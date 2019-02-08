@@ -12,8 +12,6 @@ public class RoomScript : MonoBehaviour {
   }
 
   public void OnTriggerExit(Collider other) {
-
-        Debug.Log(other.tag);
         if(other.name == "Player")
         {
             /*

@@ -41,15 +41,15 @@ public class PickupObject : MonoBehaviour
 
 		pickup();
 		
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    filterThroughInventory();
-        //}
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            filterThroughInventory();
+        }
     }
 
     void carry(InventoryItem o)
     {
-        var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2);
+        var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.LEFT))
         {
             pos.x -= Screen.width/4;
@@ -60,6 +60,13 @@ public class PickupObject : MonoBehaviour
             pos.y -= Screen.height/3;
 
         }
+        //if (currentlySelectedObj)
+        //{
+        //    findAndSetShaderForObj(default_shader, currentlySelectedObj);
+        //}
+        //findAndSetShaderForObj(outline_shader, o.item);
+        //o.item.layer = 9;
+        o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
         o.item.transform.SetParent(null);
         o.item.transform.position = Camera.main.ScreenToWorldPoint(pos);
@@ -107,14 +114,24 @@ public class PickupObject : MonoBehaviour
         if (currentlySelectedObj)
         {
             currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
+            findAndSetShaderForObj(default_shader, currentlySelectedObj);
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-
             GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
             if (obj)
             {
+                findAndSetShaderForObj(outline_shader, obj);
                 currentlySelectedObj = obj;
             }
             else
@@ -174,18 +191,18 @@ public class PickupObject : MonoBehaviour
     * one   
     *
     */
-    //void filterThroughInventory()
-    //{
-    //    if (currentlySelectedObj)
-    //    {
-    //        int index = this.inventory.findIndexFromGameObject(currentlySelectedObj);
-    //        GameObject newSelectedObj = this.inventory.getNextTakenIndexAfterGivenIndex(index);
-    //        if (newSelectedObj)
-    //        {
-    //            this.currentlySelectedObj = newSelectedObj;
-    //        }
-    //    }
-    //}
-
+    void filterThroughInventory()
+    {
+        if (currentlySelectedObj)
+        {
+            InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
+            if (nextItem != null)
+            {
+                findAndSetShaderForObj(default_shader, currentlySelectedObj);
+                findAndSetShaderForObj(outline_shader, nextItem.item);
+                this.currentlySelectedObj = nextItem.item;
+            }
+        }
+    }
 
 }

@@ -49,7 +49,6 @@ public class Inventory
 
     public void AddGameObjectToInventory(GameObject obj)
     {
-        Debug.Log(this.IsObjectAlreadyInInventory(obj));
         if (this.IsObjectAlreadyInInventory(obj))
         {
             return;
@@ -99,17 +98,76 @@ public class Inventory
 
     public GameObject FindFirstObject()
     {
+        Debug.Log("First is: " + this.inventory[0] + " Second is: " + this.inventory[1]);
         if (this.inventory[0] != null)
         {
             return this.inventory[0].item;
-        } else if (this.inventory[0] != null)
+        } else if (this.inventory[1] != null)
         {
             return this.inventory[1].item;
         }
         return null;
     }
 
-    /**
+    public InventoryItem FindFirstInventoryItem()
+    {
+        if (this.inventory[0] != null)
+        {
+            return this.inventory[0];
+        }
+        else if (this.inventory[0] != null)
+        {
+            return this.inventory[1];
+        }
+        return null;
+    }
+
+    /*
+     * Given an index find the next available object
+     * 
+     * Used for filtering inventory
+     */
+    public InventoryItem FindNextObject(GameObject obj)
+    {
+
+        int index = GetIndexOfCurrentGameObject(obj);
+        InventoryItem firstObj = this.FindFirstInventoryItem();
+        if (index < 0)
+        {
+            return null;
+        } else if (!this.IsInventoryFull() && firstObj != null)
+        {
+            //If its not full that means that 
+            return firstObj;
+        }
+
+        if (index == 0 && this.inventory[1] != null)
+        {
+            return this.inventory[1];
+        } else if (index == 1 && this.inventory[0] != null)
+        {
+            return this.inventory[0];
+        } else
+        {
+            return null;
+        }
+    }
+
+    private int GetIndexOfCurrentGameObject(GameObject obj)
+    {
+        int index = 0;
+        foreach (InventoryItem i in this.inventory)
+        {
+            if (obj == i.item)
+            {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
+    /*
      * Find the next available open space in the inventory
      * 
      * Returns:   
