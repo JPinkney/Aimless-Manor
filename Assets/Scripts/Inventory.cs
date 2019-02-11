@@ -98,7 +98,6 @@ public class Inventory
 
     public GameObject FindFirstObject()
     {
-        Debug.Log("First is: " + this.inventory[0] + " Second is: " + this.inventory[1]);
         if (this.inventory[0] != null)
         {
             return this.inventory[0].item;

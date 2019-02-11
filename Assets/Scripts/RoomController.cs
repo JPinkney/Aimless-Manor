@@ -20,11 +20,12 @@ public class RoomController : MonoBehaviour {
         int levelIndex;
         if(portal == null)
         {
-            levelIndex = 2;
+            levelIndex = 1;
         }
         else
         {
-            levelIndex = Random.Range(1, 2);
+            levelIndex = Random.Range(1, 4);
+            //levelIndex = 2;
         }
 
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);

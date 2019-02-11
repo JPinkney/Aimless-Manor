@@ -41,10 +41,10 @@ public class PickupObject : MonoBehaviour
 
 		pickup();
 		
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            filterThroughInventory();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    filterThroughInventory();
+        //}
     }
 
     void carry(InventoryItem o)
@@ -60,11 +60,11 @@ public class PickupObject : MonoBehaviour
             pos.y -= Screen.height/3;
 
         }
-        //if (currentlySelectedObj)
-        //{
-        //    findAndSetShaderForObj(default_shader, currentlySelectedObj);
-        //}
-        //findAndSetShaderForObj(outline_shader, o.item);
+        if (currentlySelectedObj)
+        {
+            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+        }
+        findAndSetShaderForObj(outline_shader, o.item);
         //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
@@ -191,18 +191,18 @@ public class PickupObject : MonoBehaviour
     * one   
     *
     */
-    void filterThroughInventory()
-    {
-        if (currentlySelectedObj)
-        {
-            InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
-            if (nextItem != null)
-            {
-                findAndSetShaderForObj(default_shader, currentlySelectedObj);
-                findAndSetShaderForObj(outline_shader, nextItem.item);
-                this.currentlySelectedObj = nextItem.item;
-            }
-        }
-    }
+    //void filterThroughInventory()
+    //{
+    //    if (currentlySelectedObj)
+    //    {
+    //        InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
+    //        if (nextItem != null)
+    //        {
+    //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+    //            findAndSetShaderForObj(outline_shader, nextItem.item);
+    //            this.currentlySelectedObj = nextItem.item;
+    //        }
+    //    }
+    //}
 
 }
