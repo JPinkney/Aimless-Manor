@@ -101,6 +101,18 @@ public class PickupObject : MonoBehaviour
                     Pickupable p = ob.collider.GetComponent<Pickupable>();
                     if (p != null)
                     {
+
+                        if (p.tag.Contains("key"))
+                        {
+                            pickupKey(p);
+                        }
+
+                        if (this.inventory.IsInventoryFull())
+                        {
+                            return;
+                        }
+
+
                         p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         this.inventory.AddGameObjectToInventory(p.gameObject);
                         currentlySelectedObj = p.gameObject;
@@ -111,6 +123,12 @@ public class PickupObject : MonoBehaviour
 			}
 		}
 	}
+
+    void pickupKey(Pickupable p)
+    {
+        p.gameObject.GetComponent<Renderer>().enabled = false;
+        p.obtainKey();
+    }
 
 	public void dropObject()
 	{
@@ -146,7 +164,7 @@ public class PickupObject : MonoBehaviour
 
     void checkUse()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             useObject();
         }
@@ -259,7 +277,7 @@ public class PickupObject : MonoBehaviour
 
     void checkComplete()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             foreach (string key in RoomController.CompletedRooms.Keys)
             {

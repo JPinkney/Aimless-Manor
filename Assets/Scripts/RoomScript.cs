@@ -44,7 +44,7 @@ public class RoomScript : MonoBehaviour
 
         for(int i = 0; i < keys.Length; i++)
         {
-            if (!keys[i].GetComponent<Pickupable>().GetUsed())
+            if (!keys[i].GetComponent<Pickupable>().KeyObtained())
             {
                 return false;
             }
