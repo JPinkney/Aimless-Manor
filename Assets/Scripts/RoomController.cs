@@ -7,7 +7,8 @@ using System.Collections.Generic;
 public class RoomController : MonoBehaviour
 {
     RoomScript[] m_RoomList;
-    Dictionary<string, bool> CompletedRooms;
+    public static Dictionary<string, bool> CompletedRooms = new Dictionary<string, bool>();
+
     public GameObject m_DoorPrefab;
     public static RoomController m_staticRef;
     bool m_loadingLevel;
@@ -19,7 +20,17 @@ public class RoomController : MonoBehaviour
         m_loadingLevel = false;
 
         for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
-            CompletedRooms[EditorBuildSettings.scenes[i].path] = false;
+            string scene_name = EditorBuildSettings.scenes[i].path;
+            
+            if(scene_name != "")
+            {
+                scene_name = scene_name.Substring(scene_name.LastIndexOf('/') + 1, scene_name.LastIndexOf('.') - (scene_name.LastIndexOf('/') + 1));
+
+                if (scene_name != "root")
+                {
+                    CompletedRooms[scene_name] = false;
+                }
+            }
         }
 
 

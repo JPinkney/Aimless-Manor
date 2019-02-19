@@ -41,7 +41,9 @@ public class PickupObject : MonoBehaviour
         }
 
 		pickup();
-		
+
+        checkComplete();
+
         //if (Input.GetKeyDown(KeyCode.Q))
         //{
         //    filterThroughInventory();
@@ -254,5 +256,16 @@ public class PickupObject : MonoBehaviour
     //        }
     //    }
     //}
+
+    void checkComplete()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            foreach (string key in RoomController.CompletedRooms.Keys)
+            {
+                Debug.Log("Room: " + key + " Status: " + RoomController.CompletedRooms[key]);
+            }
+        }
+    }
 
 }

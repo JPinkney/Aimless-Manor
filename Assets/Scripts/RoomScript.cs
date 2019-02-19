@@ -33,7 +33,10 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        
+        if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
+        {
+            Complete();
+        }
     }
 
     public bool Complete()
@@ -47,10 +50,7 @@ public class RoomScript : MonoBehaviour
             }
         }
 
-        // RoomController - call complete in there somewhere
-        // the key is currently a path
-        // but the room name/tag could be using "contains"?
-        // loop and contains?
+        RoomController.CompletedRooms["room_" + this.gameObject.tag] = true;
         return true;
     }
 }
