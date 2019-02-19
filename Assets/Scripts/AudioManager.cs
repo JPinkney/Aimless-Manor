@@ -28,7 +28,6 @@ public class AudioManager : MonoBehaviour
 
 		foreach (Sound s in sounds)
 		{
-            // I probably have to look into adding this
 			s.source = gameObject.AddComponent<AudioSource>();
 			s.source.clip = s.clip;
 			s.source.loop = s.loop;
