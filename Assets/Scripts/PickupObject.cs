@@ -37,6 +37,7 @@ public class PickupObject : MonoBehaviour
                 }
             }
             checkDrop();
+            checkUse();
         }
 
 		pickup();
@@ -125,6 +126,55 @@ public class PickupObject : MonoBehaviour
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
             findAndSetShaderForObj(default_shader, currentlySelectedObj);
+            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+            GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
+            if (obj)
+            {
+                findAndSetShaderForObj(outline_shader, obj);
+                currentlySelectedObj = obj;
+            }
+            else
+            {
+                currentlySelectedObj = null;
+            }
+        }
+    }
+
+    void checkUse()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            useObject();
+        }
+    }
+
+    public void useObject()
+    {
+        if (currentlySelectedObj)
+        {
+            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
+
+            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            // Destroy(currentlySelectedObj);
+
+            currentlySelectedObj.GetComponent<Pickupable>().SetUsed(true);
+
+            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+
+
+
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();

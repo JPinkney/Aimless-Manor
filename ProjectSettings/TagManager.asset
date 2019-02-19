@@ -7,6 +7,10 @@ TagManager:
   - DoorLocator
   - Processed
   - TestPuzzleItem
+  - kitchen_key
+  - kitchen
+  - bathroom
+  - bathroom_key
   layers:
   - Default
   - TransparentFX

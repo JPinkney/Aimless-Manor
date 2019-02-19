@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pickupable : MonoBehaviour {
 
+    // public bool key = false;
+    private bool used = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +16,14 @@ public class Pickupable : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SetUsed(bool use)
+    {
+        this.used = use;
+    }
+
+    public bool GetUsed()
+    {
+        return this.used;
+    }
 }
