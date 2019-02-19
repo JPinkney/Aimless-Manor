@@ -185,4 +185,18 @@ public class Inventory
         }
         return -1;
     }
+
+    public void EmptyAll()
+    {
+        if (this.inventory[0] != null)
+        {
+            this.inventory[0] = null;
+        }
+
+        if (this.inventory[1] != null)
+        {
+            this.inventory[1] = null;
+        }
+
+    }
 }

@@ -17,21 +17,24 @@ public class RoomController : MonoBehaviour {
 	}
 
       public void LoadRoom(PortalScript portal) {
-        int levelIndex;
+        int levelIndex = 1;
         if(portal == null)
         {
-            levelIndex = 1;
+            // levelIndex = 1;
+
         }
         else
         {
-            levelIndex = Random.Range(1, 4);
-            //levelIndex = 2;
+            // levelIndex = Random.Range(1, 4);
+            levelIndex = 2;
         }
 
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);
         m_loadingLevel = true;
         m_sourcePortal = portal;
-      }
+
+
+    }
 
       public void SetupRoom(RoomScript room) {
         room.tag = "Processed";

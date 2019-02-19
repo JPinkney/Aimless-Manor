@@ -15,12 +15,16 @@ public class PickupObject : MonoBehaviour
 
     private Inventory inventory;
 
-
     // Use this for initialization
     void Start()
 	{
         mainCamera = GameObject.FindWithTag("MainCamera");
         this.inventory = new Inventory();
+    }
+
+    private void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("Theme Music");
     }
 
     // Update is called once per frame
@@ -65,7 +69,6 @@ public class PickupObject : MonoBehaviour
             findAndSetShaderForObj(default_shader, currentlySelectedObj);
         }
         findAndSetShaderForObj(outline_shader, o.item);
-        //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
         o.item.transform.SetParent(null);
@@ -188,8 +191,7 @@ public class PickupObject : MonoBehaviour
 
     /*
     * When some key is pushed it filters to have the next object be the main
-    * one   
-    *
+    * one
     */
     //void filterThroughInventory()
     //{
