@@ -37,6 +37,15 @@ public class RoomController : MonoBehaviour
         LoadRoom(null);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            SceneManager.LoadScene(4);
+        }
+    }
+
     public void LoadRoom(PortalScript portal)
     {
         int levelIndex;
