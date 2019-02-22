@@ -26,28 +26,25 @@ public class PickupObject : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        setObjOutline();
+        SetObjOutline();
         if (!this.inventory.IsEmpty())
 		{
             foreach (InventoryItem obj in this.inventory.GetInventory())
             {
                 if (obj != null)
                 {
-                    carry(obj);
+                    Carry(obj);
                 }
             }
-            checkDrop();
+            CheckDrop();
+            CheckUse();
         }
 
-		pickup();
-		
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    filterThroughInventory();
-        //}
+        Interact();
+        Pickup();
     }
 
-    void carry(InventoryItem o)
+    void Carry(InventoryItem o)
     {
         var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.LEFT))
@@ -62,9 +59,9 @@ public class PickupObject : MonoBehaviour
         }
         if (currentlySelectedObj)
         {
-            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
         }
-        findAndSetShaderForObj(outline_shader, o.item);
+        FindAndSetShaderForObj(outline_shader, o.item);
         //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
@@ -73,7 +70,7 @@ public class PickupObject : MonoBehaviour
         o.item.transform.rotation = Quaternion.identity;
     }
 
-    void pickup()
+    void Pickup()
 	{
         if (this.inventory.IsInventoryFull())
         {
@@ -109,43 +106,106 @@ public class PickupObject : MonoBehaviour
 		}
 	}
 
-	public void dropObject()
-	{
-        if (currentlySelectedObj)
+    void Interact()
+    {
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
+        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-            Vector3 playerPos = this.transform.position;
-            Vector3 playerDirection = this.transform.forward;
-            Quaternion playerRotation = this.transform.rotation;
-            float spawnDistance = 0.1f;
-
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            currentlySelectedObj.transform.position = spawnPos;
-            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-            findAndSetShaderForObj(default_shader, currentlySelectedObj);
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            GameObject obj = this.inventory.FindFirstObject();
-            currentlySelectedObj.layer = 0;
-            if (obj)
+            RaycastHit[] hitObjects = Physics.RaycastAll(ray);
+            if (hitObjects.Length > 0)
             {
-                findAndSetShaderForObj(outline_shader, obj);
-                currentlySelectedObj = obj;
-            }
-            else
-            {
-                currentlySelectedObj = null;
+                foreach (RaycastHit ob in hitObjects)
+                {
+                    Interactable p = ob.collider.GetComponent<Interactable>();
+                    if (p != null)
+                    {
+                        //p.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                        //this.inventory.AddGameObjectToInventory(p.gameObject);
+                        //currentlySelectedObj = p.gameObject;
+                        foreach(InventoryItem obj in this.inventory.GetInventory())
+                        {
+                            if (obj != null)
+                            {
+                                p.Interact(this.inventory, obj.item);
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }
 
-    void checkDrop()
+    void CheckUse()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            UseObject();
+        }
+    }
+
+    private void ChangeCurrentlySelectedObjectLocation()
+    {
+        currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+        Vector3 playerPos = this.transform.position;
+        Vector3 playerDirection = this.transform.forward;
+        Quaternion playerRotation = this.transform.rotation;
+        float spawnDistance = 0.1f;
+
+        Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+        currentlySelectedObj.transform.position = spawnPos;
+    }
+
+    public void UseObject()
+    {
+        if (currentlySelectedObj)
+        {
+            ChangeCurrentlySelectedObjectLocation();
+            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            currentlySelectedObj.GetComponent<Pickupable>().SetUsed(true);
+            ChangeSelectedObject();
+        }
+    }
+
+    private void ChangeSelectedObject()
+    {
+        this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+        FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+
+        GameObject obj = this.inventory.FindFirstObject();
+        currentlySelectedObj.layer = 0;
+        if (obj)
+        {
+            FindAndSetShaderForObj(outline_shader, obj);
+            currentlySelectedObj = obj;
+        }
+        else
+        {
+            currentlySelectedObj = null;
+        }
+    }
+
+
+    public void DropObject()
+	{
+        if (currentlySelectedObj)
+        {
+            ChangeCurrentlySelectedObjectLocation();
+            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+            ChangeSelectedObject();
+        }
+    }
+
+    void CheckDrop()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            dropObject();
+            DropObject();
         }
     }
 
@@ -154,7 +214,7 @@ public class PickupObject : MonoBehaviour
      * Object outlining code 
      * 
      */
-    void setObjOutline()
+    void SetObjOutline()
     {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
@@ -163,7 +223,7 @@ public class PickupObject : MonoBehaviour
 
         if (lastOutlinedObject != null)
         {
-            findAndSetShaderForObj(default_shader, lastOutlinedObject);
+            FindAndSetShaderForObj(default_shader, lastOutlinedObject);
             lastOutlinedObject = null;
         }
 
@@ -172,37 +232,18 @@ public class PickupObject : MonoBehaviour
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<Pickupable>() != null)
             {
-                findAndSetShaderForObj(outline_shader, hitObj);
+                FindAndSetShaderForObj(outline_shader, hitObj);
                 lastOutlinedObject = hitObj;
             }
         }
 
     }
 
-    void findAndSetShaderForObj(string shaderName, GameObject obj)
+    void FindAndSetShaderForObj(string shaderName, GameObject obj)
     {
         Shader shader = Shader.Find(shaderName);
         Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
         rendererObj.material.shader = shader;
     }
-
-    /*
-    * When some key is pushed it filters to have the next object be the main
-    * one   
-    *
-    */
-    //void filterThroughInventory()
-    //{
-    //    if (currentlySelectedObj)
-    //    {
-    //        InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
-    //        if (nextItem != null)
-    //        {
-    //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
-    //            findAndSetShaderForObj(outline_shader, nextItem.item);
-    //            this.currentlySelectedObj = nextItem.item;
-    //        }
-    //    }
-    //}
 
 }

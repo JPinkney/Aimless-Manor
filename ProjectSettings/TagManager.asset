@@ -7,6 +7,9 @@ TagManager:
   - DoorLocator
   - Processed
   - TestPuzzleItem
+  - ingredient_1
+  - ingredient_2
+  - ingredient_3
   layers:
   - Default
   - TransparentFX
