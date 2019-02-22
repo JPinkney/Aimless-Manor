@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1960,6 +1960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: book
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e24adfee237dc46d7896fbfeba5202a7, type: 3}
+      propertyPath: m_TagString
+      value: kitchen_key
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e24adfee237dc46d7896fbfeba5202a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.687
@@ -2450,7 +2454,7 @@ GameObject:
   - component: {fileID: 1441900249}
   m_Layer: 0
   m_Name: RoomRoot
-  m_TagString: Untagged
+  m_TagString: kitchen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2517,6 +2521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Portals:
   - {fileID: 340275773}
+  keys: []
 --- !u!1 &1509640962
 GameObject:
   m_ObjectHideFlags: 0

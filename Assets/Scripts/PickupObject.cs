@@ -37,10 +37,13 @@ public class PickupObject : MonoBehaviour
                 }
             }
             checkDrop();
+            checkUse();
         }
 
 		pickup();
-		
+
+        checkComplete();
+
         //if (Input.GetKeyDown(KeyCode.Q))
         //{
         //    filterThroughInventory();
@@ -98,6 +101,18 @@ public class PickupObject : MonoBehaviour
                     Pickupable p = ob.collider.GetComponent<Pickupable>();
                     if (p != null)
                     {
+
+                        if (p.tag.Contains("key"))
+                        {
+                            pickupKey(p);
+                        }
+
+                        if (this.inventory.IsInventoryFull())
+                        {
+                            return;
+                        }
+
+
                         p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         this.inventory.AddGameObjectToInventory(p.gameObject);
                         currentlySelectedObj = p.gameObject;
@@ -108,6 +123,12 @@ public class PickupObject : MonoBehaviour
 			}
 		}
 	}
+
+    void pickupKey(Pickupable p)
+    {
+        p.gameObject.GetComponent<Renderer>().enabled = false;
+        p.obtainKey();
+    }
 
 	public void dropObject()
 	{
@@ -125,6 +146,55 @@ public class PickupObject : MonoBehaviour
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
             findAndSetShaderForObj(default_shader, currentlySelectedObj);
+            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+            GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
+            if (obj)
+            {
+                findAndSetShaderForObj(outline_shader, obj);
+                currentlySelectedObj = obj;
+            }
+            else
+            {
+                currentlySelectedObj = null;
+            }
+        }
+    }
+
+    void checkUse()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            useObject();
+        }
+    }
+
+    public void useObject()
+    {
+        if (currentlySelectedObj)
+        {
+            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
+
+            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            // Destroy(currentlySelectedObj);
+
+            currentlySelectedObj.GetComponent<Pickupable>().SetUsed(true);
+
+            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+
+
+
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
@@ -204,5 +274,16 @@ public class PickupObject : MonoBehaviour
     //        }
     //    }
     //}
+
+    void checkComplete()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            foreach (string key in RoomController.CompletedRooms.Keys)
+            {
+                Debug.Log("Room: " + key + " Status: " + RoomController.CompletedRooms[key]);
+            }
+        }
+    }
 
 }
