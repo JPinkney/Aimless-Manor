@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 601227060}
   m_Layer: 0
   m_Name: RoomRoot
-  m_TagString: Untagged
+  m_TagString: bathroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Portals:
   - {fileID: 0}
+  keys: []
 --- !u!4 &601227062
 Transform:
   m_ObjectHideFlags: 0
@@ -234,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601227059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437417251}
@@ -1664,6 +1665,7 @@ GameObject:
   - component: {fileID: 971119579}
   - component: {fileID: 970349553}
   - component: {fileID: 969349425}
+  - component: {fileID: 971343868}
   m_Layer: 0
   m_Name: polySurface143
   m_TagString: Untagged
@@ -1671,6 +1673,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &971343868
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971343867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300032, guid: c9f6e178c7db14343a8b8c10c9538026, type: 3}
 --- !u!1 &971343869
 GameObject:
   m_ObjectHideFlags: 0

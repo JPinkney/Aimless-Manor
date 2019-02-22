@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DoorLocator
-  - Processed
-  - TestPuzzleItem
-  - ingredient_1
-  - ingredient_2
-  - ingredient_3
+  - ingredients_1
+  - ingredients_2
+  - ingredients_3
   layers:
   - Default
   - TransparentFX
@@ -19,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Test
+  - 
+  - 
   - 
   - 
   - 

@@ -42,6 +42,7 @@ public class PickupObject : MonoBehaviour
 
         Interact();
         Pickup();
+        checkComplete();
     }
 
     void Carry(InventoryItem o)
@@ -95,6 +96,18 @@ public class PickupObject : MonoBehaviour
                     Pickupable p = ob.collider.GetComponent<Pickupable>();
                     if (p != null)
                     {
+
+                        if (p.tag.Contains("key"))
+                        {
+                            pickupKey(p);
+                        }
+
+                        if (this.inventory.IsInventoryFull())
+                        {
+                            return;
+                        }
+
+
                         p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         this.inventory.AddGameObjectToInventory(p.gameObject);
                         currentlySelectedObj = p.gameObject;
@@ -165,7 +178,7 @@ public class PickupObject : MonoBehaviour
         {
             ChangeCurrentlySelectedObjectLocation();
             currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
-            currentlySelectedObj.GetComponent<Pickupable>().SetUsed(true);
+            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
             ChangeSelectedObject();
         }
     }
@@ -198,6 +211,92 @@ public class PickupObject : MonoBehaviour
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             ChangeSelectedObject();
+        }
+    }
+
+    void pickupKey(Pickupable p)
+    {
+        p.gameObject.GetComponent<Renderer>().enabled = false;
+        p.obtainKey();
+    }
+
+	public void dropObject()
+	{
+        if (currentlySelectedObj)
+        {
+            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
+            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+            GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
+            if (obj)
+            {
+                FindAndSetShaderForObj(outline_shader, obj);
+                currentlySelectedObj = obj;
+            }
+            else
+            {
+                currentlySelectedObj = null;
+            }
+        }
+    }
+
+    void checkUse()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            useObject();
+        }
+    }
+
+    public void useObject()
+    {
+        if (currentlySelectedObj)
+        {
+            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
+
+            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            // Destroy(currentlySelectedObj);
+
+            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
+
+            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+
+
+            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+            GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
+            if (obj)
+            {
+                FindAndSetShaderForObj(outline_shader, obj);
+                currentlySelectedObj = obj;
+            }
+            else
+            {
+                currentlySelectedObj = null;
+            }
         }
     }
 
@@ -246,4 +345,33 @@ public class PickupObject : MonoBehaviour
         rendererObj.material.shader = shader;
     }
 
+    /*
+    * When some key is pushed it filters to have the next object be the main
+    * one   
+    *
+    */
+    //void filterThroughInventory()
+    //{
+    //    if (currentlySelectedObj)
+    //    {
+    //        InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
+    //        if (nextItem != null)
+    //        {
+    //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+    //            findAndSetShaderForObj(outline_shader, nextItem.item);
+    //            this.currentlySelectedObj = nextItem.item;
+    //        }
+    //    }
+    //}
+
+    void checkComplete()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            foreach (string key in RoomController.CompletedRooms.Keys)
+            {
+                Debug.Log("Room: " + key + " Status: " + RoomController.CompletedRooms[key]);
+            }
+        }
+    }
 }

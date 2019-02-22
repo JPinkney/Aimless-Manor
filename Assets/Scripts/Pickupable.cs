@@ -6,13 +6,25 @@ public class Pickupable : MonoBehaviour {
 
     private bool used = false;
 
-    public void SetUsed(bool use)
+    private bool key_got = false;
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void obtainKey()
     {
-        this.used = use;
+        this.key_got = true;
     }
 
-    public bool GetUsed()
+    public bool KeyObtained()
     {
-        return this.used;
+        return this.key_got;
     }
 }
