@@ -51,6 +51,7 @@ public class RoomScript : MonoBehaviour
         }
 
         RoomController.CompletedRooms["room_" + this.gameObject.tag] = true;
+        RoomController.KeyTracker.GetComponent<KeyHUD>().CollectKey();
         return true;
     }
 }

@@ -8,6 +8,7 @@ public class RoomController : MonoBehaviour
 {
     RoomScript[] m_RoomList;
     public static Dictionary<string, bool> CompletedRooms = new Dictionary<string, bool>();
+    public static GameObject KeyTracker;
 
     public GameObject m_DoorPrefab;
     public static RoomController m_staticRef;
@@ -33,6 +34,7 @@ public class RoomController : MonoBehaviour
             }
         }
 
+        KeyTracker = GameObject.Find("KeyUI");
 
         LoadRoom(null);
     }
