@@ -18,6 +18,7 @@ public class Cauldron : Interactable
     public GameObject hiddenIngredient1;
     public GameObject hiddenIngredient2;
     public GameObject hiddenIngredient3;
+    public GameObject hiddenWaterPitcher;
 
     private bool shouldMoveToTarget = false;
     private GameObject currentObj = null;
@@ -32,22 +33,23 @@ public class Cauldron : Interactable
             string currentItemsTags = obj.tag;
             switch (currentItemsTags)
             {
-                case "ingredient_1":
+                case "ingredients_1":
                     {
                         tag1HasBeenAdded = true;
                         hiddenIngredient1.SetActive(true);
                         break;
                     }
-                case "ingredient_2":
+                case "ingredients_2":
                     {
                         tag2HasBeenAdded = true;
                         hiddenIngredient2.SetActive(true);
                         break;
                     }
-                case "ingredient_3":
+                case "ingredients_3":
                     {
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
+                        hiddenWaterPitcher.SetActive(true);
                         break;
                     }
             }
@@ -108,6 +110,10 @@ public class Cauldron : Interactable
             }
         }
 
+        if (this.HasPuzzleFinished())
+        {
+            Debug.Log("Testing");
+        }
     }
 
     public override bool PossibleItem(GameObject obj)

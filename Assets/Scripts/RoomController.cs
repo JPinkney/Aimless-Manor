@@ -14,6 +14,7 @@ public class RoomController : MonoBehaviour
     public static RoomController m_staticRef;
     bool m_loadingLevel;
     PortalScript m_sourcePortal;
+    PortalScript m_destPortal;
 
     void Start()
     {
@@ -41,13 +42,22 @@ public class RoomController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-            SceneManager.LoadScene(4);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        //    SceneManager.LoadScene(4);
+        //}
     }
 
+    /*
+     * So this is where the next room gets loaded and the source portal
+     * gets set. After this setup room gets called once the room spawns
+     * so that the source portal then looks for a destination portal.
+     * 
+     * However, the idea is that we can actually set the destination portal
+     * from the portal script and then that will take care of which one we go
+     * to   
+     */
     public void LoadRoom(PortalScript portal)
     {
         int levelIndex;
@@ -57,8 +67,7 @@ public class RoomController : MonoBehaviour
         }
         else
         {
-            // levelIndex = Random.Range(1, 4);
-            levelIndex = 3;
+            levelIndex = portal.m_destRoomID;
         }
 
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);
@@ -68,23 +77,45 @@ public class RoomController : MonoBehaviour
 
     public void SetupRoom(RoomScript room)
     {
-        // room.tag = "Processed";
 
         if (m_sourcePortal)
         {
-            PortalScript destPortal = room.m_Portals[0];
-            destPortal.m_LinkedPortal = m_sourcePortal;
-            m_sourcePortal.m_LinkedPortal = destPortal;
+            //PortalScript destPortal = room.m_Portals[0];
+            /*
+             * This is going to find the portal in the new room that matches
+             * the portals tag of the old room           
+             */
+            PortalScript destPortal = FindObjectByTag(room.m_Portals, m_sourcePortal.tag);
+            Debug.Log(destPortal);
 
-            room.transform.rotation = Quaternion.LookRotation(
-              destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
-              destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
-            room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
+            if (destPortal)
+            {
+                destPortal.m_LinkedPortal = m_sourcePortal;
+                m_sourcePortal.m_LinkedPortal = destPortal;
 
-            m_sourcePortal = null;
+                room.transform.rotation = Quaternion.LookRotation(
+                  destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
+                  destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
+                room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
+
+                m_sourcePortal = null;
+            }
+
         }
 
         m_loadingLevel = false;
+    }
+
+    private PortalScript FindObjectByTag(PortalScript[] portals, string findTag)
+    {
+        foreach(PortalScript s in portals)
+        {
+            if (s.tag == findTag)
+            {
+                return s;
+            }
+        }
+        return null;
     }
 
 }

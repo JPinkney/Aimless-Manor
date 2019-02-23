@@ -7,6 +7,10 @@ TagManager:
   - ingredients_1
   - ingredients_2
   - ingredients_3
+  - bathroom
+  - bathroom_key
+  - bathroom_portal
+  - kitchen_portal
   layers:
   - Default
   - TransparentFX

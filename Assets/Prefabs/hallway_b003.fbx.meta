@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: bc4419f1c54294b1fb32d29d819931d1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bool_a
+    100002: bool_b
+    100004: door.000
+    100006: door.001
+    100008: door.002
+    100010: door.003
+    100012: door.004
+    100014: door.005
+    100016: floor
+    100018: //RootNode
+    100020: room_front
+    100022: room_front.001
+    100024: room_front.002
+    100026: roomtop
+    100028: src_door
+    100030: src_trim_doorarches
+    100032: trim_doorarches.000
+    100034: trim_old
+    100036: vec_trim_doorarches_old
+    100038: walls_old
+    400000: bool_a
+    400002: bool_b
+    400004: door.000
+    400006: door.001
+    400008: door.002
+    400010: door.003
+    400012: door.004
+    400014: door.005
+    400016: floor
+    400018: //RootNode
+    400020: room_front
+    400022: room_front.001
+    400024: room_front.002
+    400026: roomtop
+    400028: src_door
+    400030: src_trim_doorarches
+    400032: trim_doorarches.000
+    400034: trim_old
+    400036: vec_trim_doorarches_old
+    400038: walls_old
+    2100000: No Name
+    2100002: doorcolour
+    2100004: chrome
+    2300000: bool_a
+    2300002: bool_b
+    2300004: door.000
+    2300006: door.001
+    2300008: door.002
+    2300010: door.003
+    2300012: door.004
+    2300014: door.005
+    2300016: floor
+    2300018: room_front
+    2300020: room_front.001
+    2300022: room_front.002
+    2300024: roomtop
+    2300026: src_door
+    2300028: src_trim_doorarches
+    2300030: trim_doorarches.000
+    2300032: trim_old
+    2300034: vec_trim_doorarches_old
+    2300036: walls_old
+    3300000: bool_a
+    3300002: bool_b
+    3300004: door.000
+    3300006: door.001
+    3300008: door.002
+    3300010: door.003
+    3300012: door.004
+    3300014: door.005
+    3300016: floor
+    3300018: room_front
+    3300020: room_front.001
+    3300022: room_front.002
+    3300024: roomtop
+    3300026: src_door
+    3300028: src_trim_doorarches
+    3300030: trim_doorarches.000
+    3300032: trim_old
+    3300034: vec_trim_doorarches_old
+    3300036: walls_old
+    4300000: room_front.002
+    4300002: room_front.001
+    4300004: bool_b
+    4300006: room_front
+    4300008: trim_doorarches.000
+    4300010: src_trim_doorarches
+    4300012: vec_trim_doorarches_old
+    4300014: bool_a
+    4300016: door.005
+    4300018: door.004
+    4300020: door.003
+    4300022: door.002
+    4300024: door.000
+    4300026: door.001
+    4300028: src_door
+    4300030: floor
+    4300032: trim_old
+    4300034: roomtop
+    4300036: walls_old
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

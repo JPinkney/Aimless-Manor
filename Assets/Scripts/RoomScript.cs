@@ -33,10 +33,10 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
-        {
-            Complete();
-        }
+        //if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
+        //{
+        //    Complete();
+        //}
     }
 
     public bool Complete()
