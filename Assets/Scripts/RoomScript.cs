@@ -36,6 +36,18 @@ public class RoomScript : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log("SHIIIIIIII");
+        if (other.name == "Player")
+        {
+            GameObject player = GameObject.Find("colleeder");
+            GameObject mana = GameObject.Find("GameManager");
+            player.GetComponent<Collisions>().man = mana;
+            //GameObject col = (GameObject)player.GetComponent(colleeder);
+        }
+    }
+
     private void Update()
     {
         if (keys.Length > 0 && !RoomController.CompletedRooms["room_" + this.gameObject.tag])

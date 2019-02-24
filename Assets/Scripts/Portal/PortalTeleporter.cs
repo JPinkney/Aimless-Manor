@@ -12,6 +12,8 @@ public class PortalTeleporter : MonoBehaviour
     private void Start()
     {
         // Get player here
+        player = GameObject.Find("Player").GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
