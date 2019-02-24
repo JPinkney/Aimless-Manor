@@ -216,7 +216,7 @@ public class PickupObject : MonoBehaviour
 
     void pickupKey(Pickupable p)
     {
-        Debug.Log("Picking up a key");
+        Debug.Log("Picking up: " + p.gameObject.name);
         p.gameObject.GetComponent<Renderer>().enabled = false;
         p.obtainKey();
     }
