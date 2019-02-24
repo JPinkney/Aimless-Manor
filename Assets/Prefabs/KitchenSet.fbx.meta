@@ -232,7 +232,12 @@ ModelImporter:
     4300080: pCube62
     4300082: Kitchen1
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handleolour
+    second: {fileID: 2100000, guid: 8587ec7f4f1684518bff5226010f4eae, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
