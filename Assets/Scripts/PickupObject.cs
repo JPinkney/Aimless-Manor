@@ -8,8 +8,7 @@ public class PickupObject : MonoBehaviour
 {
 	GameObject mainCamera;
 	GameObject currentlySelectedObj;
-    public string outline_shader = "Outlined/UltimateOutline";
-    public string default_shader = "Standard";
+    public Material mat;
 
     private GameObject lastOutlinedObject;
 
@@ -60,9 +59,9 @@ public class PickupObject : MonoBehaviour
         }
         if (currentlySelectedObj)
         {
-            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
         }
-        FindAndSetShaderForObj(outline_shader, o.item);
+        FindAndSetOutlineMaterialForObj(false, o.item);
         //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
@@ -97,6 +96,7 @@ public class PickupObject : MonoBehaviour
                     if (p != null)
                     {
 
+                        Debug.Log(p.tag.Contains("key"));
                         if (p.tag.Contains("key"))
                         {
                             pickupKey(p);
@@ -187,13 +187,13 @@ public class PickupObject : MonoBehaviour
     {
         this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-        FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
 
         GameObject obj = this.inventory.FindFirstObject();
         currentlySelectedObj.layer = 0;
         if (obj)
         {
-            FindAndSetShaderForObj(outline_shader, obj);
+            FindAndSetOutlineMaterialForObj(false, obj);
             currentlySelectedObj = obj;
         }
         else
@@ -235,14 +235,14 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.transform.position = spawnPos;
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetShaderForObj(outline_shader, obj);
+                FindAndSetOutlineMaterialForObj(false, obj);
                 currentlySelectedObj = obj;
             }
             else
@@ -276,12 +276,11 @@ public class PickupObject : MonoBehaviour
 
             currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
             // Destroy(currentlySelectedObj);
-
             currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
 
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetShaderForObj(default_shader, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
 
 
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
@@ -290,7 +289,7 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetShaderForObj(outline_shader, obj);
+                FindAndSetOutlineMaterialForObj(false, obj);
                 currentlySelectedObj = obj;
             }
             else
@@ -322,7 +321,7 @@ public class PickupObject : MonoBehaviour
 
         if (lastOutlinedObject != null)
         {
-            FindAndSetShaderForObj(default_shader, lastOutlinedObject);
+            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject);
             lastOutlinedObject = null;
         }
 
@@ -331,18 +330,26 @@ public class PickupObject : MonoBehaviour
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<Pickupable>() != null)
             {
-                FindAndSetShaderForObj(outline_shader, hitObj);
+                FindAndSetOutlineMaterialForObj(false, hitObj);
                 lastOutlinedObject = hitObj;
             }
         }
 
     }
 
-    void FindAndSetShaderForObj(string shaderName, GameObject obj)
+    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj)
     {
-        Shader shader = Shader.Find(shaderName);
         Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
-        rendererObj.material.shader = shader;
+        if (remove)
+        {
+            //rendererObj.material = null;
+        }
+        else
+        {
+            //rendererObj.material = this.mat;
+        }
+
+
     }
 
     /*

@@ -19,9 +19,13 @@ public class Cauldron : Interactable
     public GameObject hiddenIngredient2;
     public GameObject hiddenIngredient3;
     public GameObject hiddenWaterPitcher;
+    public GameObject hiddenBubbles;
+    public GameObject key;
 
     private bool shouldMoveToTarget = false;
     private GameObject currentObj = null;
+    private bool isCoroutineExecuting = false;
+    private bool hasPlayedPuzzleAnimation = false;
 
     protected float Animation;
 
@@ -50,6 +54,7 @@ public class Cauldron : Interactable
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
                         hiddenWaterPitcher.SetActive(true);
+                        hiddenBubbles.SetActive(true);
                         break;
                     }
             }
@@ -79,11 +84,30 @@ public class Cauldron : Interactable
         }
     }
 
+     IEnumerator ExecuteAfterTime(float time)
+     {
+         if (isCoroutineExecuting)
+             yield break;
+     
+         isCoroutineExecuting = true;
+         
+         yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        hiddenIngredient1.SetActive(false);
+        hiddenIngredient2.SetActive(false);
+        hiddenIngredient3.SetActive(false);
+        hiddenBubbles.SetActive(false);
+
+        key.SetActive(true);
+
+        isCoroutineExecuting = false;
+     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Pear" || other.name == "chair1")
         {
-            Debug.Log("So it was hit?");
             shouldMoveToTarget = true;
         }
     }
@@ -110,9 +134,10 @@ public class Cauldron : Interactable
             }
         }
 
-        if (this.HasPuzzleFinished())
+        if (this.HasPuzzleFinished() && !hasPlayedPuzzleAnimation)
         {
-            Debug.Log("Testing");
+            StartCoroutine(ExecuteAfterTime(4));
+            this.hasPlayedPuzzleAnimation = true;
         }
     }
 

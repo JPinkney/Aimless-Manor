@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb3476441e716c408f9b653ca5fff5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedKeys: 3
+  collectedKeys: 0
   totalKeys: 5
   keys:
   - {fileID: 508882093}
@@ -1178,6 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline_shader: Outlined/UltimateOutline
   default_shader: Standard
+  mat: {fileID: 2100000, guid: f4b4a4f15859848008877276cdf44e8c, type: 2}
 --- !u!4 &1989848402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
