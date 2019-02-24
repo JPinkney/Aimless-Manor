@@ -1,27 +1,20 @@
 fileFormatVersion: 2
-guid: 51ddf1b4c8b814c41ba010dc0db74827
+guid: ed6355af8e4324e998196b8cba87234f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: lid.001
-    100002: pot_003
-    100004: //RootNode
-    400000: lid.001
-    400002: pot_003
-    400004: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: No Name
-    2300000: lid.001
-    2300002: pot_003
-    3300000: lid.001
-    3300002: pot_003
-    4300000: pot_003
-    4300002: lid.001
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pan.001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: 3a64a986b3b084d33bbd10c2421a9bd8, type: 2}
+    second: {fileID: 2100000, guid: 3bef37c0493554ed4995d8288e9c5331, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
