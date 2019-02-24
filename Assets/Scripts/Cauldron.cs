@@ -19,7 +19,7 @@ public class Cauldron : Interactable
     public GameObject hiddenIngredient2;
     public GameObject hiddenIngredient3;
     public GameObject hiddenWaterPitcher;
-    public GameObject hiddenBubbles;
+    public ParticleSystem hiddenBubbles;
     public GameObject key;
 
     private bool shouldMoveToTarget = false;
@@ -54,7 +54,7 @@ public class Cauldron : Interactable
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
                         hiddenWaterPitcher.SetActive(true);
-                        hiddenBubbles.SetActive(true);
+                        hiddenBubbles.Play();
                         break;
                     }
             }
@@ -97,7 +97,7 @@ public class Cauldron : Interactable
         hiddenIngredient1.SetActive(false);
         hiddenIngredient2.SetActive(false);
         hiddenIngredient3.SetActive(false);
-        hiddenBubbles.SetActive(false);
+        hiddenBubbles.Stop();
 
         key.SetActive(true);
 
