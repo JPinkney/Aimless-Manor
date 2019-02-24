@@ -60,6 +60,7 @@ public class Inventory
             return;
         }
 
+        Debug.Log(obj);
         if(index == 0)
         {
             this.inventory[index] = new InventoryItem(obj, InventoryItem.Location.LEFT);

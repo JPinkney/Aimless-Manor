@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LinkedPortal: {fileID: 0}
+  m_DestPortal: {fileID: 0}
+  m_destRoomID: 0
 --- !u!4 &124142938
 Transform:
   m_ObjectHideFlags: 0
@@ -578,7 +580,12 @@ PrefabInstance:
     - target: {fileID: 7696601821559148319, guid: 0c5e8485a1e9245e793068bb5d91775d,
         type: 3}
       propertyPath: m_Name
-      value: Book (9)
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696601821559148319, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3584430867446066749, guid: 0c5e8485a1e9245e793068bb5d91775d,
         type: 3}
@@ -640,6 +647,31 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6682289180582102106, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_TagString
+      value: bathroom_key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682289180582102106, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_Name
+      value: key
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914038247278118694, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682289180584368794, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0009e3c04eae24c0d8004a9c987692dc, type: 2}
+    - target: {fileID: 6682289180584368794, guid: 0c5e8485a1e9245e793068bb5d91775d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0009e3c04eae24c0d8004a9c987692dc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5e8485a1e9245e793068bb5d91775d, type: 3}
 --- !u!4 &693290644 stripped
@@ -661,7 +693,7 @@ GameObject:
   - component: {fileID: 729276219}
   m_Layer: 0
   m_Name: RoomRoot
-  m_TagString: Untagged
+  m_TagString: bathroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,6 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Portals:
   - {fileID: 124142937}
+  keys: []
 --- !u!65 &729276219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -725,8 +758,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.116953, y: 3.1985178, z: 3.0432513}
-  m_Center: {x: -0.021522045, y: -1.9492784, z: 0.05643475}
+  m_Size: {x: 3.4996386, y: 2.7134032, z: 2.5781355}
+  m_Center: {x: -0.0075924397, y: -2.0354457, z: -0.01599288}
 --- !u!1001 &735259245
 PrefabInstance:
   m_ObjectHideFlags: 0
