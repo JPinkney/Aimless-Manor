@@ -14,7 +14,12 @@ public class RoomScript : MonoBehaviour
     {
         RoomController.m_staticRef.SetupRoom(this);
 
-        keys = GameObject.FindGameObjectsWithTag(this.gameObject.tag + "_key");
+        /*
+         * I'm commenting this out because I think it might be easier if we
+         * just manually set the keys because FindGameObjectsWithTag doesn't
+         * find hidden objects iirc
+         */
+        //keys = GameObject.FindGameObjectsWithTag(this.gameObject.tag + "_key");
     }
 
     public void OnTriggerExit(Collider other)
@@ -33,15 +38,14 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        //if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
-        //{
-        //    Complete();
-        //}
+        if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
+        {
+            Complete();
+        }
     }
 
     public bool Complete()
     {
-
         for(int i = 0; i < keys.Length; i++)
         {
             if (!keys[i].GetComponent<Pickupable>().KeyObtained())
