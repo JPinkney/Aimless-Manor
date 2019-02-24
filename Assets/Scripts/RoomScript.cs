@@ -38,7 +38,7 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        if(!RoomController.CompletedRooms["room_" + this.gameObject.tag])
+        if (keys.Length > 0 && !RoomController.CompletedRooms["room_" + this.gameObject.tag])
         {
             Complete();
         }

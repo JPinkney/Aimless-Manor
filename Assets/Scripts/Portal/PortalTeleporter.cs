@@ -5,9 +5,14 @@ using UnityEngine;
 public class PortalTeleporter : MonoBehaviour
 {
     public Transform player;
-    public Transform reciever;
+    public Transform receiver;
 
     private bool playerIsOverlapping = false;
+
+    private void Start()
+    {
+        // Get player here
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,8 +24,8 @@ public class PortalTeleporter : MonoBehaviour
 
             if (dotProduct < 0f)
             {
-                player.position = reciever.position;
-                player.rotation = reciever.rotation;
+                player.position = receiver.position;
+                player.rotation = receiver.rotation;
 
                 playerIsOverlapping = false;
             }
