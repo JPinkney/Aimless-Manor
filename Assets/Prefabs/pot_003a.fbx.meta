@@ -16,7 +16,12 @@ ModelImporter:
     3300002: pot_003
     4300000: pot_003
     4300002: lid.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 3a64a986b3b084d33bbd10c2421a9bd8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

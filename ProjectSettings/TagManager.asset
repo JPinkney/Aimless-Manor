@@ -11,6 +11,8 @@ TagManager:
   - bathroom_key
   - bathroom_portal
   - kitchen_portal
+  - kitchen_key
+  - kitchen
   layers:
   - Default
   - TransparentFX
