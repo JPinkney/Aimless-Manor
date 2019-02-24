@@ -5,7 +5,7 @@ using UnityEngine;
 public class CauldronItemDrop : MonoBehaviour
 {
 
-    public GameObject waterEffect;
+    public ParticleSystem waterEffect;
     private bool showWaterEffect;
 
     private void OnTriggerEnter(Collider other)
@@ -16,10 +16,10 @@ public class CauldronItemDrop : MonoBehaviour
     IEnumerator ExecuteItemDropEffect(float time)
     {
         Debug.Log(this.waterEffect);
-        this.waterEffect.SetActive(true);
+        this.waterEffect.Play();
         yield return new WaitForSeconds(time);
         this.showWaterEffect = false;
-        this.waterEffect.SetActive(false);
+        this.waterEffect.Stop();
     }
 
     // Update is called once per frame
