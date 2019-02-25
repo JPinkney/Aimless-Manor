@@ -20,6 +20,7 @@ public class Pickupable : MonoBehaviour {
 
     public void obtainKey()
     {
+        Debug.Log("OBTAINING KEY");
         this.key_got = true;
     }
 

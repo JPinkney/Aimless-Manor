@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    public GameObject man;
+    //public GameObject man;
     public Camera cam;
 
     
@@ -35,8 +35,16 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        var ray = new Ray(transform.position, Vector3.down);
-        isGrounded = Physics.Raycast(ray, raycastDistance);
+        //var ray = new Ray(transform.position, Vector3.down);
+        //isGrounded = Physics.Raycast(ray, raycastDistance);
+        //Debug.Log(ray);
+
+        //RaycastHit hit = new RaycastHit();
+        //Debug.Log(hit.distance);
+        //if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+        //{
+        //    var distanceToGround = hit.distance;
+        //}
 
 
         float yRot = Input.GetAxisRaw("Mouse X");

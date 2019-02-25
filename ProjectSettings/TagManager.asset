@@ -13,6 +13,8 @@ TagManager:
   - kitchen_portal
   - kitchen_key
   - kitchen
+  - tutorial
+  - tutorial_key
   layers:
   - Default
   - TransparentFX
