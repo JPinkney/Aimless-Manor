@@ -7,9 +7,15 @@ public class Break : MonoBehaviour
     public Transform brokenGlass;
     public ParticleSystem glassShatter;
 
+    public AudioClip breakNoise;
+    private AudioSource breakSource;
+
     void OnMouseDown()
     {
-        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(breakNoise, this.transform.position);
+
+        //Destroy(gameObject);
+        this.gameObject.SetActive(false);
         Instantiate(brokenGlass, transform.position, transform.rotation);
         brokenGlass.localScale = transform.localScale;
 

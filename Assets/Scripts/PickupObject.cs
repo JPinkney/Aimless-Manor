@@ -343,11 +343,13 @@ public class PickupObject : MonoBehaviour
         Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
         if (remove)
         {
-            //rendererObj.material = null;
+            //var numMaterials = rendererObj.materials.Length - 2;
+            //rendererObj.materials[numMaterials] = this.mat;
         }
         else
         {
-            //rendererObj.material = this.mat;
+            //var numMaterials = rendererObj.materials.Length;
+            //rendererObj.materials[numMaterials] = this.mat;
         }
 
 

@@ -16,11 +16,17 @@ public class Cauldron : Interactable
     public GameObject target;
 
     public GameObject hiddenIngredient1;
+    public GameObject glimmer1;
     public GameObject hiddenIngredient2;
+    public GameObject glimmer2;
     public GameObject hiddenIngredient3;
+    public GameObject glimmer3;
     public GameObject hiddenWaterPitcher;
     public ParticleSystem hiddenBubbles;
     public GameObject key;
+    public AudioClip bubblingWater;
+
+    private AudioSource loopSound;
 
     private bool shouldMoveToTarget = false;
     private GameObject currentObj = null;
@@ -28,6 +34,13 @@ public class Cauldron : Interactable
     private bool hasPlayedPuzzleAnimation = false;
 
     protected float Animation;
+
+    private void Start()
+    {
+        loopSound = gameObject.AddComponent<AudioSource>();
+        loopSound.clip = bubblingWater;
+        loopSound.loop = true;
+    }
 
     public override void Interact(Inventory inv, GameObject obj)
     {
@@ -41,12 +54,16 @@ public class Cauldron : Interactable
                     {
                         tag1HasBeenAdded = true;
                         hiddenIngredient1.SetActive(true);
+                        glimmer1.SetActive(false);
+                        Destroy(glimmer1);
                         break;
                     }
                 case "ingredients_2":
                     {
                         tag2HasBeenAdded = true;
                         hiddenIngredient2.SetActive(true);
+                        glimmer2.SetActive(false);
+                        Destroy(glimmer2);
                         break;
                     }
                 case "ingredients_3":
@@ -55,6 +72,9 @@ public class Cauldron : Interactable
                         hiddenIngredient3.SetActive(true);
                         hiddenWaterPitcher.SetActive(true);
                         hiddenBubbles.Play();
+                        loopSound.Play();
+                        glimmer3.SetActive(false);
+                        Destroy(glimmer3);
                         break;
                     }
             }
@@ -98,6 +118,7 @@ public class Cauldron : Interactable
         hiddenIngredient2.SetActive(false);
         hiddenIngredient3.SetActive(false);
         hiddenBubbles.Stop();
+        loopSound.Stop();
 
         key.SetActive(true);
 

@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class CauldronItemDrop : MonoBehaviour
 {
-
+   
     public ParticleSystem waterEffect;
     private bool showWaterEffect;
+    public AudioClip dropNoise;
+    private AudioSource dropSound;
+    private bool soundIsPlaying = false;
+
+    private void Start()
+    {
+        dropSound = gameObject.AddComponent<AudioSource>();
+        dropSound.clip = dropNoise;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,11 +24,22 @@ public class CauldronItemDrop : MonoBehaviour
 
     IEnumerator ExecuteItemDropEffect(float time)
     {
-        Debug.Log(this.waterEffect);
         this.waterEffect.Play();
+
+        //Play the audio with it
+        if (!soundIsPlaying)
+        {
+            dropSound.Play();
+            soundIsPlaying = true;
+        }
+
         yield return new WaitForSeconds(time);
         this.showWaterEffect = false;
         this.waterEffect.Stop();
+        dropSound.Stop();
+        soundIsPlaying = false;
+
+
     }
 
     // Update is called once per frame
