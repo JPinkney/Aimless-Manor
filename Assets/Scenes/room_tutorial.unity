@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 0}
+  gravity: 1
 --- !u!65 &370623204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 327331965}
+  gravity: 1
 --- !u!65 &734747144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2695,6 +2697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 327331965}
+  gravity: 1
 --- !u!65 &986964040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3558,6 +3561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 327331965}
+  gravity: 1
 --- !u!65 &1628056983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3626,6 +3630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 1445034596}
+  gravity: 0
 --- !u!65 &1672560322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3911,6 +3916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   receiver: {fileID: 327331965}
+  gravity: 1
 --- !u!65 &1957290041
 BoxCollider:
   m_ObjectHideFlags: 0

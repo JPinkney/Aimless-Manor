@@ -6,6 +6,7 @@ public class PortalTeleporter : MonoBehaviour
 {
     public Transform player;
     public Transform receiver;
+    public bool gravity = true;
 
     private bool playerIsOverlapping = false;
 
@@ -26,6 +27,8 @@ public class PortalTeleporter : MonoBehaviour
 
             if (dotProduct < 0f)
             {
+                player.gameObject.GetComponent<Rigidbody>().useGravity = gravity;
+
                 player.position = receiver.position;
                 player.rotation = receiver.rotation;
 
