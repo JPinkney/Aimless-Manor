@@ -13,7 +13,10 @@ public class TheEnabler : MonoBehaviour
     {
         for (int i = 0; i < numCol; i+=1)
         {
-            col[i].GetComponent<BoxCollider>().enabled = !col[i].GetComponent<BoxCollider>().enabled;
+            if (col[i] != null)
+            {
+                col[i].GetComponent<BoxCollider>().enabled = !col[i].GetComponent<BoxCollider>().enabled;
+            }
         }
 
     }

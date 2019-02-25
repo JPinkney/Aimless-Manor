@@ -9,6 +9,9 @@ public class Break : MonoBehaviour
 
     public AudioClip breakNoise;
     private AudioSource breakSource;
+    public Transform newKeyLocation;
+    public GameObject keyObj;
+    public GameObject glimmer;
 
     void OnMouseDown()
     {
@@ -20,7 +23,8 @@ public class Break : MonoBehaviour
         brokenGlass.localScale = transform.localScale;
 
         glassShatter.Play();
-
+        keyObj.transform.position = newKeyLocation.position;
+        glimmer.SetActive(true);
     }
 
 }
