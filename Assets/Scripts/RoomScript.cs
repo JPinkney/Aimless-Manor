@@ -31,8 +31,8 @@ public class RoomScript : MonoBehaviour
              * fine       
              */
             //SceneManager.UnloadSceneAsync(this.gameObject.scene);
-            Destroy(gameObject);
-            Destroy(this);
+            //Destroy(gameObject);
+            //Destroy(this);
         }
     }
 
