@@ -20,12 +20,14 @@ public class PickupObject : MonoBehaviour
 	{
         mainCamera = GameObject.FindWithTag("MainCamera");
         this.inventory = new Inventory();
+
+        Debug.Log(GameObject.Find("button_e").name);
     }
 
     // Update is called once per frame
     void Update()
 	{
-        SetObjOutline();
+        SetObjOutline(true);
         if (!this.inventory.IsEmpty())
 		{
             foreach (InventoryItem obj in this.inventory.GetInventory())
@@ -59,9 +61,9 @@ public class PickupObject : MonoBehaviour
         }
         if (currentlySelectedObj)
         {
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
         }
-        FindAndSetOutlineMaterialForObj(false, o.item);
+        FindAndSetOutlineMaterialForObj(false, o.item, false);
         //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
@@ -82,6 +84,9 @@ public class PickupObject : MonoBehaviour
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         if (Input.GetKeyDown(KeyCode.E))
 		{
+            // KEY E appears
+            GameObject.Find("button_e").GetComponent<Image>().enabled = false;
+
             RaycastHit[] hitObjects = Physics.RaycastAll(ray);
 			if (hitObjects.Length > 0)
 			{
@@ -107,16 +112,14 @@ public class PickupObject : MonoBehaviour
                             return;
                         }
 
-
                         p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         this.inventory.AddGameObjectToInventory(p.gameObject);
                         currentlySelectedObj = p.gameObject;
                         return;
                     }
                 }
-
-			}
-		}
+            }
+        }
 	}
 
     void Interact()
@@ -187,13 +190,13 @@ public class PickupObject : MonoBehaviour
     {
         this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
 
         GameObject obj = this.inventory.FindFirstObject();
         currentlySelectedObj.layer = 0;
         if (obj)
         {
-            FindAndSetOutlineMaterialForObj(false, obj);
+            FindAndSetOutlineMaterialForObj(false, obj, false);
             currentlySelectedObj = obj;
         }
         else
@@ -236,14 +239,14 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.transform.position = spawnPos;
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
+                FindAndSetOutlineMaterialForObj(false, obj, false);
                 currentlySelectedObj = obj;
             }
             else
@@ -281,7 +284,7 @@ public class PickupObject : MonoBehaviour
 
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
 
 
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
@@ -290,7 +293,7 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
+                FindAndSetOutlineMaterialForObj(false, obj, false);
                 currentlySelectedObj = obj;
             }
             else
@@ -313,7 +316,7 @@ public class PickupObject : MonoBehaviour
      * Object outlining code 
      * 
      */
-    void SetObjOutline()
+    void SetObjOutline(bool keyChange)
     {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
@@ -322,7 +325,7 @@ public class PickupObject : MonoBehaviour
 
         if (lastOutlinedObject != null)
         {
-            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject);
+            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject, keyChange);
             lastOutlinedObject = null;
         }
 
@@ -331,25 +334,38 @@ public class PickupObject : MonoBehaviour
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<Pickupable>() != null)
             {
-                FindAndSetOutlineMaterialForObj(false, hitObj);
+                FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
                 lastOutlinedObject = hitObj;
             }
         }
 
     }
 
-    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj)
+    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj, bool keyChange)
     {
         Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
         if (remove)
         {
             //var numMaterials = rendererObj.materials.Length - 2;
             //rendererObj.materials[numMaterials] = this.mat;
+
+            if (keyChange)
+            {
+                // KEY E disappears
+                GameObject.Find("button_e").GetComponent<Image>().enabled = false;
+            }
         }
         else
         {
             //var numMaterials = rendererObj.materials.Length;
             //rendererObj.materials[numMaterials] = this.mat;
+
+            if (keyChange)
+            {
+                // KEY E appears
+                GameObject.Find("button_e").GetComponent<Image>().enabled = true;
+            }
+
         }
 
 
