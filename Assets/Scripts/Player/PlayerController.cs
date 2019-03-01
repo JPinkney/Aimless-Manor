@@ -74,12 +74,4 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    
-    private void Jump()
-    {
-        Vector3 vel = rb.velocity;
-        vel.y = jumpSpeed;
-        rb.velocity = vel;
-
-    }
 }
