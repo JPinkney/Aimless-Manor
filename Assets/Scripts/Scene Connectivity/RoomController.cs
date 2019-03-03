@@ -93,10 +93,10 @@ public class RoomController : MonoBehaviour
                 destPortal.m_LinkedPortal = m_sourcePortal;
                 m_sourcePortal.m_LinkedPortal = destPortal;
 
-                room.transform.rotation = Quaternion.LookRotation(
-                  destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
-                  destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
-                room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
+                //room.transform.rotation = Quaternion.LookRotation(
+                //  destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
+                //  destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
+                //room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
 
                 m_sourcePortal = null;
             }
