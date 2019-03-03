@@ -5,7 +5,6 @@ public class DoorTrigger : MonoBehaviour {
 
   float m_delayTimer;
   bool m_inTrigger;
-    public int m_destRoomID;
 
 public void Start() {
     m_delayTimer = 1.0f;
@@ -13,8 +12,8 @@ public void Start() {
   }
 
   public void Open() {
-        RoomController.m_staticRef.LoadRoom(m_destRoomID);
-        GetComponent<Collider>().enabled = false; // Stops retrigger
+        SendMessageUpwards("LoadRoom");
+        //GetComponent<Collider>().enabled = false; // Stops retrigger
     m_delayTimer = 1.0f;
   }
 

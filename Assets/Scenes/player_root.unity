@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122752da8fcb4de499f5d36bcff35af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DoorPrefab: {fileID: 6131421642880352543, guid: 463f6552fcbde4b5cbd2d1506531c21d,
+  m_DoorPrefab: {fileID: 42905769574379235, guid: 3f4315dadcfa6443398effc08e925c33,
     type: 3}
 --- !u!4 &637798823
 Transform:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41bb92b2ea924edd96ab9fbe1de749b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: f4b4a4f15859848008877276cdf44e8c, type: 2}
+  mat: {fileID: 0}
 --- !u!82 &804111896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -917,15 +917,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedKeys: 0
-  totalKeys: 5
-  keys:
-  - {fileID: 508882093}
-  - {fileID: 2051890348}
-  - {fileID: 1578507817}
-  - {fileID: 997612982}
-  - {fileID: 620826282}
-  collected: {fileID: 21300000, guid: 07df6d636fb68094a986f7c8b5740d47, type: 3}
-  empty: {fileID: 21300000, guid: 2477b33f28a253c42ae8dc38a541b010, type: 3}
+  totalKeys: 0
+  keys: []
+  collected: {fileID: 0}
+  empty: {fileID: 0}
 --- !u!114 &897731896
 MonoBehaviour:
   m_ObjectHideFlags: 0

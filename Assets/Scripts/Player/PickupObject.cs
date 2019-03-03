@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PickupObject : MonoBehaviour
 {
-	GameObject mainCamera;
-	GameObject currentlySelectedObj;
+    GameObject mainCamera;
+    GameObject currentlySelectedObj;
     public Material mat;
 
 
@@ -18,17 +18,17 @@ public class PickupObject : MonoBehaviour
 
     // Use this for initialization
     void Start()
-	{
+    {
         mainCamera = GameObject.FindWithTag("MainCamera");
         this.inventory = new Inventory();
     }
 
     // Update is called once per frame
     void Update()
-	{
+    {
         SetObjOutline();
         if (!this.inventory.IsEmpty())
-		{
+        {
             foreach (InventoryItem obj in this.inventory.GetInventory())
             {
                 if (obj != null)
@@ -48,12 +48,13 @@ public class PickupObject : MonoBehaviour
         var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.LEFT))
         {
-            pos.x -= Screen.width/4;
-            pos.y -= Screen.height/3;
-        } else if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.RIGHT))
+            pos.x -= Screen.width / 4;
+            pos.y -= Screen.height / 3;
+        }
+        else if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.RIGHT))
         {
-            pos.x += Screen.width/4;
-            pos.y -= Screen.height/3;
+            pos.x += Screen.width / 4;
+            pos.y -= Screen.height / 3;
 
         }
         if (currentlySelectedObj)
@@ -70,7 +71,7 @@ public class PickupObject : MonoBehaviour
     }
 
     void Pickup()
-	{
+    {
         if (this.inventory.IsInventoryFull())
         {
             return;
@@ -83,291 +84,307 @@ public class PickupObject : MonoBehaviour
         var pos1 = caaa.transform.position;
         var bbbb = caaa.transform.TransformDirection(Vector3.forward);
         if (Input.GetKeyDown(KeyCode.E))
-		{
+        {
 
-            RaycastHit hit;
-            if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 1.25f)) {
-                Debug.Log(hit.transform.name);
-                Pickupable pickupableObj = hit.collider.GetComponent<Pickupable>();
-                if (pickupableObj != null)
+            RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.5f);
+            if (hit.Length > 0)
+            {
+                foreach (RaycastHit ob in hit)
                 {
-
-                    Debug.Log(pickupableObj.tag.Contains("key"));
-                    if (pickupableObj.tag.Contains("key"))
-                    {
-                        pickupKey(pickupableObj);
-                    }
-
-                    if (this.inventory.IsInventoryFull())
+                    if (PerformAction(ob))
                     {
                         return;
                     }
-
-                    pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    this.inventory.AddGameObjectToInventory(pickupableObj.gameObject);
-                    currentlySelectedObj = pickupableObj.gameObject;
-                    return;
                 }
 
-                Interactable interactableObj = hit.collider.GetComponent<Interactable>();
-                if (interactableObj != null)
+            }
+        }
+    }
+
+        bool PerformAction(RaycastHit hit)
+        {
+
+            Pickupable pickupableObj = hit.collider.GetComponent<Pickupable>();
+            if (pickupableObj != null)
+            {
+
+                Debug.Log(pickupableObj.tag.Contains("key"));
+                if (pickupableObj.tag.Contains("key"))
                 {
-                    /*
-                     * This will cover the case when the objects in your inventory
-                     * are going to be interacting with the objects in your view  
-                     * E.g. the cauldron
-                     */
-                    foreach (InventoryItem obj in this.inventory.GetInventory())
-                    {
-                        if (obj != null)
-                        {
-                            interactableObj.Interact(this.inventory, obj.item);
-                        }
-                    }
+                    pickupKey(pickupableObj);
+                }
 
-                    /*
-                     * This will cover the case when you are interacting with
-                     * something else that plays some sort of animation
-                     * E.g. the door animation
-                     */                   
-                    interactableObj.Interact(this.inventory, null);
+                if (this.inventory.IsInventoryFull())
+                {
+                    return false;
+                }
+
+                pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                this.inventory.AddGameObjectToInventory(pickupableObj.gameObject);
+                currentlySelectedObj = pickupableObj.gameObject;
+                return true;
+            }
+
+            Interactable interactableObj = hit.collider.GetComponent<Interactable>();
+            if (interactableObj != null)
+            {
+                /*
+                 * This will cover the case when the objects in your inventory
+                 * are going to be interacting with the objects in your view  
+                 * E.g. the cauldron
+                 */
+                foreach (InventoryItem obj in this.inventory.GetInventory())
+                {
+                    if (obj != null)
+                    {
+                        interactableObj.Interact(this.inventory, obj.item);
+                    }
+                }
+
+                /*
+                 * This will cover the case when you are interacting with
+                 * something else that plays some sort of animation
+                 * E.g. the door animation
+                 */
+                interactableObj.Interact(this.inventory, null);
+            }
+
+            return false;
+
+        }
+
+        void CheckUse()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                UseObject();
+            }
+        }
+
+        void ChangeCurrentlySelectedObjectLocation()
+        {
+            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+            Vector3 playerPos = this.transform.position;
+            Vector3 playerDirection = this.transform.forward;
+            Quaternion playerRotation = this.transform.rotation;
+            float spawnDistance = 0.1f;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+            currentlySelectedObj.transform.position = spawnPos;
+        }
+
+        void UseObject()
+        {
+            if (currentlySelectedObj)
+            {
+                ChangeCurrentlySelectedObjectLocation();
+                currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+                currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
+                ChangeSelectedObject();
+            }
+        }
+
+        void ChangeSelectedObject()
+        {
+            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+
+            GameObject obj = this.inventory.FindFirstObject();
+            currentlySelectedObj.layer = 0;
+            if (obj)
+            {
+                FindAndSetOutlineMaterialForObj(false, obj);
+                currentlySelectedObj = obj;
+            }
+            else
+            {
+                currentlySelectedObj = null;
+            }
+        }
+
+
+        void DropObject()
+        {
+            if (currentlySelectedObj)
+            {
+                ChangeCurrentlySelectedObjectLocation();
+                //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+                //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+                ChangeSelectedObject();
+            }
+        }
+
+        void pickupKey(Pickupable p)
+        {
+            Debug.Log("Picking up: " + p.gameObject.name);
+            p.gameObject.GetComponent<Renderer>().enabled = false;
+            p.obtainKey();
+        }
+
+        void dropObject()
+        {
+            if (currentlySelectedObj)
+            {
+                currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+                Vector3 playerPos = this.transform.position;
+                Vector3 playerDirection = this.transform.forward;
+                Quaternion playerRotation = this.transform.rotation;
+                float spawnDistance = 0.1f;
+
+                Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+                currentlySelectedObj.transform.position = spawnPos;
+                this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+                FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+                //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+                //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+                GameObject obj = this.inventory.FindFirstObject();
+                currentlySelectedObj.layer = 0;
+                if (obj)
+                {
+                    FindAndSetOutlineMaterialForObj(false, obj);
+                    currentlySelectedObj = obj;
+                }
+                else
+                {
+                    currentlySelectedObj = null;
+                }
+            }
+        }
+
+        void checkUse()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                useObject();
+            }
+        }
+
+        void useObject()
+        {
+            if (currentlySelectedObj)
+            {
+                currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+                Vector3 playerPos = this.transform.position;
+                Vector3 playerDirection = this.transform.forward;
+                Quaternion playerRotation = this.transform.rotation;
+                float spawnDistance = 0.1f;
+
+                Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+                currentlySelectedObj.transform.position = spawnPos;
+
+                currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+                // Destroy(currentlySelectedObj);
+                currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
+
+                this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
+
+                FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+
+
+                //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
+                //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
+                GameObject obj = this.inventory.FindFirstObject();
+                currentlySelectedObj.layer = 0;
+                if (obj)
+                {
+                    FindAndSetOutlineMaterialForObj(false, obj);
+                    currentlySelectedObj = obj;
+                }
+                else
+                {
+                    currentlySelectedObj = null;
+                }
+            }
+        }
+
+        void CheckDrop()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                DropObject();
+            }
+        }
+
+        /*
+         *
+         * Object outlining code 
+         * 
+         */
+        public void SetObjOutline()
+        {
+            int x = Screen.width / 2;
+            int y = Screen.height / 2;
+            Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+            RaycastHit hit;
+
+            if (lastOutlinedObject != null)
+            {
+                FindAndSetOutlineMaterialForObj(true, lastOutlinedObject);
+                lastOutlinedObject = null;
+            }
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject hitObj = hit.transform.gameObject;
+                if (hitObj.GetComponent<Pickupable>() != null)
+                {
+                    FindAndSetOutlineMaterialForObj(false, hitObj);
+                    lastOutlinedObject = hitObj;
                 }
             }
 
         }
-	}
 
-    void CheckUse()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
+        void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj)
         {
-            UseObject();
-        }
-    }
-
-    private void ChangeCurrentlySelectedObjectLocation()
-    {
-        currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-        Vector3 playerPos = this.transform.position;
-        Vector3 playerDirection = this.transform.forward;
-        Quaternion playerRotation = this.transform.rotation;
-        float spawnDistance = 0.1f;
-
-        Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-        currentlySelectedObj.transform.position = spawnPos;
-    }
-
-    public void UseObject()
-    {
-        if (currentlySelectedObj)
-        {
-            ChangeCurrentlySelectedObjectLocation();
-            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
-            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
-            ChangeSelectedObject();
-        }
-    }
-
-    private void ChangeSelectedObject()
-    {
-        this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
-
-        GameObject obj = this.inventory.FindFirstObject();
-        currentlySelectedObj.layer = 0;
-        if (obj)
-        {
-            FindAndSetOutlineMaterialForObj(false, obj);
-            currentlySelectedObj = obj;
-        }
-        else
-        {
-            currentlySelectedObj = null;
-        }
-    }
-
-
-    public void DropObject()
-	{
-        if (currentlySelectedObj)
-        {
-            ChangeCurrentlySelectedObjectLocation();
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            ChangeSelectedObject();
-        }
-    }
-
-    void pickupKey(Pickupable p)
-    {
-        Debug.Log("Picking up: " + p.gameObject.name);
-        p.gameObject.GetComponent<Renderer>().enabled = false;
-        p.obtainKey();
-    }
-
-	public void dropObject()
-	{
-        if (currentlySelectedObj)
-        {
-            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-            Vector3 playerPos = this.transform.position;
-            Vector3 playerDirection = this.transform.forward;
-            Quaternion playerRotation = this.transform.rotation;
-            float spawnDistance = 0.1f;
-
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            currentlySelectedObj.transform.position = spawnPos;
-            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            GameObject obj = this.inventory.FindFirstObject();
-            currentlySelectedObj.layer = 0;
-            if (obj)
+            Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
+            if (remove)
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
-                currentlySelectedObj = obj;
+                //var numMaterials = rendererObj.materials.Length - 2;
+                //rendererObj.materials[numMaterials] = this.mat;
             }
             else
             {
-                currentlySelectedObj = null;
+                //var numMaterials = rendererObj.materials.Length;
+                //rendererObj.materials[numMaterials] = this.mat;
             }
+
+
         }
-    }
 
-    void checkUse()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+        /*
+        * When some key is pushed it filters to have the next object be the main
+        * one   
+        *
+        */
+        //void filterThroughInventory()
+        //{
+        //    if (currentlySelectedObj)
+        //    {
+        //        InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
+        //        if (nextItem != null)
+        //        {
+        //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
+        //            findAndSetShaderForObj(outline_shader, nextItem.item);
+        //            this.currentlySelectedObj = nextItem.item;
+        //        }
+        //    }
+        //}
+
+        void checkComplete()
         {
-            useObject();
-        }
-    }
-
-    public void useObject()
-    {
-        if (currentlySelectedObj)
-        {
-            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-            Vector3 playerPos = this.transform.position;
-            Vector3 playerDirection = this.transform.forward;
-            Quaternion playerRotation = this.transform.rotation;
-            float spawnDistance = 0.1f;
-
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            currentlySelectedObj.transform.position = spawnPos;
-
-            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
-            // Destroy(currentlySelectedObj);
-            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
-
-            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
-
-
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            GameObject obj = this.inventory.FindFirstObject();
-            currentlySelectedObj.layer = 0;
-            if (obj)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
-                currentlySelectedObj = obj;
-            }
-            else
-            {
-                currentlySelectedObj = null;
+                foreach (string key in RoomController.CompletedRooms.Keys)
+                {
+                    Debug.Log("Room: " + key + " Status: " + RoomController.CompletedRooms[key]);
+                }
             }
         }
     }
 
-    void CheckDrop()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DropObject();
-        }
-    }
-
-    /*
-     *
-     * Object outlining code 
-     * 
-     */
-    void SetObjOutline()
-    {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        RaycastHit hit;
-
-        if (lastOutlinedObject != null)
-        {
-            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject);
-            lastOutlinedObject = null;
-        }
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            GameObject hitObj = hit.transform.gameObject;
-            if (hitObj.GetComponent<Pickupable>() != null)
-            {
-                FindAndSetOutlineMaterialForObj(false, hitObj);
-                lastOutlinedObject = hitObj;
-            }
-        }
-
-    }
-
-    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj)
-    {
-        Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
-        if (remove)
-        {
-            //var numMaterials = rendererObj.materials.Length - 2;
-            //rendererObj.materials[numMaterials] = this.mat;
-        }
-        else
-        {
-            //var numMaterials = rendererObj.materials.Length;
-            //rendererObj.materials[numMaterials] = this.mat;
-        }
-
-
-    }
-
-    /*
-    * When some key is pushed it filters to have the next object be the main
-    * one   
-    *
-    */
-    //void filterThroughInventory()
-    //{
-    //    if (currentlySelectedObj)
-    //    {
-    //        InventoryItem nextItem = this.inventory.FindNextObject(currentlySelectedObj);
-    //        if (nextItem != null)
-    //        {
-    //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
-    //            findAndSetShaderForObj(outline_shader, nextItem.item);
-    //            this.currentlySelectedObj = nextItem.item;
-    //        }
-    //    }
-    //}
-
-    void checkComplete()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            foreach (string key in RoomController.CompletedRooms.Keys)
-            {
-                Debug.Log("Room: " + key + " Status: " + RoomController.CompletedRooms[key]);
-            }
-        }
-    }
-}

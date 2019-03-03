@@ -16,12 +16,10 @@ public class Cauldron : Interactable
     public GameObject target;
 
     public GameObject hiddenIngredient1;
-    public GameObject glimmer1;
     public GameObject hiddenIngredient2;
-    public GameObject glimmer2;
     public GameObject hiddenIngredient3;
-    public GameObject glimmer3;
     public GameObject hiddenWaterPitcher;
+    public GameObject hiddenWater;
     public ParticleSystem hiddenBubbles;
     public GameObject key;
     public AudioClip bubblingWater;
@@ -54,16 +52,12 @@ public class Cauldron : Interactable
                     {
                         tag1HasBeenAdded = true;
                         hiddenIngredient1.SetActive(true);
-                        glimmer1.SetActive(false);
-                        Destroy(glimmer1);
                         break;
                     }
                 case "ingredients_2":
                     {
                         tag2HasBeenAdded = true;
                         hiddenIngredient2.SetActive(true);
-                        glimmer2.SetActive(false);
-                        Destroy(glimmer2);
                         break;
                     }
                 case "ingredients_3":
@@ -71,23 +65,24 @@ public class Cauldron : Interactable
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
                         hiddenWaterPitcher.SetActive(true);
+                        hiddenWater.SetActive(true);
                         hiddenBubbles.Play();
                         loopSound.Play();
-                        glimmer3.SetActive(false);
-                        Destroy(glimmer3);
                         break;
                     }
             }
 
-            Destroy(obj);
+            obj.SetActive(false);
+            //Destroy(obj);
         }
         else
         {
+            // This was for the cannon
 
-            currentObj = obj;
+            //currentObj = obj;
 
-            var targetPos = this.target.gameObject.transform.position;
-            var cauldronPos = this.gameObject.transform.position;
+            //var targetPos = this.target.gameObject.transform.position;
+            //var cauldronPos = this.gameObject.transform.position;
 
             // First we need to put the item in the cauldron
             //this.currentObj.GetComponent<Rigidbody>().detectCollisions = false;
@@ -96,10 +91,10 @@ public class Cauldron : Interactable
             //this.gameObject.GetComponent<Rigidbody>().detectCollisions = false;
             //this.gameObject.GetComponent<Collider>().enabled = false;
 
-            this.currentObj.GetComponent<Rigidbody>().useGravity = true;
+            //this.currentObj.GetComponent<Rigidbody>().useGravity = true;
 
-            var t = new Vector3(cauldronPos.x, cauldronPos.y + .4f, cauldronPos.z);
-            this.currentObj.transform.position = t;
+            //var t = new Vector3(cauldronPos.x, cauldronPos.y + .4f, cauldronPos.z);
+            //this.currentObj.transform.position = t;
             //shouldMoveToTarget = true;
         }
     }
@@ -117,6 +112,7 @@ public class Cauldron : Interactable
         hiddenIngredient1.SetActive(false);
         hiddenIngredient2.SetActive(false);
         hiddenIngredient3.SetActive(false);
+        hiddenWater.SetActive(false);
         hiddenBubbles.Stop();
         loopSound.Stop();
 
@@ -164,6 +160,10 @@ public class Cauldron : Interactable
 
     public override bool PossibleItem(GameObject obj)
     {
+        if (obj == null)
+        {
+            return false;
+        }
         return obj.tag.StartsWith("ingredient", System.StringComparison.Ordinal);
     }
 
