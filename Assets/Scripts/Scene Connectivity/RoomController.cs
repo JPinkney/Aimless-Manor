@@ -12,14 +12,10 @@ public class RoomController : MonoBehaviour
 
     public GameObject m_DoorPrefab;
     public static RoomController m_staticRef;
-    bool m_loadingLevel;
-    PortalScript m_sourcePortal;
-    PortalScript m_destPortal;
 
     void Start()
     {
         m_staticRef = this;
-        m_loadingLevel = false;
 
         for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
             string scene_name = EditorBuildSettings.scenes[i].path;
@@ -37,16 +33,7 @@ public class RoomController : MonoBehaviour
 
         KeyTracker = GameObject.Find("KeyUI");
 
-        LoadRoom(null);
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        //    SceneManager.LoadScene(4);
-        //}
+        LoadRoom(-1);
     }
 
     /*
@@ -58,64 +45,19 @@ public class RoomController : MonoBehaviour
      * from the portal script and then that will take care of which one we go
      * to   
      */
-    public void LoadRoom(PortalScript portal)
+    public void LoadRoom(int destination_room_id)
     {
         int levelIndex;
-        if (portal == null)
+        if (destination_room_id == -1)
         {
             levelIndex = 1;
         }
         else
         {
-            levelIndex = portal.m_destRoomID;
+            levelIndex = destination_room_id;
         }
 
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);
-        m_loadingLevel = true;
-        m_sourcePortal = portal;
-    }
-
-    public void SetupRoom(RoomScript room)
-    {
-
-        if (m_sourcePortal)
-        {
-            //PortalScript destPortal = room.m_Portals[0];
-            /*
-             * This is going to find the portal in the new room that matches
-             * the portals tag of the old room           
-             */
-            PortalScript destPortal = FindObjectByTag(room.m_Portals, m_sourcePortal.tag);
-            Debug.Log(destPortal);
-
-            if (destPortal)
-            {
-                destPortal.m_LinkedPortal = m_sourcePortal;
-                m_sourcePortal.m_LinkedPortal = destPortal;
-
-                //room.transform.rotation = Quaternion.LookRotation(
-                //  destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
-                //  destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
-                //room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
-
-                m_sourcePortal = null;
-            }
-
-        }
-
-        m_loadingLevel = false;
-    }
-
-    private PortalScript FindObjectByTag(PortalScript[] portals, string findTag)
-    {
-        foreach(PortalScript s in portals)
-        {
-            if (s.tag == findTag)
-            {
-                return s;
-            }
-        }
-        return null;
     }
 
 }

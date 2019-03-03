@@ -37,15 +37,11 @@ public class PlayerController : MonoBehaviour
 
         var ray = new Ray(transform.position, Vector3.down);
         isGrounded = Physics.Raycast(ray, raycastDistance);
-        Debug.Log(ray);
 
         RaycastHit hit = new RaycastHit();
-        Debug.Log(hit.distance);
-        Debug.DrawRay(transform.position, Vector3.down);
         if (Physics.Raycast(transform.position, -Vector3.up, out hit))
         {
             var distanceToGround = hit.distance;
-            Debug.Log("Distance to ground is: " + distanceToGround);
         }
 
         float yRot = Input.GetAxisRaw("Mouse X");

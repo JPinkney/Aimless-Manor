@@ -10,6 +10,7 @@ public class PickupObject : MonoBehaviour
 	GameObject currentlySelectedObj;
     public Material mat;
 
+
     private GameObject lastOutlinedObject;
 
     private Inventory inventory;
@@ -38,8 +39,6 @@ public class PickupObject : MonoBehaviour
             CheckDrop();
             CheckUse();
         }
-
-        Interact();
         Pickup();
         checkComplete();
     }
@@ -79,77 +78,64 @@ public class PickupObject : MonoBehaviour
 
         int x = Screen.width / 2;
         int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        //Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        var caaa = mainCamera.GetComponent<Camera>();
+        var pos1 = caaa.transform.position;
+        var bbbb = caaa.transform.TransformDirection(Vector3.forward);
         if (Input.GetKeyDown(KeyCode.E))
 		{
-            RaycastHit[] hitObjects = Physics.RaycastAll(ray);
-			if (hitObjects.Length > 0)
-			{
-                /*
-                 * We're only adding the first item so that the player
-                 * Has to click e each time to pick up an item
-                 * (thats why it returns early when the first one is found)               
-                 */
-                foreach (RaycastHit ob in hitObjects)
+
+            RaycastHit hit;
+            if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 1.25f)) {
+                Debug.Log(hit.transform.name);
+                Pickupable pickupableObj = hit.collider.GetComponent<Pickupable>();
+                if (pickupableObj != null)
                 {
-                    Pickupable p = ob.collider.GetComponent<Pickupable>();
-                    if (p != null)
+
+                    Debug.Log(pickupableObj.tag.Contains("key"));
+                    if (pickupableObj.tag.Contains("key"))
                     {
+                        pickupKey(pickupableObj);
+                    }
 
-                        Debug.Log(p.tag.Contains("key"));
-                        if (p.tag.Contains("key"))
-                        {
-                            pickupKey(p);
-                        }
-
-                        if (this.inventory.IsInventoryFull())
-                        {
-                            return;
-                        }
-
-
-                        p.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                        this.inventory.AddGameObjectToInventory(p.gameObject);
-                        currentlySelectedObj = p.gameObject;
+                    if (this.inventory.IsInventoryFull())
+                    {
                         return;
                     }
+
+                    pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    this.inventory.AddGameObjectToInventory(pickupableObj.gameObject);
+                    currentlySelectedObj = pickupableObj.gameObject;
+                    return;
                 }
 
-			}
-		}
-	}
-
-    void Interact()
-    {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            RaycastHit[] hitObjects = Physics.RaycastAll(ray);
-            if (hitObjects.Length > 0)
-            {
-                foreach (RaycastHit ob in hitObjects)
+                Interactable interactableObj = hit.collider.GetComponent<Interactable>();
+                if (interactableObj != null)
                 {
-                    Interactable p = ob.collider.GetComponent<Interactable>();
-                    if (p != null)
+                    /*
+                     * This will cover the case when the objects in your inventory
+                     * are going to be interacting with the objects in your view  
+                     * E.g. the cauldron
+                     */
+                    foreach (InventoryItem obj in this.inventory.GetInventory())
                     {
-                        //p.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                        //this.inventory.AddGameObjectToInventory(p.gameObject);
-                        //currentlySelectedObj = p.gameObject;
-                        foreach(InventoryItem obj in this.inventory.GetInventory())
+                        if (obj != null)
                         {
-                            if (obj != null)
-                            {
-                                p.Interact(this.inventory, obj.item);
-                            }
+                            interactableObj.Interact(this.inventory, obj.item);
                         }
                     }
-                }
 
+                    /*
+                     * This will cover the case when you are interacting with
+                     * something else that plays some sort of animation
+                     * E.g. the door animation
+                     */                   
+                    interactableObj.Interact(this.inventory, null);
+                }
             }
+
         }
-    }
+	}
 
     void CheckUse()
     {
