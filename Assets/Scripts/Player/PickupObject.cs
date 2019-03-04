@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class PickupObject : MonoBehaviour
 {
@@ -85,7 +86,7 @@ public class PickupObject : MonoBehaviour
         var caaa = mainCamera.GetComponent<Camera>();
         var pos1 = caaa.transform.position;
         var bbbb = caaa.transform.TransformDirection(Vector3.forward);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || XCI.GetButton(XboxButton.X))
         {
             // KEY E appears
             GameObject.Find("button_e").GetComponent<Image>().enabled = false;
@@ -306,7 +307,7 @@ public class PickupObject : MonoBehaviour
 
     void CheckDrop()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) || XCI.GetButton(XboxButton.B))
         {
             DropObject();
         }
