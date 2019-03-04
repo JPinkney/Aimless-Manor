@@ -26,9 +26,4 @@ public class Break : Interactable
         keyObj.transform.position = newKeyLocation.position;
         glimmer.SetActive(true);
     }
-
-    public override bool PossibleItem(GameObject obj)
-    {
-        return true;
-    }
 }
