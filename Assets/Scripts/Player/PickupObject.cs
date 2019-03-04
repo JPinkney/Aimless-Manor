@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class PickupObject : MonoBehaviour
 {
-	GameObject mainCamera;
-	GameObject currentlySelectedObj;
+    GameObject mainCamera;
+    GameObject currentlySelectedObj;
     public Material mat;
+
 
     private GameObject lastOutlinedObject;
 
@@ -17,17 +19,19 @@ public class PickupObject : MonoBehaviour
 
     // Use this for initialization
     void Start()
-	{
+    {
         mainCamera = GameObject.FindWithTag("MainCamera");
         this.inventory = new Inventory();
+
+        Debug.Log(GameObject.Find("button_e").name);
     }
 
     // Update is called once per frame
     void Update()
-	{
-        SetObjOutline();
+    {
+        SetObjOutline(true);
         if (!this.inventory.IsEmpty())
-		{
+        {
             foreach (InventoryItem obj in this.inventory.GetInventory())
             {
                 if (obj != null)
@@ -38,8 +42,6 @@ public class PickupObject : MonoBehaviour
             CheckDrop();
             CheckUse();
         }
-
-        Interact();
         Pickup();
         checkComplete();
     }
@@ -49,19 +51,20 @@ public class PickupObject : MonoBehaviour
         var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.LEFT))
         {
-            pos.x -= Screen.width/4;
-            pos.y -= Screen.height/3;
-        } else if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.RIGHT))
+            pos.x -= Screen.width / 4;
+            pos.y -= Screen.height / 3;
+        }
+        else if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.RIGHT))
         {
-            pos.x += Screen.width/4;
-            pos.y -= Screen.height/3;
+            pos.x += Screen.width / 4;
+            pos.y -= Screen.height / 3;
 
         }
         if (currentlySelectedObj)
         {
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
         }
-        FindAndSetOutlineMaterialForObj(false, o.item);
+        FindAndSetOutlineMaterialForObj(false, o.item, false);
         //o.item.layer = 9;
         o.item.gameObject.layer = 9;
         o.item.transform.SetParent(this.transform);
@@ -71,7 +74,7 @@ public class PickupObject : MonoBehaviour
     }
 
     void Pickup()
-	{
+    {
         if (this.inventory.IsInventoryFull())
         {
             return;
@@ -79,76 +82,79 @@ public class PickupObject : MonoBehaviour
 
         int x = Screen.width / 2;
         int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        if (Input.GetKeyDown(KeyCode.E))
-		{
-            RaycastHit[] hitObjects = Physics.RaycastAll(ray);
-			if (hitObjects.Length > 0)
-			{
-                /*
-                 * We're only adding the first item so that the player
-                 * Has to click e each time to pick up an item
-                 * (thats why it returns early when the first one is found)               
-                 */
-                foreach (RaycastHit ob in hitObjects)
-                {
-                    Pickupable p = ob.collider.GetComponent<Pickupable>();
-                    if (p != null)
-                    {
-
-                        Debug.Log(p.tag.Contains("key"));
-                        if (p.tag.Contains("key"))
-                        {
-                            pickupKey(p);
-                        }
-
-                        if (this.inventory.IsInventoryFull())
-                        {
-                            return;
-                        }
-
-
-                        p.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                        this.inventory.AddGameObjectToInventory(p.gameObject);
-                        currentlySelectedObj = p.gameObject;
-                        return;
-                    }
-                }
-
-			}
-		}
-	}
-
-    void Interact()
-    {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        if (Input.GetKeyDown(KeyCode.Y))
+        //Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        var caaa = mainCamera.GetComponent<Camera>();
+        var pos1 = caaa.transform.position;
+        var bbbb = caaa.transform.TransformDirection(Vector3.forward);
+        if (Input.GetKeyDown(KeyCode.E) || XCI.GetButton(XboxButton.X))
         {
-            RaycastHit[] hitObjects = Physics.RaycastAll(ray);
-            if (hitObjects.Length > 0)
+            // KEY E appears
+            GameObject.Find("button_e").GetComponent<Image>().enabled = false;
+
+            RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.4f);
+            if (hit.Length > 0)
             {
-                foreach (RaycastHit ob in hitObjects)
+                foreach (RaycastHit ob in hit)
                 {
-                    Interactable p = ob.collider.GetComponent<Interactable>();
-                    if (p != null)
+                    if (PerformAction(ob))
                     {
-                        //p.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                        //this.inventory.AddGameObjectToInventory(p.gameObject);
-                        //currentlySelectedObj = p.gameObject;
-                        foreach(InventoryItem obj in this.inventory.GetInventory())
-                        {
-                            if (obj != null)
-                            {
-                                p.Interact(this.inventory, obj.item);
-                            }
-                        }
+                        return;
                     }
                 }
 
             }
         }
+    }
+
+    bool PerformAction(RaycastHit hit)
+    {
+
+        Pickupable pickupableObj = hit.collider.GetComponent<Pickupable>();
+        if (pickupableObj != null)
+        {
+
+            if (pickupableObj.tag.Contains("key"))
+            {
+                pickupKey(pickupableObj);
+            }
+
+            if (this.inventory.IsInventoryFull())
+            {
+                return false;
+            }
+
+            pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            this.inventory.AddGameObjectToInventory(pickupableObj.gameObject);
+            currentlySelectedObj = pickupableObj.gameObject;
+            return true;
+        }
+
+        Interactable interactableObj = hit.collider.GetComponent<Interactable>();
+        if (interactableObj != null)
+        {
+            /*
+             * This will cover the case when the objects in your inventory
+             * are going to be interacting with the objects in your view  
+             * E.g. the cauldron
+             */
+            foreach (InventoryItem obj in this.inventory.GetInventory())
+            {
+                if (obj != null)
+                {
+                    interactableObj.Interact(this.inventory, obj.item);
+                }
+            }
+
+            /*
+             * This will cover the case when you are interacting with
+             * something else that plays some sort of animation
+             * E.g. the door animation
+             */
+            interactableObj.Interact(this.inventory, null);
+        }
+
+        return false;
+
     }
 
     void CheckUse()
@@ -159,7 +165,7 @@ public class PickupObject : MonoBehaviour
         }
     }
 
-    private void ChangeCurrentlySelectedObjectLocation()
+    void ChangeCurrentlySelectedObjectLocation()
     {
         currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
 
@@ -172,7 +178,7 @@ public class PickupObject : MonoBehaviour
         currentlySelectedObj.transform.position = spawnPos;
     }
 
-    public void UseObject()
+    void UseObject()
     {
         if (currentlySelectedObj)
         {
@@ -183,17 +189,17 @@ public class PickupObject : MonoBehaviour
         }
     }
 
-    private void ChangeSelectedObject()
+    void ChangeSelectedObject()
     {
         this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+        FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
 
         GameObject obj = this.inventory.FindFirstObject();
         currentlySelectedObj.layer = 0;
         if (obj)
         {
-            FindAndSetOutlineMaterialForObj(false, obj);
+            FindAndSetOutlineMaterialForObj(false, obj, false);
             currentlySelectedObj = obj;
         }
         else
@@ -203,8 +209,8 @@ public class PickupObject : MonoBehaviour
     }
 
 
-    public void DropObject()
-	{
+    void DropObject()
+    {
         if (currentlySelectedObj)
         {
             ChangeCurrentlySelectedObjectLocation();
@@ -216,13 +222,12 @@ public class PickupObject : MonoBehaviour
 
     void pickupKey(Pickupable p)
     {
-        Debug.Log("Picking up: " + p.gameObject.name);
         p.gameObject.GetComponent<Renderer>().enabled = false;
         p.obtainKey();
     }
 
-	public void dropObject()
-	{
+    void dropObject()
+    {
         if (currentlySelectedObj)
         {
             currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
@@ -236,14 +241,14 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.transform.position = spawnPos;
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
+                FindAndSetOutlineMaterialForObj(false, obj, false);
                 currentlySelectedObj = obj;
             }
             else
@@ -261,7 +266,7 @@ public class PickupObject : MonoBehaviour
         }
     }
 
-    public void useObject()
+    void useObject()
     {
         if (currentlySelectedObj)
         {
@@ -281,7 +286,7 @@ public class PickupObject : MonoBehaviour
 
             this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
 
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj);
+            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
 
 
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
@@ -290,7 +295,7 @@ public class PickupObject : MonoBehaviour
             currentlySelectedObj.layer = 0;
             if (obj)
             {
-                FindAndSetOutlineMaterialForObj(false, obj);
+                FindAndSetOutlineMaterialForObj(false, obj, false);
                 currentlySelectedObj = obj;
             }
             else
@@ -302,7 +307,7 @@ public class PickupObject : MonoBehaviour
 
     void CheckDrop()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) || XCI.GetButton(XboxButton.B))
         {
             DropObject();
         }
@@ -313,43 +318,56 @@ public class PickupObject : MonoBehaviour
      * Object outlining code 
      * 
      */
-    void SetObjOutline()
+    public void SetObjOutline(bool keyChange)
     {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        RaycastHit hit;
+        var caaa = mainCamera.GetComponent<Camera>();
+        var pos1 = caaa.transform.position;
+        var bbbb = caaa.transform.TransformDirection(Vector3.forward);
 
+        RaycastHit hit;
         if (lastOutlinedObject != null)
         {
-            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject);
+            FindAndSetOutlineMaterialForObj(true, lastOutlinedObject, keyChange);
             lastOutlinedObject = null;
         }
 
-        if (Physics.Raycast(ray, out hit))
+        //RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.4f);
+        if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 0.8f))
         {
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<Pickupable>() != null)
             {
-                FindAndSetOutlineMaterialForObj(false, hitObj);
+                FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
                 lastOutlinedObject = hitObj;
             }
         }
 
     }
 
-    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj)
+    void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj, bool keyChange)
     {
         Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
         if (remove)
         {
             //var numMaterials = rendererObj.materials.Length - 2;
             //rendererObj.materials[numMaterials] = this.mat;
+
+            if (keyChange)
+            {
+                // KEY E disappears
+                GameObject.Find("button_e").GetComponent<Image>().enabled = false;
+            }
         }
         else
         {
             //var numMaterials = rendererObj.materials.Length;
             //rendererObj.materials[numMaterials] = this.mat;
+
+            if (keyChange)
+            {
+                // KEY E appears
+                GameObject.Find("button_e").GetComponent<Image>().enabled = true;
+            }
         }
 
 
@@ -369,7 +387,7 @@ public class PickupObject : MonoBehaviour
     //        {
     //            findAndSetShaderForObj(default_shader, currentlySelectedObj);
     //            findAndSetShaderForObj(outline_shader, nextItem.item);
-    //            this.currentlySelectedObj = nextItem.item;
+    //            this.currentlySelectedObj = nextItem.item; d
     //        }
     //    }
     //}
@@ -385,3 +403,4 @@ public class PickupObject : MonoBehaviour
         }
     }
 }
+

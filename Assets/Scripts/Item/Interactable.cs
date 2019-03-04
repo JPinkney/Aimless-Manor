@@ -13,5 +13,8 @@ public abstract class Interactable : MonoBehaviour
     /*
      * Given a game object check if that object is a valid possible item
      */
-    public abstract bool PossibleItem(GameObject obj);
+    public virtual bool PossibleItem(GameObject obj)
+    {
+        return true;
+    }
 }

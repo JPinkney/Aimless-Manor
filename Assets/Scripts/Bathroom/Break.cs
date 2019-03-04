@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Break : MonoBehaviour
+public class Break : Interactable
 {
     public Transform brokenGlass;
     public ParticleSystem glassShatter;
@@ -13,7 +13,7 @@ public class Break : MonoBehaviour
     public GameObject keyObj;
     public GameObject glimmer;
 
-    void OnMouseDown()
+    public override void Interact(Inventory inv, GameObject obj)
     {
         AudioSource.PlayClipAtPoint(breakNoise, this.transform.position);
 
@@ -26,5 +26,4 @@ public class Break : MonoBehaviour
         keyObj.transform.position = newKeyLocation.position;
         glimmer.SetActive(true);
     }
-
 }
