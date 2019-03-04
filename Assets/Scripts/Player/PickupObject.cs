@@ -108,7 +108,6 @@ public class PickupObject : MonoBehaviour
             if (pickupableObj != null)
             {
 
-                Debug.Log(pickupableObj.tag.Contains("key"));
                 if (pickupableObj.tag.Contains("key"))
                 {
                     pickupKey(pickupableObj);
@@ -218,7 +217,6 @@ public class PickupObject : MonoBehaviour
 
         void pickupKey(Pickupable p)
         {
-            Debug.Log("Picking up: " + p.gameObject.name);
             p.gameObject.GetComponent<Renderer>().enabled = false;
             p.obtainKey();
         }
