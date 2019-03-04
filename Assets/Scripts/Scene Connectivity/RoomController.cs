@@ -8,18 +8,20 @@ public class RoomController : MonoBehaviour
 {
     RoomScript[] m_RoomList;
     public static Dictionary<string, bool> CompletedRooms = new Dictionary<string, bool>();
+
+    // This is going to stop a mapping of build setting number to if its loaded or not
+    public static Dictionary<int, bool> LoadedRooms = new Dictionary<int, bool>();
     public static GameObject KeyTracker;
 
     public GameObject m_DoorPrefab;
     public static RoomController m_staticRef;
-    bool m_loadingLevel;
+
     PortalScript m_sourcePortal;
     PortalScript m_destPortal;
 
     void Start()
     {
         m_staticRef = this;
-        m_loadingLevel = false;
 
         for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
             string scene_name = EditorBuildSettings.scenes[i].path;
@@ -28,9 +30,14 @@ public class RoomController : MonoBehaviour
             {
                 scene_name = scene_name.Substring(scene_name.LastIndexOf('/') + 1, scene_name.LastIndexOf('.') - (scene_name.LastIndexOf('/') + 1));
 
-                if (scene_name != "root")
+                if (scene_name != "player_root")
                 {
                     CompletedRooms[scene_name] = false;
+                    LoadedRooms[i] = false;
+                }
+                else
+                {
+                    LoadedRooms[i] = true;
                 }
             }
         }
@@ -38,15 +45,6 @@ public class RoomController : MonoBehaviour
         KeyTracker = GameObject.Find("KeyUI");
 
         LoadRoom(null);
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        //    SceneManager.LoadScene(4);
-        //}
     }
 
     /*
@@ -70,8 +68,17 @@ public class RoomController : MonoBehaviour
             levelIndex = portal.m_destRoomID;
         }
 
+        if (!LoadedRooms[levelIndex])
+        {
+            LoadSceneFromIndex(portal, levelIndex);
+            LoadedRooms[levelIndex] = true;
+        }
+
+    }
+
+    private void LoadSceneFromIndex(PortalScript portal, int levelIndex)
+    {
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);
-        m_loadingLevel = true;
         m_sourcePortal = portal;
     }
 
@@ -92,23 +99,16 @@ public class RoomController : MonoBehaviour
             {
                 destPortal.m_LinkedPortal = m_sourcePortal;
                 m_sourcePortal.m_LinkedPortal = destPortal;
-
-                //room.transform.rotation = Quaternion.LookRotation(
-                //  destPortal.transform.InverseTransformDirection(-m_sourcePortal.transform.forward),
-                //  destPortal.transform.InverseTransformDirection(m_sourcePortal.transform.up));
-                //room.transform.position = m_sourcePortal.transform.position + (room.transform.position - destPortal.transform.position);
-
                 m_sourcePortal = null;
             }
 
         }
 
-        m_loadingLevel = false;
     }
 
     private PortalScript FindObjectByTag(PortalScript[] portals, string findTag)
     {
-        foreach(PortalScript s in portals)
+        foreach (PortalScript s in portals)
         {
             if (s.tag == findTag)
             {

@@ -6,14 +6,14 @@ public class DoorTrigger : MonoBehaviour {
   float m_delayTimer;
   bool m_inTrigger;
 
-  public void Start() {
+public void Start() {
     m_delayTimer = 1.0f;
     m_inTrigger = false;
   }
 
   public void Open() {
-    SendMessageUpwards("LoadRoom");
-    GetComponent<Collider>().enabled = false; // Stops retrigger
+        SendMessageUpwards("LoadRoom");
+        //GetComponent<Collider>().enabled = false; // Stops retrigger
     m_delayTimer = 1.0f;
   }
 

@@ -10,18 +10,6 @@ public class RoomScript : MonoBehaviour
 
     public GameObject[] keys;
 
-    public void Start()
-    {
-        RoomController.m_staticRef.SetupRoom(this);
-
-        /*
-         * I'm commenting this out because I think it might be easier if we
-         * just manually set the keys because FindGameObjectsWithTag doesn't
-         * find hidden objects iirc
-         */
-        //keys = GameObject.FindGameObjectsWithTag(this.gameObject.tag + "_key");
-    }
-
     public void OnTriggerExit(Collider other)
     {
         if (other.name == "Player")
@@ -30,7 +18,17 @@ public class RoomScript : MonoBehaviour
              * This will be needed when we have more rooms but for now its
              * fine       
              */
-            //SceneManager.UnloadSceneAsync(this.gameObject.scene);
+
+            //Before we delete move the current connecting door to the new room
+            //This solution hurts so bad. Cringe Cringe *dies inside*
+
+            /*
+             * Set it to false in loaded rooms so that the RoomController knows
+             * that it can reload it on the new trigger           
+             */
+            RoomController.LoadedRooms[this.gameObject.scene.buildIndex] = false;
+
+            SceneManager.UnloadSceneAsync(this.gameObject.scene);
             //Destroy(gameObject);
             //Destroy(this);
         }
@@ -38,13 +36,11 @@ public class RoomScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("SHIIIIIIII");
         if (other.name == "Player")
         {
             GameObject player = GameObject.Find("colleeder");
             GameObject mana = GameObject.Find("GameManager");
             player.GetComponent<Collisions>().man = mana;
-            //GameObject col = (GameObject)player.GetComponent(colleeder);
         }
     }
 

@@ -49,6 +49,16 @@ public class Inventory
 
     public void AddGameObjectToInventory(GameObject obj)
     {
+
+        /*
+         * We can just return early in this case because we don't actually need
+         * to have the key in the inventory       
+         */
+        if (obj.tag.Contains("key"))
+        {
+            return;
+        }
+
         if (this.IsObjectAlreadyInInventory(obj))
         {
             return;
@@ -60,7 +70,7 @@ public class Inventory
             return;
         }
 
-        Debug.Log(obj);
+        Debug.Log("Adding: " + obj);
         if(index == 0)
         {
             this.inventory[index] = new InventoryItem(obj, InventoryItem.Location.LEFT);
@@ -75,8 +85,10 @@ public class Inventory
     {
         for (int ind = 0; ind < inventory.Length; ind++)
         {
+            Debug.Log("Trying to remove");
             if (inventory[ind] != null && inventory[ind].item == obj)
             {
+                Debug.Log("Finally removed");
                 this.inventory[ind] = null;
             }
         }
@@ -176,6 +188,8 @@ public class Inventory
      */
     private int GetNextAvailableOpenIndex()
     {
+        Debug.Log("Next available index");
+        Debug.Log("First one is: " + this.inventory[0]);
         if (this.inventory[0] == null)
         {
             return 0;
