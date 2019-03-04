@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LinkedPortal: {fileID: 0}
   m_DestPortal: {fileID: 0}
-  m_destRoomID: 2
+  m_destRoomID: 1
 --- !u!1001 &200552570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330364058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.185, y: 1.24, z: -1.08}
+  m_LocalPosition: {x: -6.185, y: 1.222, z: -1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 108911326}
