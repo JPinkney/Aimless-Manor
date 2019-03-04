@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         if (Cursor.lockState != CursorLockMode.Locked)
         {
             Cursor.lockState = CursorLockMode.Locked;
-
         }
 
         var ray = new Ray(transform.position, Vector3.down);

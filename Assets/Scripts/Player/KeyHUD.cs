@@ -12,38 +12,32 @@ public class KeyHUD : MonoBehaviour
     public Sprite collected;
     public Sprite empty;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        //if(collectedKeys > totalKeys)
-        //{
-        //    collectedKeys = totalKeys;
-        //}
+        if(collectedKeys > totalKeys)
+        {
+            collectedKeys = totalKeys;
+        }
 
-        //for (int i = 0; i < keys.Length; i++)
-        //{
-        //    if (i < collectedKeys)
-        //    {
-        //        keys[i].sprite = collected;
-        //    } else
-        //    {
-        //        keys[i].sprite = empty;
-        //    }
+        for (int i = 0; i < keys.Length; i++)
+        {
+            if (i < collectedKeys)
+            {
+                keys[i].sprite = collected;
+            } else
+            {
+                keys[i].sprite = empty;
+            }
 
-        //    if (i < totalKeys)
-        //    {
-        //        keys[i].enabled = true;
-        //    } else
-        //    {
-        //        keys[i].enabled = false;
-        //    }
-        //}
+            if (i < totalKeys)
+            {
+                keys[i].enabled = true;
+            } else
+            {
+                keys[i].enabled = false;
+            }
+        }
     }
 
     public void CollectKey()

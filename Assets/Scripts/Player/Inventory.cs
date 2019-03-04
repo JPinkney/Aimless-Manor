@@ -49,11 +49,16 @@ public class Inventory
 
     public void AddGameObjectToInventory(GameObject obj)
     {
+
+        /*
+         * We can just return early in this case because we don't actually need
+         * to have the key in the inventory       
+         */
         if (obj.tag.Contains("key"))
         {
-            Debug.Log("Returning early because I hit a key");
             return;
         }
+
         if (this.IsObjectAlreadyInInventory(obj))
         {
             return;

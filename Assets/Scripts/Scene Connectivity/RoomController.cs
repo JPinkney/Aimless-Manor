@@ -42,7 +42,7 @@ public class RoomController : MonoBehaviour
             }
         }
 
-        //KeyTracker = GameObject.Find("KeyUI");
+        KeyTracker = GameObject.Find("KeyUI");
 
         LoadRoom(null);
     }
