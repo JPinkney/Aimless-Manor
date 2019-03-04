@@ -86,7 +86,7 @@ public class PickupObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
 
-            RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.5f);
+            RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.4f);
             if (hit.Length > 0)
             {
                 foreach (RaycastHit ob in hit)
