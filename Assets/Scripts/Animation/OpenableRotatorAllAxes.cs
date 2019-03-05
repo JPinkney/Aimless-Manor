@@ -19,7 +19,7 @@ public class OpenableRotatorAllAxes : Interactable
     public float doorAnimSpeed = 2.0f;
 
     private Quaternion doorOpen = Quaternion.identity;
-    private Quaternion doorClose = Quaternion.identity;
+    public Quaternion doorClose = Quaternion.identity;
 
     public bool doorStatus = false; //false is close, true is open
     private bool doorGo = false; //for Coroutine, when start only one
@@ -57,17 +57,14 @@ public class OpenableRotatorAllAxes : Interactable
             }
             else
             { //open door
+                SendMessageUpwards("LoadRoom");
                 StartCoroutine(this.MoveDoor(doorOpen));
             }
         }
     }
 
-    /*
-     * This isn't needed here because we already know we are accessing a door
-     * and we don't need to know anything about any game object    
-     */
-    public override bool PossibleItem(GameObject obj)
+    public void closeDoor()
     {
-        return true;
+        StartCoroutine(this.MoveDoor(doorClose));
     }
 }
