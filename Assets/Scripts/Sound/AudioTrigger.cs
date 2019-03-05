@@ -8,9 +8,11 @@ public class AudioTrigger : MonoBehaviour
     private bool hasPlayed = false;
     public AudioClip someAudio;
     private AudioSource someSource;
+    private AudioManager audioManager;
 
     private void Start()
     {
+        audioManager = AudioManager.instance;
         someSource = gameObject.AddComponent<AudioSource>();
         someSource.clip = someAudio;
     }
@@ -19,7 +21,7 @@ public class AudioTrigger : MonoBehaviour
     {
         if (other.name == "Player" && ((!playOnce) || (playOnce && !hasPlayed)))
         {
-            someSource.Play();
+            audioManager.Play(someSource);
             hasPlayed = true;
         }
     }

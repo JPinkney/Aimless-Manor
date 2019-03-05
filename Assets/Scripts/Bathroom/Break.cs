@@ -19,10 +19,17 @@ public class Break : Interactable
     public GameObject keyObj;
     public GameObject glimmer;
 
+    private AudioManager audioManager;
+
+    public void Start()
+    {
+        audioManager = AudioManager.instance;
+    }
+
     public override void Interact(Inventory inv, GameObject obj)
     {
         AudioSource.PlayClipAtPoint(breakNoise, this.transform.position);
-        AudioSource.PlayClipAtPoint(voicelineNoise, this.transform.position);
+        audioManager.Play(voicelineNoise);
         //Destroy(gameObject);
         this.gameObject.SetActive(false);
         Instantiate(brokenGlass, transform.position, transform.rotation);
