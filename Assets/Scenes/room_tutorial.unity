@@ -876,8 +876,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.764785, y: 3.2835255, z: 3.6533313}
-  m_Center: {x: -1.3826776, y: 0.21591854, z: -0.099351645}
+  m_Size: {x: 5.5695906, y: 3.2835255, z: 3.6533313}
+  m_Center: {x: -0.98027456, y: 0.21591854, z: -0.099351645}
 --- !u!114 &601227061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4017,7 +4017,7 @@ GameObject:
   - component: {fileID: 1983964019}
   m_Layer: 0
   m_Name: Portal_N
-  m_TagString: Untagged
+  m_TagString: bathroom_portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
