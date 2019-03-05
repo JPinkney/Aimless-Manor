@@ -2846,6 +2846,7 @@ MonoBehaviour:
   glassShatter: {fileID: 3233378907420744323, guid: 5c00561e7f0f2134d8e907a8512e4393,
     type: 3}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 8300000, guid: 0a7f0ab5debf7431b8fb91d303e5641e, type: 3}
   newKeyLocation: {fileID: 1405656136}
   keyObj: {fileID: 1519480018}
   glimmer: {fileID: 70653036}
@@ -4048,6 +4049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LinkedPortal: {fileID: 0}
+  m_currDoor: {fileID: 0}
   m_DestPortal: {fileID: 0}
   m_destRoomID: 1
 --- !u!1001 &4651501378447123976
@@ -4142,6 +4144,11 @@ PrefabInstance:
       propertyPath: glimmer
       value: 
       objectReference: {fileID: 70653036}
+    - target: {fileID: 8253648586065323484, guid: 174c999ae19781c479f710cb83d23673,
+        type: 3}
+      propertyPath: voicelineNoise
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a7f0ab5debf7431b8fb91d303e5641e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174c999ae19781c479f710cb83d23673, type: 3}
 --- !u!1 &4651501378447123977 stripped

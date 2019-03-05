@@ -8,7 +8,7 @@ using System.Collections;
 public class PortalScript : MonoBehaviour
 {
     public PortalScript m_LinkedPortal;
-    GameObject m_currDoor;
+    public GameObject m_currDoor;
 
     public PortalScript m_DestPortal;
     public int m_destRoomID;
@@ -23,15 +23,20 @@ public class PortalScript : MonoBehaviour
 
     public void CloseDoor()
     {
-        m_currDoor = Instantiate(RoomController.m_staticRef.m_DoorPrefab, transform.position, transform.rotation) as GameObject;
-        m_currDoor.GetComponent<OpenableRotatorAllAxes>().objectToRotate = m_currDoor;
-        m_currDoor.transform.parent = transform;
+        //If its in the hallway then instantiate the doors
+        //Otherwise we shouldn't need them
+        if (this.gameObject.scene.buildIndex == 1 && m_LinkedPortal == null)
+        {
+            m_currDoor = Instantiate(RoomController.m_staticRef.m_DoorPrefab, transform.position, transform.rotation) as GameObject;
+            m_currDoor.GetComponent<OpenableRotatorAllAxes>().objectToRotate = m_currDoor;
+            m_currDoor.transform.parent = transform;
+        }
     }
 
     public void OpenDoor()
     {
-        Destroy(m_currDoor); // Could play open anim
-        Destroy(m_LinkedPortal.m_currDoor);
+        //Destroy(m_currDoor); // Could play open anim
+        //Destroy(m_LinkedPortal.m_currDoor);
     }
 
     public void LoadRoom()

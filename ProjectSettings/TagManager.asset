@@ -15,6 +15,7 @@ TagManager:
   - kitchen
   - tutorial
   - tutorial_key
+  - hallway
   layers:
   - Default
   - TransparentFX
