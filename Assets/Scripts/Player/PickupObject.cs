@@ -11,7 +11,6 @@ public class PickupObject : MonoBehaviour
     GameObject currentlySelectedObj;
     public Material mat;
 
-
     private GameObject lastOutlinedObject;
 
     private Inventory inventory;
@@ -22,8 +21,6 @@ public class PickupObject : MonoBehaviour
     {
         mainCamera = GameObject.FindWithTag("MainCamera");
         this.inventory = new Inventory();
-
-        Debug.Log(GameObject.Find("button_e").name);
     }
 
     // Update is called once per frame
@@ -332,7 +329,7 @@ public class PickupObject : MonoBehaviour
         }
 
         //RaycastHit[] hit = Physics.RaycastAll(caaa.transform.position, caaa.transform.forward, 1.4f);
-        if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 0.8f))
+        if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 1.4f))
         {
             GameObject hitObj = hit.transform.gameObject;
             if (hitObj.GetComponent<Pickupable>() != null)
