@@ -38,5 +38,9 @@ public class Break : Interactable
         glassShatter.Play();
         keyObj.transform.position = newKeyLocation.position;
         glimmer.SetActive(true);
+
+        Physics.IgnoreLayerCollision(9, 9);
+        //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
+
     }
 }
