@@ -876,8 +876,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.764785, y: 3.2835255, z: 3.6533313}
-  m_Center: {x: -1.3826776, y: 0.21591854, z: -0.099351645}
+  m_Size: {x: 5.5695906, y: 3.2835255, z: 3.6533313}
+  m_Center: {x: -0.98027456, y: 0.21591854, z: -0.099351645}
 --- !u!114 &601227061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601227059}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 3.973, y: 1.225, z: 4.925}
+  m_LocalPosition: {x: 3.973, y: 1.2, z: 4.925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437417251}
@@ -2796,6 +2796,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: abc32e907b04e4f9aa25a6e84c6dace5, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d3d6461f975a4ac6b8c8fd66cc3d74e, type: 2}
     - target: {fileID: 400000, guid: abc32e907b04e4f9aa25a6e84c6dace5, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2812,10 +2816,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.67
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: abc32e907b04e4f9aa25a6e84c6dace5, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d3d6461f975a4ac6b8c8fd66cc3d74e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc32e907b04e4f9aa25a6e84c6dace5, type: 3}
 --- !u!4 &1011775969 stripped
@@ -4017,7 +4017,7 @@ GameObject:
   - component: {fileID: 1983964019}
   m_Layer: 0
   m_Name: Portal_N
-  m_TagString: Untagged
+  m_TagString: bathroom_portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,6 +16,8 @@ TagManager:
   - tutorial
   - tutorial_key
   - hallway
+  - hallway_key
+  - Skull
   layers:
   - Default
   - TransparentFX
