@@ -1366,7 +1366,7 @@ ParticleSystem:
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0.9999
       minScalar: 0.6666667
       maxCurve:
@@ -4710,7 +4710,7 @@ GameObject:
   - component: {fileID: 5972350764594958637}
   - component: {fileID: 5972350764594958636}
   m_Layer: 0
-  m_Name: Fog
+  m_Name: P_Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5358,7 +5358,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 1
+    enabled: 0
     type: 4
     angle: 25
     length: 5
@@ -10764,7 +10764,7 @@ ParticleSystem:
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0.9999
       minScalar: 0.6666667
       maxCurve:
