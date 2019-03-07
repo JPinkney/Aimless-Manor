@@ -17,7 +17,7 @@ public class Break : Interactable
 
     public Transform newKeyLocation;
     public GameObject keyObj;
-    public GameObject glimmer;
+    public ParticleSystem glimmer;
 
     private AudioManager audioManager;
 
@@ -37,7 +37,7 @@ public class Break : Interactable
 
         glassShatter.Play();
         keyObj.transform.position = newKeyLocation.position;
-        glimmer.SetActive(true);
+        glimmer.Play();
 
         Physics.IgnoreLayerCollision(9, 9);
         //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());

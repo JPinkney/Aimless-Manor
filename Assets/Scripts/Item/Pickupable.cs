@@ -8,6 +8,8 @@ public class Pickupable : MonoBehaviour {
 
     private bool key_got = false;
 
+
+
 	// Use this for initialization
 	void Start () {
 		
