@@ -4710,7 +4710,7 @@ GameObject:
   - component: {fileID: 48785963468451680}
   - component: {fileID: 1632689322685873365}
   m_Layer: 0
-  m_Name: Water
+  m_Name: P_Tap_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5305,7 +5305,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2

@@ -791,6 +791,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 804111893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &804111898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804111897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6051bace5b500c84698108ae9537ffa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectMaterial: {fileID: 2100000, guid: 801e8402bcd9285409c2589d2f1a96db, type: 2}
 --- !u!114 &804111899
 MonoBehaviour:
   m_ObjectHideFlags: 0
