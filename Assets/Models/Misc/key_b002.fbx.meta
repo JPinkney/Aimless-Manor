@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: f286a328055fd43ada8e0685437404b6
+guid: 2809916a901b442a79af15221bf7e89d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: key
     400000: //RootNode
-    2100000: lambert1
+    400002: key
+    2100000: mp_keybase
+    2100002: mp_keygem
     2300000: //RootNode
+    2300002: key
     3300000: //RootNode
-    4300000: polysurface
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: f518b654c7845480dadea83289bc93f8, type: 2}
+    3300002: key
+    4300000: key
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -59,7 +59,7 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -76,7 +76,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
