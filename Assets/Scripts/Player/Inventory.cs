@@ -59,6 +59,12 @@ public class Inventory
             return;
         }
 
+        if (obj == GameObject.Find("cheese_slice_5"))
+        {
+            obj = GameObject.Find("cheese_slice");
+            GameObject.Find("cheese_slice_5").SetActive(false);
+        }
+
         if (this.IsObjectAlreadyInInventory(obj))
         {
             return;
