@@ -18,7 +18,6 @@ public class Cauldron : Interactable
     public GameObject hiddenIngredient1;
     public GameObject hiddenIngredient2;
     public GameObject hiddenIngredient3;
-    public GameObject ingredient3_reappear;
     public GameObject water;
     public ParticleSystem hiddenBubbles;
     public GameObject key;
@@ -64,13 +63,13 @@ public class Cauldron : Interactable
                     {
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
-                        ingredient3_reappear.SetActive(true);
                         break;
                     }
             }
 
             if((this.tag1HasBeenAdded? 1:0) + (this.tag2HasBeenAdded ? 1 : 0) + (this.tag3HasBeenAdded ? 1 : 0) == 1)
             {
+                water.SetActive(true);
                 hiddenBubbles.Play();
                 loopSound.Play();
             }

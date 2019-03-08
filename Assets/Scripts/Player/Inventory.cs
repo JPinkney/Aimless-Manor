@@ -59,10 +59,18 @@ public class Inventory
             return;
         }
 
-        if (obj == GameObject.Find("cheese_slice_5"))
+        if (obj.name.Contains("scaled"))
         {
-            obj = GameObject.Find("cheese_slice");
-            GameObject.Find("cheese_slice_5").SetActive(false);
+            string smaller = obj.name.Substring(0, obj.name.LastIndexOf("_"));
+            Debug.Log(smaller);
+
+            GameObject smol = GameObject.Find(smaller);
+            // smol.SetActive(true);
+
+            GameObject big = obj;
+
+            obj = smol;
+            big.SetActive(false);
         }
 
         if (this.IsObjectAlreadyInInventory(obj))
