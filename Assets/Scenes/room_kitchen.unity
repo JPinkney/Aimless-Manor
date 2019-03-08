@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 325627384}
   m_Layer: 0
   m_Name: PortalCamGround
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 467250047}
   m_Layer: 0
   m_Name: PortalCamWall
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3528,7 +3528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749998272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.185, y: 1.15, z: -1.0772}
+  m_LocalPosition: {x: -6.094, y: 1.225, z: -1.035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1320082818}
@@ -4786,7 +4786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1102479955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4910,10 +4910,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 749998273}
     m_Modifications:
-    - target: {fileID: 100016, guid: a307731c112bffe428e629a454fcb395, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_Name
       value: KitchenSet
@@ -4921,6 +4917,18 @@ PrefabInstance:
     - target: {fileID: 100034, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: a307731c112bffe428e629a454fcb395, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: a307731c112bffe428e629a454fcb395, type: 3}
+      propertyPath: m_Name
+      value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: a307731c112bffe428e629a454fcb395, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_Name
@@ -4930,13 +4938,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: stove_front
       objectReference: {fileID: 0}
-    - target: {fileID: 100040, guid: a307731c112bffe428e629a454fcb395, type: 3}
+    - target: {fileID: 100056, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_Name
-      value: door
-      objectReference: {fileID: 0}
-    - target: {fileID: 100040, guid: a307731c112bffe428e629a454fcb395, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: floor_iguess
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_Name
@@ -4961,10 +4965,6 @@ PrefabInstance:
     - target: {fileID: 100054, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_Name
       value: hems
-      objectReference: {fileID: 0}
-    - target: {fileID: 100056, guid: a307731c112bffe428e629a454fcb395, type: 3}
-      propertyPath: m_Name
-      value: floor_iguess
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: a307731c112bffe428e629a454fcb395, type: 3}
       propertyPath: m_LocalPosition.x
