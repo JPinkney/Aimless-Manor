@@ -18,8 +18,8 @@ public class Cauldron : Interactable
     public GameObject hiddenIngredient1;
     public GameObject hiddenIngredient2;
     public GameObject hiddenIngredient3;
-    public GameObject hiddenWaterPitcher;
-    public GameObject hiddenWater;
+    public GameObject ingredient3_reappear;
+    public GameObject water;
     public ParticleSystem hiddenBubbles;
     public GameObject key;
     public AudioClip bubblingWater;
@@ -64,12 +64,15 @@ public class Cauldron : Interactable
                     {
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
-                        hiddenWaterPitcher.SetActive(true);
-                        hiddenWater.SetActive(true);
-                        hiddenBubbles.Play();
-                        loopSound.Play();
+                        ingredient3_reappear.SetActive(true);
                         break;
                     }
+            }
+
+            if((this.tag1HasBeenAdded? 1:0) + (this.tag2HasBeenAdded ? 1 : 0) + (this.tag3HasBeenAdded ? 1 : 0) == 1)
+            {
+                hiddenBubbles.Play();
+                loopSound.Play();
             }
 
             obj.SetActive(false);
@@ -112,7 +115,7 @@ public class Cauldron : Interactable
         hiddenIngredient1.SetActive(false);
         hiddenIngredient2.SetActive(false);
         hiddenIngredient3.SetActive(false);
-        hiddenWater.SetActive(false);
+        water.SetActive(false);
         hiddenBubbles.Stop();
         loopSound.Stop();
 
