@@ -27,8 +27,6 @@ public class DebugButtons : MonoBehaviour {
         }
     }
 
-
-
     // THESE FUNCTIONS CAN ALSO BE ACCESSED BY OTHER SCRIPTS AND EVENTS
     void LoadTutorial(){
         SceneManager.LoadScene(1);

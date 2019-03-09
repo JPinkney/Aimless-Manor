@@ -16,6 +16,10 @@ public class RoomController : MonoBehaviour
     public GameObject m_DoorPrefab;
     public static RoomController m_staticRef;
 
+    public bool lowSpecModeEnabled = false;
+
+    public RoomPortalDisabler portalDisable;
+
     PortalScript m_sourcePortal;
     PortalScript m_destPortal;
 
@@ -41,6 +45,8 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
+
+        portalDisable = FindObjectOfType<RoomPortalDisabler>();
 
         KeyTracker = GameObject.Find("KeyUI");
 
@@ -70,17 +76,39 @@ public class RoomController : MonoBehaviour
 
         if (!LoadedRooms[levelIndex])
         {
-            LoadSceneFromIndex(portal, levelIndex);
-            LoadedRooms[levelIndex] = true;
+            if (lowSpecModeEnabled)
+            {
+                StartCoroutine(LoadSceneFromIndexAsync(portal, levelIndex));
+            }
+            else
+            {
+                LoadSceneFromIndexSync(portal, levelIndex);
+                LoadedRooms[levelIndex] = true;
+            }
+
         }
 
     }
 
-    private void LoadSceneFromIndex(PortalScript portal, int levelIndex)
+    private void LoadSceneFromIndexSync(PortalScript portal, int levelIndex)
     {
         SceneManager.LoadScene(levelIndex, LoadSceneMode.Additive);
+        portalDisable.SetCameraVisibility(levelIndex, true);
         m_sourcePortal = portal;
     }
+
+    private IEnumerator LoadSceneFromIndexAsync(PortalScript portal, int levelIndex)
+    {
+        AsyncOperation ao = SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
+        while (!ao.isDone)
+        {
+            yield return null;
+        }
+        LoadedRooms[levelIndex] = true;
+        portalDisable.SetCameraVisibility(levelIndex, false);
+        m_sourcePortal = portal;
+    }
+
 
     public void SetupRoom(RoomScript room)
     {
@@ -93,7 +121,6 @@ public class RoomController : MonoBehaviour
              * the portals tag of the old room           
              */
             PortalScript destPortal = FindObjectByTag(room.m_Portals, m_sourcePortal.tag);
-            Debug.Log(destPortal);
 
             if (destPortal)
             {
