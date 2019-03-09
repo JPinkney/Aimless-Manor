@@ -3,21 +3,25 @@
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_MainTex("Color (RGB) Alpha (A)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
+		_Transparency("Transparency", Range(0.0,0.5)) = 0.25
 		_Scale("Scale", float) = 1
 		_Speed("Speed", float) = 1
 		_Frequency("Frequency", float) = 1
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags {"Queue" = "Transparent" "RenderType" = "Transparent" }
         LOD 200
+
+		ZWrite Off
+		Blend SrcAlpha OneMinusSrcAlpha
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows vertex:vert
+        #pragma surface surf Standard alpha fullforwardshadows vertex:vert fragment:frag
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -33,7 +37,7 @@
 
 		void vert(inout appdata_full v) 
 		{
-			half offsetvert = v.vertex.x;
+			half offsetvert = (v.vertex.z * v.vertex.z) + (v.vertex.x * v.vertex.x);
 
 			half value = _Scale * sin(_Time.w * _Speed + offsetvert * _Frequency);
 
@@ -57,10 +61,10 @@
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
+			o.Alpha = tex2D(_MainTex, IN.uv_MainTex).a;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
         }
         ENDCG
     }
