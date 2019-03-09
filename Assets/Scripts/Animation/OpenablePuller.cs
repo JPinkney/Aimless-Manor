@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenablePuller : MonoBehaviour
+public class OpenablePuller : Interactable
 {
     //this script should work even if you set the objectToPull to the object this script is attached to (its own parent in a way)
     //if parent is moved the child drawer should still be moving properly unless the set objectToPull object is 'its own parent'
@@ -49,10 +49,9 @@ public class OpenablePuller : MonoBehaviour
 
     }
 
-    void Update()
+    public override void Interact(Inventory inv, GameObject obj)
     {
-        //If press P key on keyboard (***********************CHANGE TO 'ON INTERACT')
-        if (Input.GetKeyDown(KeyCode.P) && !drawerGo)
+        if (!drawerGo)
         {
             if (drawerStatus)
             { //close drawer
@@ -65,8 +64,8 @@ public class OpenablePuller : MonoBehaviour
                 Debug.Log("Drawer opening started on: " + objectToPull.gameObject.name + " inside " + this.gameObject.name + " in scene " + objectToPull.scene.name);
             }
         }
-
     }
+
     public IEnumerator MoveDrawer(Vector3 dest)
     {
         drawerGo = true;
