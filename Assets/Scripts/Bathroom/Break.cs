@@ -28,16 +28,38 @@ public class Break : Interactable
 
     public override void Interact(Inventory inv, GameObject obj)
     {
-        AudioSource.PlayClipAtPoint(breakNoise, this.transform.position);
-        audioManager.Play(voicelineNoise);
-        //Destroy(gameObject);
-        this.gameObject.SetActive(false);
-        Instantiate(brokenGlass, transform.position, transform.rotation);
-        brokenGlass.localScale = transform.localScale;
+        if (breakNoise)
+        {
+            AudioSource.PlayClipAtPoint(breakNoise, this.transform.position);
+        }
 
-        glassShatter.Play();
-        keyObj.transform.position = newKeyLocation.position;
-        glimmer.Play();
+        if (voicelineNoise)
+        {
+            audioManager.Play(voicelineNoise);
+        }
+       
+        this.gameObject.SetActive(false);
+
+        if (brokenGlass)
+        {
+            Instantiate(brokenGlass, transform.position, transform.rotation);
+            brokenGlass.localScale = transform.localScale;
+        }
+
+        if (glassShatter)
+        {
+            glassShatter.Play();
+        }
+
+        if (keyObj)
+        {
+            keyObj.transform.position = newKeyLocation.position;
+        }
+
+        if (glimmer)
+        {
+            glimmer.Play();
+        }
 
         Physics.IgnoreLayerCollision(9, 9);
         //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
