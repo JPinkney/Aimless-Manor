@@ -509,11 +509,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lit Sconce
       objectReference: {fileID: 0}
-    - target: {fileID: 1461881703203006481, guid: 93c8f34831f1daa4b8374451fb38cbb0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 98063257, guid: 93c8f34831f1daa4b8374451fb38cbb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.68
@@ -1240,11 +1235,6 @@ PrefabInstance:
       propertyPath: m_Range
       value: 7.092678
       objectReference: {fileID: 0}
-    - target: {fileID: 7399935532259621889, guid: 5735b077e9a1b7d47b1a902f678983ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3793481160036909813, guid: 5735b077e9a1b7d47b1a902f678983ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1408,7 +1398,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2309,11 +2299,6 @@ PrefabInstance:
       propertyPath: m_Range
       value: 7.092678
       objectReference: {fileID: 0}
-    - target: {fileID: 7399935532259621889, guid: 5735b077e9a1b7d47b1a902f678983ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3793481160036909813, guid: 5735b077e9a1b7d47b1a902f678983ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2666,7 +2651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3281,7 +3266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1a976fbfbc5984b4f96bd0b3772f28b8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3676,7 +3661,7 @@ PrefabInstance:
     - target: {fileID: 8192342344676076235, guid: 3362374fbb26d43ec91240e237c48e11,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8192342344676076234, guid: 3362374fbb26d43ec91240e237c48e11,
         type: 3}
@@ -3751,7 +3736,7 @@ PrefabInstance:
     - target: {fileID: 8192342345957326380, guid: 3362374fbb26d43ec91240e237c48e11,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3362374fbb26d43ec91240e237c48e11, type: 3}
