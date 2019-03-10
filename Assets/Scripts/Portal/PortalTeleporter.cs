@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PortalTeleporter : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     public Transform receiver;
     public bool gravity = true;
-
+    private Transform playerTransform;
+    private PlayerController playerController;
     private bool playerIsOverlapping = false;
 
     private void Start()
     {
         // Get player here
-        player = GameObject.Find("Player").GetComponent<Transform>();
-
+        player = GameObject.Find("Player");
+        playerTransform = player.GetComponent<Transform>();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -22,15 +24,20 @@ public class PortalTeleporter : MonoBehaviour
     {
         if (playerIsOverlapping)
         {
-            Vector3 portalToPlayer = player.position - transform.position;
+            Vector3 portalToPlayer = playerTransform.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
             if (dotProduct < 0f)
             {
                 player.gameObject.GetComponent<Rigidbody>().useGravity = gravity;
 
-                player.position = receiver.position;
-                player.rotation = receiver.rotation;
+                playerTransform.position = receiver.position;
+                Debug.Log(playerTransform.rotation);
+
+                playerController.euler = receiver.rotation.eulerAngles;
+
+                playerTransform.rotation = receiver.rotation;
+                Debug.Log(playerTransform.rotation);
 
                 playerIsOverlapping = false;
             }
