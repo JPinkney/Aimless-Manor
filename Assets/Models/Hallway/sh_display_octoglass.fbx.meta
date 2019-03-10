@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c50efc80719d843e09951a389258a9ef
+guid: 5c1f6b00c58324e738734b8f4de85126
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -392,11 +392,12 @@ ModelImporter:
     4300148: sh_display_octo_glass_TEST.002
     4300150: sh_display_octo_glass_TEST.001
     4300152: sh_display_octo_glass_TEST
-  externalObjects: {}
+      assembly: UnityEngine.CoreModule
+      name: sh_display_octo_glass_Outer
+    second: {fileID: 2100000, guid: 5419515766f63437bb05e632eb530a8e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
@@ -437,7 +438,7 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -454,7 +455,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

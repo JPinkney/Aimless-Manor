@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1061129723399990394}
   - component: {fileID: 1061129723399990395}
   m_Layer: 0
-  m_Name: Item Glimmer
+  m_Name: P_Item_Glimmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,8 +864,8 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 10
+      minMaxState: 3
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1475,7 +1475,7 @@ ParticleSystem:
     tilesY: 4
     animationType: 0
     rowIndex: 0
-    cycles: 1
+    cycles: 3
     uvChannelMask: -1
     randomRow: 1
     sprites:
@@ -4654,7 +4654,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6da5474f0adc3a4479ad8ede2e39837e, type: 2}
+  - {fileID: 2100000, guid: 438a536f68bffd14693cda3a902eddf8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
