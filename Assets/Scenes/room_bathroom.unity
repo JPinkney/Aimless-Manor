@@ -5843,6 +5843,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pre_CeilingLight
       objectReference: {fileID: 0}
+    - target: {fileID: 2264875250992438177, guid: 4594b988b103e1e42a4143eac2d29365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2264875250992438182, guid: 4594b988b103e1e42a4143eac2d29365,
         type: 3}
       propertyPath: m_LocalPosition.x

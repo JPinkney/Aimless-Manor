@@ -5,20 +5,18 @@ using UnityEngine;
 public class HallwayTutorial : Interactable
 {
 
-    public GameObject hiddenSkull;
+    public GameObject hiddenEgg;
     public GameObject dome;
-    public GameObject key;
     public GameObject tutorialRoomPortal;
 
     public override void Interact(Inventory inv, GameObject obj)
     {
-        if (obj && obj.tag == "Skull")
+        if (obj && obj.tag == "Egg")
         {
             obj.SetActive(false);
             inv.RemoveGameObjectFromInventory(obj);
-            hiddenSkull.SetActive(true);
+            hiddenEgg.SetActive(true);
             dome.SetActive(false);
-            key.SetActive(true);
             tutorialRoomPortal.SetActive(true);
         }
     }

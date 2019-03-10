@@ -30,8 +30,9 @@ public class AudioManager : MonoBehaviour
         if (source != null)
         {
             source.Stop();
+            SetSource(sound);
         }
-        SetSource(sound);
+
     }
 
     /*
@@ -43,8 +44,9 @@ public class AudioManager : MonoBehaviour
         if (source != null)
         {
             source.Stop();
+            SetSource(sound);
         }
-        SetSource(sound);
+       
     }
 
     private void SetSource(AudioSource sound)
@@ -55,8 +57,11 @@ public class AudioManager : MonoBehaviour
 
     private void SetSource(AudioClip sound)
     {
-        source.clip = sound;
-        source.Play();
+        if (sound != null)
+        {
+            source.clip = sound;
+            source.Play();
+        }
     }
 
 }
