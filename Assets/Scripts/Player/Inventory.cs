@@ -67,10 +67,15 @@ public class Inventory
             GameObject smol = GameObject.Find(smaller);
             // smol.SetActive(true);
 
-            GameObject big = obj;
+            string origName = obj.name;
+            GameObject big = GameObject.Find(origName);
 
             obj = smol;
-            big.SetActive(false);
+            while (big != null)
+            {
+                    big.SetActive(false);
+                    big = GameObject.Find(origName);
+            }
         }
 
         if (this.IsObjectAlreadyInInventory(obj))
