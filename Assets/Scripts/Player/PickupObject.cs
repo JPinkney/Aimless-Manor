@@ -5,6 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
+//using this script requires at least 1 collider attached and 1 rigidbody attached
+//**you may attach an additional, larger collider (not on the children, please) for highlighting purposes if you set it to TRIGGER**
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
+
 public class PickupObject : MonoBehaviour
 {
     GameObject mainCamera;
@@ -20,6 +25,7 @@ public class PickupObject : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.FindWithTag("MainCamera");
+
         this.inventory = new Inventory();
     }
 
@@ -120,7 +126,22 @@ public class PickupObject : MonoBehaviour
                 return false;
             }
 
-            pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            //DISABLE COLLIDER(S)
+            //pickupableObj.gameObject.GetComponent<Collider>().enabled = false;
+            Component[] colChildren = pickupableObj.gameObject.GetComponentsInChildren(typeof(Collider));
+            foreach (Collider col in colChildren)
+            {
+                col.enabled = false;
+            }
+
+            //DISABLE GRAVITY
+            //pickupableObj.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            Component[] rbChildren = pickupableObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
+            foreach (Rigidbody rb in rbChildren)
+            {
+                rb.useGravity = false;
+            }
+
             this.inventory.AddGameObjectToInventory(pickupableObj.gameObject);
             currentlySelectedObj = pickupableObj.gameObject;
             return true;
@@ -164,7 +185,21 @@ public class PickupObject : MonoBehaviour
 
     void ChangeCurrentlySelectedObjectLocation()
     {
-        currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        //ENABLE COLLIDER(S)
+        //currentlySelectedObj.gameObject.GetComponent<Collider>().enabled = true;
+        Component[] colChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Collider));
+        foreach (Collider col in colChildren)
+        {
+            col.enabled = true;
+        }
+
+        //ENABLE GRAVITY
+        //currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        Component[] rbChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
+        foreach (Rigidbody rb in rbChildren)
+        {
+            rb.useGravity = true;
+        }
 
         Vector3 playerPos = this.transform.position;
         Vector3 playerDirection = this.transform.forward;
@@ -180,7 +215,7 @@ public class PickupObject : MonoBehaviour
         if (currentlySelectedObj)
         {
             ChangeCurrentlySelectedObjectLocation();
-            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            currentlySelectedObj.GetComponentInChildren<MeshRenderer>().enabled = false;
             currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
             ChangeSelectedObject();
         }
@@ -219,7 +254,7 @@ public class PickupObject : MonoBehaviour
 
     void pickupKey(Pickupable p)
     {
-        p.gameObject.GetComponent<Renderer>().enabled = false;
+        p.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         p.obtainKey();
     }
 
@@ -227,7 +262,13 @@ public class PickupObject : MonoBehaviour
     {
         if (currentlySelectedObj)
         {
-            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            //ENABLE GRAVITY
+            //currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            Component[] rbChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
+            foreach (Rigidbody rb in rbChildren)
+            {
+                rb.useGravity = true;
+            }
 
             Vector3 playerPos = this.transform.position;
             Vector3 playerDirection = this.transform.forward;
@@ -267,7 +308,13 @@ public class PickupObject : MonoBehaviour
     {
         if (currentlySelectedObj)
         {
-            currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            //ENABLE GRAVITY
+            //currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            Component[] rbChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
+            foreach (Rigidbody rb in rbChildren)
+            {
+                rb.useGravity = true;
+            }
 
             Vector3 playerPos = this.transform.position;
             Vector3 playerDirection = this.transform.forward;
@@ -277,7 +324,7 @@ public class PickupObject : MonoBehaviour
             Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
             currentlySelectedObj.transform.position = spawnPos;
 
-            currentlySelectedObj.GetComponent<MeshRenderer>().enabled = false;
+            currentlySelectedObj.GetComponentInChildren<MeshRenderer>().enabled = false;
             // Destroy(currentlySelectedObj);
             currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
 
@@ -343,7 +390,7 @@ public class PickupObject : MonoBehaviour
 
     void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj, bool keyChange)
     {
-        Renderer rendererObj = obj.transform.gameObject.GetComponent<Renderer>();
+        Renderer rendererObj = obj.transform.gameObject.GetComponentInChildren<Renderer>();
         if (remove)
         {
             //var numMaterials = rendererObj.materials.Length - 2;
