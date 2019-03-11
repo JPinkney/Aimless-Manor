@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: s_cupripple
+  m_Name: m_object_highlightyellow
   m_Shader: {fileID: 4800000, guid: a6f19de1e196de84bb9fb7e06cfffc68, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,14 +20,16 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 626b10d5b2d55ba459f287b8467cd59f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Frequency: 0.01
-    - _Glossiness: 0.5
-    - _Metallic: 0
-    - _Scale: 0.001
-    - _Speed: 0.46
+    - _Emission: 0
+    - _Frequency: -1.61
+    - _Glossiness: 0.376
+    - _Metallic: 0.517
+    - _Scale: 1.08
+    - _Speed: 1.33
+    - _Transparency: 0.487
     m_Colors:
-    - _Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.1764706}

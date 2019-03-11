@@ -1,20 +1,18 @@
 fileFormatVersion: 2
-guid: f286a328055fd43ada8e0685437404b6
+guid: 352e0973b8ed8564e9cd6010f2098af4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: mp_toilet_hinges
+    2100002: lambert1
+    2100004: mp_toilet_lever
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polysurface
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: f518b654c7845480dadea83289bc93f8, type: 2}
+    4300000: toilet_merged
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

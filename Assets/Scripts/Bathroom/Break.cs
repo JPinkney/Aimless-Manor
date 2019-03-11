@@ -19,6 +19,8 @@ public class Break : Interactable
     public GameObject keyObj;
     public ParticleSystem glimmer;
 
+    public GameObject highlightLight;
+
     private AudioManager audioManager;
 
     public void Start()
@@ -34,6 +36,7 @@ public class Break : Interactable
         this.gameObject.SetActive(false);
         Instantiate(brokenGlass, transform.position, transform.rotation);
         brokenGlass.localScale = transform.localScale;
+        highlightLight.SetActive(false);
 
         glassShatter.Play();
         keyObj.transform.position = newKeyLocation.position;

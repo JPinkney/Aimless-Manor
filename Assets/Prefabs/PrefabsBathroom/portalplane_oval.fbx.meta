@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: f286a328055fd43ada8e0685437404b6
+guid: 104dfbca41ec23f40ae631f2dc979f2e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polysurface
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: f518b654c7845480dadea83289bc93f8, type: 2}
+    4300000: Circle
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

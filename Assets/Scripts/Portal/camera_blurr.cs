@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Testing_Blit : MonoBehaviour
+public class camera_blurr : MonoBehaviour
 {
     public Material EffectMaterial;
 
