@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * This script attaches to the cauldron and checks to see if all types of
@@ -14,6 +15,12 @@ public class Cauldron : Interactable
     private bool tag3HasBeenAdded = false;
 
     public GameObject target;
+
+    public GameObject guideConst;
+    public GameObject guide1;
+    public GameObject guide2;
+    public GameObject guide3;
+    public GameObject guideEnd;
 
     public GameObject hiddenIngredient1;
     public GameObject hiddenIngredient2;
@@ -37,6 +44,26 @@ public class Cauldron : Interactable
         loopSound = gameObject.AddComponent<AudioSource>();
         loopSound.clip = bubblingWater;
         loopSound.loop = true;
+
+        int count = 0;
+        for(int i = 1; i < SceneManager.sceneCount; i++)
+        {
+            if (SceneManager.GetSceneAt(i).name.Equals("room_kitchen"))
+            {
+                count++;
+                if (count > 1)
+                {
+                    SceneManager.UnloadSceneAsync(i);
+                    count--;
+                }
+            }
+        }
+
+        guideConst.SetActive(true);
+        guide1.SetActive(true);
+        guide2.SetActive(false);
+        guide3.SetActive(false);
+        guideEnd.SetActive(false);
     }
 
     public override void Interact(Inventory inv, GameObject obj)
@@ -51,18 +78,36 @@ public class Cauldron : Interactable
                     {
                         tag1HasBeenAdded = true;
                         hiddenIngredient1.SetActive(true);
+
+                        guideConst.SetActive(true);
+                        guide1.SetActive(false);
+                        guide2.SetActive(true);
+                        guide3.SetActive(false);
+
                         break;
                     }
                 case "ingredients_2":
                     {
                         tag2HasBeenAdded = true;
                         hiddenIngredient2.SetActive(true);
+
+                        guideConst.SetActive(true);
+                        guide1.SetActive(false);
+                        guide2.SetActive(false);
+                        guide3.SetActive(true);
+
                         break;
                     }
                 case "ingredients_3":
                     {
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
+
+                        guideConst.SetActive(false);
+                        guide1.SetActive(false);
+                        guide2.SetActive(false);
+                        guide3.SetActive(false);
+
                         break;
                     }
             }
@@ -115,6 +160,9 @@ public class Cauldron : Interactable
         hiddenIngredient2.SetActive(false);
         hiddenIngredient3.SetActive(false);
         water.SetActive(false);
+
+        guideEnd.SetActive(true);
+
         hiddenBubbles.Stop();
         loopSound.Stop();
 
