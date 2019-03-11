@@ -11,18 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/room_hallway.unity
     guid: a07f6d9c53e6f4df29b00e4b2029897e
-  - enabled: 0
-    path: Assets/Scenes/room_tutorial.unity
-    guid: 45235c468e12b4d64a1192fc39fc2585
   - enabled: 1
     path: Assets/Scenes/room_bathroom.unity
     guid: 064e9a20935548e4889f458581619ca2
   - enabled: 1
     path: Assets/Scenes/room_kitchen.unity
-    guid: dc5fb30b02fc1dc42bf2348f67921e5a
+    guid: 52a3bcdfd29dddc418662dca1db7f51a
   - enabled: 0
-    path: Assets/Scenes/room_kitchen_old.unity
-    guid: 4cdd538cdc7b84b0a9dac089294b380c
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/room_tutorial.unity
+    guid: 45235c468e12b4d64a1192fc39fc2585
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

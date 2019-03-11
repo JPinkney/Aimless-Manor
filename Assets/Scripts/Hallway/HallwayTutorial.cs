@@ -6,7 +6,6 @@ public class HallwayTutorial : Interactable
 {
 
     public GameObject hiddenEgg;
-    public GameObject dome;
     public GameObject tutorialRoomPortal;
 
     public override void Interact(Inventory inv, GameObject obj)
@@ -16,7 +15,6 @@ public class HallwayTutorial : Interactable
             obj.SetActive(false);
             inv.RemoveGameObjectFromInventory(obj);
             hiddenEgg.SetActive(true);
-            dome.SetActive(false);
             tutorialRoomPortal.SetActive(true);
         }
     }

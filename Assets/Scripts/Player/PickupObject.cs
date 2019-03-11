@@ -179,7 +179,7 @@ public class PickupObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            UseObject();
+            //UseObject();
         }
     }
 
