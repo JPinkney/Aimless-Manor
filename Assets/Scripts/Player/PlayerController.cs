@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//ld gousing System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
@@ -110,10 +111,54 @@ public class PlayerController : MonoBehaviour
         {
             //This is old rotation code I don't want to remove just in case
             Vector3 camRot = new Vector3(xRot, 0, 0f);
+
+
+            //works with forward
+            cam.transform.Rotate(-camRot);
+
+            float test = Vector3.Angle(transform.forward, cam.transform.forward);
+            //float test = Vector3.Angle(cam.transform.forward, -transform.up);
+            //Debug.Log(test);
+
+            if (test > 80f)
+            {
+                cam.transform.Rotate(camRot);
+            }
+
+
+
+
+            //works for up down
+            /*
+
+            Debug.Log("");
+            Debug.Log(camRot);
+
+            Debug.Log(cam.transform.forward);
+            cam.transform.Rotate(-camRot);
+            Debug.Log(cam.transform.forward);
+
+            Debug.Log("");
+            float test = Vector3.Angle(cam.transform.forward, -transform.up);
+            //Debug.Log(test);
+
+            if (test < 10f || test > 170f)
+            {
+                cam.transform.Rotate(camRot);
+            }
+            */
+
+
+
+
             //if (cam.transform.rotation.x < maxY && cam.transform.rotation.x > minY)
             //{
             //    Debug.Log(cam.transform.rotation.x);
-            cam.transform.Rotate(-camRot);
+
+
+            //cam.transform.Rotate(-camRot);
+
+
             //}
             //euler.x += (-xRot);
             //if (euler.x >= maxY)
