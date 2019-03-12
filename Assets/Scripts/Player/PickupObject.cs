@@ -384,35 +384,51 @@ public class PickupObject : MonoBehaviour
                 FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
                 lastOutlinedObject = hitObj;
             }
+            else if (hitObj.GetComponent<Interactable>() != null)
+            {
+                FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
+                lastOutlinedObject = hitObj;
+            }
         }
 
     }
 
     void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj, bool keyChange)
     {
-        List<Material[]> oldMats = obj.gameObject.GetComponent<Pickupable>().origMats;
+
+        List<Material[]> oldMats = new List<Material[]>();
+        if (obj.gameObject.GetComponent<Pickupable>() != null) {
+            oldMats = obj.gameObject.GetComponent<Pickupable>().origMats;
+        } 
+
+        bool isInteractable = obj.gameObject.GetComponent<Interactable>() != null;
+         
         //Renderer rendererObj = obj.transform.gameObject.GetComponentInChildren<Renderer>();
         Component[] rendChildren = obj.GetComponentsInChildren(typeof(Renderer));
 
         if (remove)
         {
-            int counter = 0;
-
-            foreach (Renderer rend in rendChildren)
+            if (!isInteractable)
             {
-                Material[] newMats = new Material[rend.materials.Length];
-                for (int i=0; i<rend.materials.Length; i++)
+                int counter = 0;
+
+                foreach (Renderer rend in rendChildren)
                 {
-                    newMats[i] = mat;
+                    Material[] newMats = new Material[rend.materials.Length];
+                    for (int i = 0; i < rend.materials.Length; i++)
+                    {
+                        newMats[i] = mat;
+                    }
+                    rend.materials = oldMats[counter];
+
+                    counter++;
                 }
-                rend.materials = oldMats[counter];
+                Debug.Log("DISABLED highlight material on: " + obj);
 
-                counter++;
+                //var numMaterials = rendererObj.materials.Length - 2;
+                //rendererObj.materials[numMaterials] = this.mat;
+               
             }
-            Debug.Log("DISABLED highlight material on: " + obj);
-
-            //var numMaterials = rendererObj.materials.Length - 2;
-            //rendererObj.materials[numMaterials] = this.mat;
 
             if (keyChange)
             {
@@ -420,23 +436,27 @@ public class PickupObject : MonoBehaviour
                 GameObject.Find("button_e").GetComponent<Image>().enabled = false;
                 Debug.Log("DISABLED button_e on: " + obj);
             }
+
         }
         else
         {
-
-            foreach (Renderer rend in rendChildren)
+            if (!isInteractable)
             {
-                Material[] newMats = new Material[rend.materials.Length];
-                for (int i = 0; i < rend.materials.Length; i++)
+                foreach (Renderer rend in rendChildren)
                 {
-                    newMats[i] = mat;
+                    Material[] newMats = new Material[rend.materials.Length];
+                    for (int i = 0; i < rend.materials.Length; i++)
+                    {
+                        newMats[i] = mat;
+                    }
+                    rend.materials = newMats;
                 }
-                rend.materials = newMats;
-            }
-            Debug.Log("ENABLED highlight material on: " + obj);
+                Debug.Log("ENABLED highlight material on: " + obj);
 
-            //var numMaterials = rendererObj.materials.Length;
-            //rendererObj.materials[numMaterials] = this.mat;
+                //var numMaterials = rendererObj.materials.Length;
+                //rendererObj.materials[numMaterials] = this.mat;
+
+            }
 
             if (keyChange)
             {

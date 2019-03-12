@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+
     /*
      * Interact is the event that is called when you're trying to interact
      * with an item. Implementation is in the object. For example, the cauldron
