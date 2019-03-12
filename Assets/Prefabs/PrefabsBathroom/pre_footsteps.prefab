@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7060466858687509696}
   - component: {fileID: 7060466858687509697}
   m_Layer: 0
-  m_Name: placeholder_footsteps_b
+  m_Name: pre_footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7060466858687509703}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0.78, y: -1.1409999, z: 3.4390001}
-  m_LocalScale: {x: 0.12500003, y: 0.12500006, z: 0.12500006}
+  m_LocalScale: {x: 0.07990323, y: 0.079903275, z: 0.079903275}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67447838fe65c5847ae828795583e274, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e233c4bb86c8d0b41a085b95303d753d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
