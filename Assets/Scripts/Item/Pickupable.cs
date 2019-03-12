@@ -9,6 +9,10 @@ public class Pickupable : MonoBehaviour
     private bool used = false;
     private bool key_got = false;
 
+    private Component[] origRenderers;
+    //public List<List<Material>> origMats = new List<List<Material>>();
+    public List<Material[]> origMats = new List<Material[]>(); //a list of arrays of materials
+
     GameObject player;
 
     // Use this for initialization
@@ -18,6 +22,17 @@ public class Pickupable : MonoBehaviour
         {
             SetupCollisionsIgnore();
         }
+
+        origRenderers = this.GetComponentsInChildren(typeof(Renderer));
+        foreach(Renderer rend in origRenderers)
+        {
+            origMats.Add(rend.materials);
+        }
+
+        //for(int r=0; r<origRenderers.Length; r++)
+        //{
+
+        //}
     }
 
     public void obtainKey()
