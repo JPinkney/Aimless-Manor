@@ -13,6 +13,12 @@ TagManager:
   - kitchen_portal
   - kitchen_key
   - kitchen
+  - tutorial
+  - tutorial_key
+  - hallway
+  - hallway_key
+  - Skull
+  - Egg
   layers:
   - Default
   - TransparentFX
@@ -22,8 +28,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Post Processing
+  - Player
   - 
   - 
   - 
