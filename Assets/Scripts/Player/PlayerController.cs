@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rb.AddForce(transform.up * -9.8f);
 
         if (Cursor.lockState != CursorLockMode.Locked)
         {

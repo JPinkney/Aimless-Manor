@@ -591,15 +591,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3343427492352623016, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+    - target: {fileID: 3343427492233289382, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
-      propertyPath: m_Name
-      value: Player
+      propertyPath: m_LocalPosition.y
+      value: 1.76
       objectReference: {fileID: 0}
-    - target: {fileID: 3343427492352623016, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_Depth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492233289401, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492352622994, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492352622995, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492352622995, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 0.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 3343427492352622996, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
@@ -676,55 +711,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289382, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+    - target: {fileID: 3343427492352623016, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.76
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343427492352623016, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3343427493475483321, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
       propertyPath: m_Name
       value: colleeder
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492352622994, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492352622995, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492352622995, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 0.0000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: m_Depth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: far clip plane
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: m_ForceIntoRT
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343427492233289401, guid: 14acad5b4b0dd4043ab9e1b454769a51,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14acad5b4b0dd4043ab9e1b454769a51, type: 3}
