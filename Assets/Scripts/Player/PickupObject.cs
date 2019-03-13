@@ -423,7 +423,7 @@ public class PickupObject : MonoBehaviour
 
                     counter++;
                 }
-                Debug.Log("DISABLED highlight material on: " + obj);
+                //Debug.Log("DISABLED highlight material on: " + obj);
 
                 //var numMaterials = rendererObj.materials.Length - 2;
                 //rendererObj.materials[numMaterials] = this.mat;
@@ -434,7 +434,7 @@ public class PickupObject : MonoBehaviour
             {
                 // KEY E disappears
                 GameObject.Find("button_e").GetComponent<Image>().enabled = false;
-                Debug.Log("DISABLED button_e on: " + obj);
+                //Debug.Log("DISABLED button_e on: " + obj);
             }
 
         }
@@ -451,7 +451,7 @@ public class PickupObject : MonoBehaviour
                     }
                     rend.materials = newMats;
                 }
-                Debug.Log("ENABLED highlight material on: " + obj);
+                //Debug.Log("ENABLED highlight material on: " + obj);
 
                 //var numMaterials = rendererObj.materials.Length;
                 //rendererObj.materials[numMaterials] = this.mat;
@@ -462,7 +462,7 @@ public class PickupObject : MonoBehaviour
             {
                 // KEY E appears
                 GameObject.Find("button_e").GetComponent<Image>().enabled = true;
-                Debug.Log("ENABLED button_e on: " + obj);
+                //Debug.Log("ENABLED button_e on: " + obj);
             }
         }
 

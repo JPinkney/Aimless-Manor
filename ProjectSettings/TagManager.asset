@@ -19,6 +19,8 @@ TagManager:
   - hallway_key
   - Skull
   - Egg
+  - left_door
+  - right_door
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HallwayTutorial : Interactable
 {
-
     public GameObject hiddenEgg;
     public GameObject tutorialRoomPortal;
 

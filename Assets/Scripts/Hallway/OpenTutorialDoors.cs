@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenableTutorialDoors : MonoBehaviour
+public class OpenTutorialDoors : MonoBehaviour
 {
     //guide from: https://answers.unity.com/questions/896552/opening-door-script-in-c.html
     //substantially modified !EXPERIMENTAL! doing multiple axes at once can cause it to look funky...
@@ -49,7 +49,8 @@ public class OpenableTutorialDoors : MonoBehaviour
 
     public void open()
     {
-        StartCoroutine(this.MoveDoor(doorClose));
+        Debug.Log("Are u fucking joking");
+        StartCoroutine(this.MoveDoor(doorOpen));
     }
 
 }
