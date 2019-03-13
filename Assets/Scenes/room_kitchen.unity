@@ -6348,7 +6348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc7e089b77ee4d2abdef4e263fd2ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreCollisionsWithPlayer: 1
+  ignoreCollisionsWithPlayer: 0
 --- !u!1 &430203140
 GameObject:
   m_ObjectHideFlags: 0
