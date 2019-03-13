@@ -1,38 +1,27 @@
 fileFormatVersion: 2
-guid: c3d542052440ca24f9473471845a30f3
+guid: 493f6b77c7f497c4fa3e4f088fb3b063
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: gem1
-    2100002: chains
-    2100004: lambert1
-    2100006: candles1
+    2100000: book
+    2100002: wood
+    2100004: recipes
     2300000: //RootNode
     3300000: //RootNode
-    4300000: gwm1
+    4300000: polySurface5
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: candles1
-    second: {fileID: 2100000, guid: b16918176111b214b9f96c12a5bcbaa2, type: 2}
+      name: book
+    second: {fileID: 2100000, guid: 2d0d021c304637e45bd7780336a7e1d0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: chains
-    second: {fileID: 2100000, guid: e0594ea347de52047af64bcda884a33b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: gem1
-    second: {fileID: 2100000, guid: b358704ae8682f44ebcbd9189cdf24c0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: e0594ea347de52047af64bcda884a33b, type: 2}
+      name: wood
+    second: {fileID: 2100000, guid: 532b364dcde22b842996bcd37efe7e37, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,7 +61,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
