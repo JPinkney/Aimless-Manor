@@ -79,10 +79,19 @@ public class Cauldron : Interactable
                         tag1HasBeenAdded = true;
                         hiddenIngredient1.SetActive(true);
 
-                        guideConst.SetActive(true);
-                        guide1.SetActive(false);
-                        guide2.SetActive(true);
-                        guide3.SetActive(false);
+                        if (!this.tag2HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(false);
+                            guide2.SetActive(true);
+                            guide3.SetActive(false);
+                        } else if (!this.tag3HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(false);
+                            guide2.SetActive(false);
+                            guide3.SetActive(true);
+                        }
 
                         break;
                     }
@@ -91,10 +100,20 @@ public class Cauldron : Interactable
                         tag2HasBeenAdded = true;
                         hiddenIngredient2.SetActive(true);
 
-                        guideConst.SetActive(true);
-                        guide1.SetActive(false);
-                        guide2.SetActive(false);
-                        guide3.SetActive(true);
+                        if (!this.tag1HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(true);
+                            guide2.SetActive(false);
+                            guide3.SetActive(false);
+                        }
+                        else if (!this.tag3HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(false);
+                            guide2.SetActive(false);
+                            guide3.SetActive(true);
+                        }
 
                         break;
                     }
@@ -103,10 +122,20 @@ public class Cauldron : Interactable
                         tag3HasBeenAdded = true;
                         hiddenIngredient3.SetActive(true);
 
-                        guideConst.SetActive(false);
-                        guide1.SetActive(false);
-                        guide2.SetActive(false);
-                        guide3.SetActive(false);
+                        if (!this.tag1HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(true);
+                            guide2.SetActive(false);
+                            guide3.SetActive(false);
+                        }
+                        else if (!this.tag2HasBeenAdded)
+                        {
+                            guideConst.SetActive(true);
+                            guide1.SetActive(false);
+                            guide2.SetActive(true);
+                            guide3.SetActive(false);
+                        }
 
                         break;
                     }
@@ -114,6 +143,16 @@ public class Cauldron : Interactable
 
             if((this.tag1HasBeenAdded? 1:0) + (this.tag2HasBeenAdded ? 1 : 0) + (this.tag3HasBeenAdded ? 1 : 0) == 1)
             {
+                
+            }
+
+            if (this.HasPuzzleFinished())
+            {
+                guideConst.SetActive(false);
+                guide1.SetActive(false);
+                guide2.SetActive(false);
+                guide3.SetActive(false);
+
                 water.SetActive(true);
                 hiddenBubbles.Play();
                 loopSound.Play();
