@@ -29,7 +29,7 @@ public class PortalTeleporter : MonoBehaviour
 
             if (dotProduct < 0f)
             {
-                player.gameObject.GetComponent<Rigidbody>().useGravity = gravity;
+                //player.gameObject.GetComponent<Rigidbody>().useGravity = gravity;
 
                 playerTransform.position = receiver.position;
                 Debug.Log(playerTransform.rotation);
