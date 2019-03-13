@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: key
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_keybase
+    second: {fileID: 2100000, guid: 723a2aef04a47884cb19bf4b052f4c23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_keygem
+    second: {fileID: 2100000, guid: 16dc9096172424c44af9ce051af64d19, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
