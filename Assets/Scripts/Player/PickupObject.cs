@@ -16,6 +16,7 @@ public class PickupObject : MonoBehaviour
     GameObject currentlySelectedObj;
     public Material mat;
 
+
     private GameObject lastOutlinedObject;
 
     private Inventory inventory;

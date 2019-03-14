@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3ab13087cd365164fa6a122cf36865e1, type: 2}
+  - {fileID: 2100000, guid: e0594ea347de52047af64bcda884a33b, type: 2}
   - {fileID: 2100000, guid: 3a339b8da14b01346863aaf2debbb825, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -122,17 +122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_CandleFlame_Orange
       objectReference: {fileID: 0}
-    - target: {fileID: 5013870381804996087, guid: 28b59e24599ee814c816fa5ad05e35f9,
-        type: 3}
-      propertyPath: m_DrawHalo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5013870381804996087, guid: 28b59e24599ee814c816fa5ad05e35f9,
-        type: 3}
-      propertyPath: m_Flare
-      value: 
-      objectReference: {fileID: 12100000, guid: cb2528963944ff74baa88c5764f94850,
-        type: 2}
     - target: {fileID: 3112118584481430446, guid: 28b59e24599ee814c816fa5ad05e35f9,
         type: 3}
       propertyPath: m_LocalPosition.z

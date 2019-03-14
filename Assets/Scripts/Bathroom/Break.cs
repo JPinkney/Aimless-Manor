@@ -11,6 +11,8 @@ public class Break : Interactable
     public AudioClip breakNoise;
     private AudioSource breakSource;
 
+    public GameObject pedestal;
+
     //For the voicelines
     public AudioClip voicelineNoise;
     private AudioSource voicelineSource;
@@ -52,6 +54,11 @@ public class Break : Interactable
             brokenGlass.localScale = transform.localScale;
         }
 
+        if (pedestal)
+        {
+            pedestal.SetActive(true);
+        }
+
         if (glassShatter)
         {
             glassShatter.Play();
@@ -59,12 +66,13 @@ public class Break : Interactable
 
         if (keyObj)
         {
-            keyObj.transform.position = newKeyLocation.position;
+            //keyObj.transform.position = newKeyLocation.position;
+            keyObj.SetActive(true);
         }
 
         if (glimmer)
         {
-            glimmer.Play();
+            glimmer.Stop();
         }
 
         Physics.IgnoreLayerCollision(9, 9);
