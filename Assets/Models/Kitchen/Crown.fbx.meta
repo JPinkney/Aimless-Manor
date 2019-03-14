@@ -14,7 +14,37 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: polySurface224
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: amethyst
+    second: {fileID: 2100000, guid: 72e1318a95c262443a418d1aec0cafe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emerald
+    second: {fileID: 2100000, guid: 40c2adb55c901744dada6a7a6ff83530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pearl
+    second: {fileID: 2100000, guid: 77dc24a88a1b5fb4092da5a00d95b073, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ruby
+    second: {fileID: 2100000, guid: a2df1fc7b935549a1b2ff5378736319b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sapphire
+    second: {fileID: 2100000, guid: 5b085af7e2aeb594e9d87ca91607c9cb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

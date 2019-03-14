@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41bb92b2ea924edd96ab9fbe1de749b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: a2df1fc7b935549a1b2ff5378736319b, type: 2}
+  mat: {fileID: 2100000, guid: 82480c81ff965f244be0d4e765744c06, type: 2}
 --- !u!82 &804111896
 AudioSource:
   m_ObjectHideFlags: 0
