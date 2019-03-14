@@ -48,18 +48,27 @@ public class PlayerController : MonoBehaviour
         if (axisX < 0 || axisX > 0)
         {
             //Look Left
-            //Vector3 rot = new Vector3(0f, axisX, 0f);
-            //transform.Rotate(rot);
-            euler.y += axisX;
+            Vector3 rot = new Vector3(0f, axisX, 0f);
+            transform.Rotate(rot);
+            //euler.y += axisX;
         }
 
         //Looking up and down with controller
         if (axisY < 0 || axisY > 0)
         {
             //Look Right
-            //Vector3 rot = new Vector3(-axisY, 0f, 0f);
-            //cam.transform.Rotate(rot);
-            euler.x += (-axisY);
+            Vector3 rot = new Vector3(axisY, 0f, 0f);
+            cam.transform.Rotate(-rot);
+
+            float test = Vector3.Angle(transform.forward, cam.transform.forward);
+            //float test = Vector3.Angle(cam.transform.forward, -transform.up);
+            //Debug.Log(test);
+
+            if (test > 80f)
+            {
+                cam.transform.Rotate(rot);
+            }
+            //euler.x += (-axisY);
         }
 
         /*
