@@ -70,7 +70,12 @@ public class PickupObject : MonoBehaviour
         }
         //FindAndSetOutlineMaterialForObj(false, o.item, false);
         //o.item.layer = 9;
-        o.item.gameObject.layer = 9;
+        Transform[] children = o.item.GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            child.gameObject.layer = 11;
+        }
+        //o.item.gameObject.layer = 11;
         o.item.transform.SetParent(this.transform);
         o.item.transform.SetParent(null);
         o.item.transform.position = Camera.main.ScreenToWorldPoint(pos);
@@ -229,7 +234,13 @@ public class PickupObject : MonoBehaviour
         FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
 
         GameObject obj = this.inventory.FindFirstObject();
-        currentlySelectedObj.layer = 0;
+
+        Transform[] children = currentlySelectedObj.GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            child.gameObject.layer = 0;
+        }
+
         if (obj)
         {
             FindAndSetOutlineMaterialForObj(false, obj, false);
@@ -284,7 +295,13 @@ public class PickupObject : MonoBehaviour
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
-            currentlySelectedObj.layer = 0;
+
+            Transform[] children = currentlySelectedObj.GetComponentsInChildren<Transform>();
+            foreach (Transform child in children)
+            {
+                child.gameObject.layer = 0;
+            }
+
             if (obj)
             {
                 FindAndSetOutlineMaterialForObj(false, obj, false);
@@ -337,7 +354,13 @@ public class PickupObject : MonoBehaviour
             //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
             //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
             GameObject obj = this.inventory.FindFirstObject();
-            currentlySelectedObj.layer = 0;
+
+            Transform[] children = currentlySelectedObj.GetComponentsInChildren<Transform>();
+            foreach (Transform child in children)
+            {
+                child.gameObject.layer = 0;
+            }
+
             if (obj)
             {
                 FindAndSetOutlineMaterialForObj(false, obj, false);
