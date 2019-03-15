@@ -10,6 +10,8 @@ public class Key_Glimmer_Gone : Interactable
     public ParticleSystem glimmer;
     public ParticleSystem confettiBurst;
     public ParticleSystem confettiRain;
+    private int count;
+    private bool done;
 
     public void Start()
     {
@@ -35,14 +37,38 @@ public class Key_Glimmer_Gone : Interactable
             glimmer.Stop();
         }
 
-        if (confettiBurst)
+        if (confettiBurst && done == false)
         {
+            /*for (int count = 0; count < 3; count++)
+            {
+                
+            }*/
+
+            if (count == 3)
+            {
+
+                done = true;
+            }
+
             confettiBurst.Play();
+
         }
 
-        if (confettiRain)
+        if (confettiRain && done == false)
         {
+            /*for (int count = 0; count < 3; count++)
+            {
+                
+            }*/
+            count++;
+
+            if (count == 3){
+
+                done = true;
+            }
+
             confettiRain.Play();
+
         }
 
         //Physics.IgnoreLayerCollision(9, 9);
