@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using System.Collections.Generic;
+//using UnityEditor.SceneManagement;
 
+//#if UNITY_EDITOR
 public class RoomController : MonoBehaviour
 {
     RoomScript[] m_RoomList;
@@ -23,6 +26,7 @@ public class RoomController : MonoBehaviour
     PortalScript m_sourcePortal;
     PortalScript m_destPortal;
 
+   
     void Start()
     {
         m_staticRef = this;
@@ -146,3 +150,4 @@ public class RoomController : MonoBehaviour
     }
 
 }
+#endif

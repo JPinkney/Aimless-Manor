@@ -1,0 +1,52 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Key_Glimmer_Gone : Interactable
+{
+    // key.activeInHierarchy == true
+
+    public GameObject keyObj;
+    public ParticleSystem glimmer;
+    public ParticleSystem confettiBurst;
+    public ParticleSystem confettiRain;
+
+    public void Start()
+    {
+        
+    }
+
+    public override void Interact(Inventory inv, GameObject obj)
+    {
+        //this.gameObject.SetActive(false);
+
+        // Instantiate(brokenGlass, transform.position, transform.rotation);
+        // brokenGlass.localScale = transform.localScale;
+        // highlightLight.SetActive(false);
+        if (keyObj)
+        {
+            //keyObj.transform.position = newKeyLocation.position;
+            //keyObj.SetActive(true);
+        }
+
+
+        if (glimmer)
+        {
+            glimmer.Stop();
+        }
+
+        if (confettiBurst)
+        {
+            confettiBurst.Play();
+        }
+
+        if (confettiRain)
+        {
+            confettiRain.Play();
+        }
+
+        //Physics.IgnoreLayerCollision(9, 9);
+        //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
+
+    }
+}

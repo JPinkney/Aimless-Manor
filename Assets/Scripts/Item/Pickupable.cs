@@ -14,6 +14,7 @@ public class Pickupable : MonoBehaviour
     public List<Material[]> origMats = new List<Material[]>(); //a list of arrays of materials
 
     GameObject player;
+    //GameObject key;
 
     // Use this for initialization
     void Start()
@@ -39,6 +40,7 @@ public class Pickupable : MonoBehaviour
     {
         Debug.Log("OBTAINING KEY");
         this.key_got = true;
+        
     }
 
     public bool KeyObtained()
