@@ -9194,6 +9194,11 @@ PrefabInstance:
       propertyPath: rightDoor
       value: 
       objectReference: {fileID: 1699477131}
+    - target: {fileID: 4835088046097579826, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060,
+        type: 3}
+      propertyPath: glimmer
+      value: 
+      objectReference: {fileID: 7444595239917449881}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060, type: 3}
 --- !u!4 &7444595239917449879 stripped
@@ -9205,6 +9210,12 @@ Transform:
 --- !u!1 &7444595239917449880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3579763178259202380, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060,
+    type: 3}
+  m_PrefabInstance: {fileID: 7444595239917449878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7444595239917449881 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 833989130788624508, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060,
     type: 3}
   m_PrefabInstance: {fileID: 7444595239917449878}
   m_PrefabAsset: {fileID: 0}

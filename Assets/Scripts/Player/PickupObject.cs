@@ -1,15 +1,16 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
+//#if UNITY_EDITOR
 //using this script requires at least 1 collider attached and 1 rigidbody attached
 //**you may attach an additional, larger collider (not on the children, please) for highlighting purposes if you set it to TRIGGER**
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-
 public class PickupObject : MonoBehaviour
 {
     GameObject mainCamera;
@@ -500,4 +501,4 @@ public class PickupObject : MonoBehaviour
         }
     }
 }
-
+#endif

@@ -6,6 +6,7 @@ public class HallwayTutorial : Interactable
 {
     public GameObject hiddenEgg;
     public GameObject tutorialRoomPortal;
+    public ParticleSystem glimmer;
 
     public override void Interact(Inventory inv, GameObject obj)
     {
@@ -15,6 +16,7 @@ public class HallwayTutorial : Interactable
             inv.RemoveGameObjectFromInventory(obj);
             hiddenEgg.SetActive(true);
             tutorialRoomPortal.SetActive(true);
+            glimmer.Stop();
         }
     }
 }
