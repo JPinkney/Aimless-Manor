@@ -439,14 +439,17 @@ public class PickupObject : MonoBehaviour
 
                 foreach (Renderer rend in rendChildren)
                 {
-                    Material[] newMats = new Material[rend.materials.Length];
-                    for (int i = 0; i < rend.materials.Length; i++)
+                    if (rend.gameObject.GetComponent<ParticleSystem>() == null)
                     {
-                        newMats[i] = mat;
-                    }
-                    rend.materials = oldMats[counter];
+                        Material[] newMats = new Material[rend.materials.Length];
+                        for (int i = 0; i < rend.materials.Length; i++)
+                        {
+                            newMats[i] = mat;
+                        }
+                        rend.materials = oldMats[counter];
 
-                    counter++;
+                        counter++;
+                    }
                 }
                 //Debug.Log("DISABLED highlight material on: " + obj);
 
@@ -469,12 +472,15 @@ public class PickupObject : MonoBehaviour
             {
                 foreach (Renderer rend in rendChildren)
                 {
-                    Material[] newMats = new Material[rend.materials.Length];
-                    for (int i = 0; i < rend.materials.Length; i++)
+                    if (rend.gameObject.GetComponent<ParticleSystem>() == null)
                     {
-                        newMats[i] = mat;
+                        Material[] newMats = new Material[rend.materials.Length];
+                        for (int i = 0; i < rend.materials.Length; i++)
+                        {
+                            newMats[i] = mat;
+                        }
+                        rend.materials = newMats;
                     }
-                    rend.materials = newMats;
                 }
                 //Debug.Log("ENABLED highlight material on: " + obj);
 
