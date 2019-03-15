@@ -91,7 +91,7 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 0
+    value: 3
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -127,7 +127,7 @@ MonoBehaviour:
     value: {x: 0.95898694, y: 0.95271593, z: 1, w: 0}
   gain:
     overrideState: 1
-    value: {x: 0.9159908, y: 0.9411374, z: 1, w: 0}
+    value: {x: 0.9160728, y: 0.9349066, z: 1, w: 0}
   masterCurve:
     overrideState: 1
     value:
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   focusDistance:
     overrideState: 1
     value: 0.9
@@ -1380,13 +1380,13 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   shutterAngle:
     overrideState: 1
     value: 246
   sampleCount:
     overrideState: 1
-    value: 10
+    value: 6
 --- !u!114 &114690192825477314
 MonoBehaviour:
   m_ObjectHideFlags: 3
