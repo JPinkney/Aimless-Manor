@@ -10,6 +10,8 @@ using System.Collections.Generic;
 public class RoomController : MonoBehaviour
 {
     RoomScript[] m_RoomList;
+
+    public string [] room_roots;
     public static Dictionary<string, bool> CompletedRooms = new Dictionary<string, bool>();
 
     // This is going to stop a mapping of build setting number to if its loaded or not
@@ -31,24 +33,31 @@ public class RoomController : MonoBehaviour
     {
         m_staticRef = this;
 
-        for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
-            string scene_name = EditorBuildSettings.scenes[i].path;
-            
-            if(scene_name != "")
-            {
-                scene_name = scene_name.Substring(scene_name.LastIndexOf('/') + 1, scene_name.LastIndexOf('.') - (scene_name.LastIndexOf('/') + 1));
-
-                if (scene_name != "player_root")
-                {
-                    CompletedRooms[scene_name] = false;
-                    LoadedRooms[i] = false;
-                }
-                else
-                {
-                    LoadedRooms[i] = true;
-                }
-            }
+        LoadedRooms[0] = true;
+        for(int i = 0; i < room_roots.Length; i ++)
+        {
+            CompletedRooms[room_roots[i]] = false;
+            LoadedRooms[i+1] = false;
         }
+
+        //for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
+        //    string scene_name = EditorBuildSettings.scenes[i].path;
+
+        //    if(scene_name != "")
+        //    {
+        //        scene_name = scene_name.Substring(scene_name.LastIndexOf('/') + 1, scene_name.LastIndexOf('.') - (scene_name.LastIndexOf('/') + 1));
+
+        //        if (scene_name != "player_root")
+        //        {
+        //            CompletedRooms[scene_name] = false;
+        //            LoadedRooms[i] = false;
+        //        }
+        //        else
+        //        {
+        //            LoadedRooms[i] = true;
+        //        }
+        //    }
+        //}
 
         portalDisable = FindObjectOfType<RoomPortalDisabler>();
 
