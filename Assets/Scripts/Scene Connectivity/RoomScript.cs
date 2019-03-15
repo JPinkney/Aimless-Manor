@@ -64,7 +64,7 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        if (keys.Length > 0 && !RoomController.CompletedRooms["room_" + this.gameObject.tag])
+        if (keys.Length > 0 && !RoomController.CompletedRooms[this.gameObject.tag])
         {
             Complete();
         }
@@ -80,7 +80,7 @@ public class RoomScript : MonoBehaviour
             }
         }
 
-        RoomController.CompletedRooms["room_" + this.gameObject.tag] = true;
+        RoomController.CompletedRooms[this.gameObject.tag] = true;
         RoomController.KeyTracker.GetComponent<KeyHUD>().CollectKey();
         return true;
     }
