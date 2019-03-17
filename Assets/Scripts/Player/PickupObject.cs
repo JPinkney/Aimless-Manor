@@ -85,10 +85,10 @@ public class PickupObject : MonoBehaviour
 
     void Pickup()
     {
-        if (this.inventory.IsInventoryFull())
-        {
-            return;
-        }
+        //if (this.inventory.IsInventoryFull())
+        //{
+        //    return;
+        //}
 
         int x = Screen.width / 2;
         int y = Screen.height / 2;
@@ -120,7 +120,7 @@ public class PickupObject : MonoBehaviour
     {
 
         Pickupable pickupableObj = hit.collider.GetComponent<Pickupable>();
-        if (pickupableObj != null)
+        if (pickupableObj != null && !this.inventory.IsInventoryFull())
         {
 
             if (pickupableObj.tag.Contains("key"))
