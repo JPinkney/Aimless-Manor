@@ -11,7 +11,7 @@ public class Collisions : MonoBehaviour
 
         if (other.gameObject.name.Contains("NoTele"))
         {
-            man.GetComponent<TheEnabler>().ToggleCol();
+            //man.GetComponent<TheEnabler>().ToggleCol();
         }
     }
 
@@ -19,7 +19,7 @@ public class Collisions : MonoBehaviour
     {
         if (other.gameObject.name.Contains("NoTele"))
         {
-            man.GetComponent<TheEnabler>().ToggleCol();
+            //man.GetComponent<TheEnabler>().ToggleCol();
         }
     }
 }
