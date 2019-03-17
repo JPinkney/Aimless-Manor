@@ -2035,6 +2035,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1928171194}
     m_Modifications:
+    - target: {fileID: 731477102896399084, guid: 2dad949a2e1515e46b1260e7e9769285,
+        type: 3}
+      propertyPath: m_Name
+      value: pre_medmirror_roof
+      objectReference: {fileID: 0}
     - target: {fileID: 731477102896399083, guid: 2dad949a2e1515e46b1260e7e9769285,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2089,11 +2094,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 731477102896399084, guid: 2dad949a2e1515e46b1260e7e9769285,
-        type: 3}
-      propertyPath: m_Name
-      value: pre_medmirror_roof
       objectReference: {fileID: 0}
     - target: {fileID: 731477102896399085, guid: 2dad949a2e1515e46b1260e7e9769285,
         type: 3}
@@ -2241,6 +2241,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 604896219}
     m_Modifications:
+    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
+        type: 3}
+      propertyPath: m_Name
+      value: key_b002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
+        type: 3}
+      propertyPath: m_TagString
+      value: bathroom_key
+      objectReference: {fileID: 0}
     - target: {fileID: 1557588320876478912, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,21 +2310,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
-        type: 3}
-      propertyPath: m_Name
-      value: key_b002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1557588320876518880, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
-        type: 3}
-      propertyPath: m_TagString
-      value: bathroom_key
       objectReference: {fileID: 0}
     - target: {fileID: 1557588320874578720, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
         type: 3}
@@ -3329,7 +3329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1117167333
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117167332}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1117167334
 Camera:
   m_ObjectHideFlags: 0
@@ -3793,6 +3793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1928171194}
     m_Modifications:
+    - target: {fileID: 260019637, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+      propertyPath: m_Name
+      value: Pre_FloorGlassWalls_roof
+      objectReference: {fileID: 0}
     - target: {fileID: 260019640, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.376684
@@ -3837,15 +3841,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 260019637, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
-      propertyPath: m_Name
-      value: Pre_FloorGlassWalls_roof
-      objectReference: {fileID: 0}
     - target: {fileID: 260019638, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
-    - target: {fileID: 770900510, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
@@ -3853,14 +3849,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
-    - target: {fileID: 1100846197, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
     - target: {fileID: 691969512, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16dc9096172424c44af9ce051af64d19, type: 2}
+    - target: {fileID: 770900510, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
+    - target: {fileID: 1100846197, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
     - target: {fileID: 1011734511, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5303,6 +5303,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 604896219}
     m_Modifications:
+    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+      propertyPath: m_Name
+      value: key_gold_hidden
+      objectReference: {fileID: 0}
+    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+      propertyPath: m_TagString
+      value: tutorial_key
+      objectReference: {fileID: 0}
+    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 462124, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.194
@@ -5358,22 +5374,6 @@ PrefabInstance:
     - target: {fileID: 462124, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
-      propertyPath: m_Name
-      value: key_gold_hidden
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
-      propertyPath: m_TagString
-      value: tutorial_key
-      objectReference: {fileID: 0}
-    - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 105912, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_TagString
@@ -5856,11 +5856,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5950396389620230365, guid: 9e4873bca32e98b47804dd0ef6532e26,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: a2df1fc7b935549a1b2ff5378736319b, type: 2}
     - target: {fileID: 4131209120558078861, guid: 9e4873bca32e98b47804dd0ef6532e26,
         type: 3}
       propertyPath: m_Size.x
@@ -5906,6 +5901,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 21.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5950396389620230365, guid: 9e4873bca32e98b47804dd0ef6532e26,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2df1fc7b935549a1b2ff5378736319b, type: 2}
     m_RemovedComponents:
     - {fileID: 112253453054880073, guid: 9e4873bca32e98b47804dd0ef6532e26, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4873bca32e98b47804dd0ef6532e26, type: 3}
@@ -5982,11 +5982,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
-    - target: {fileID: 5820218902789891090, guid: 8688188d0366ad64b8a71f629f722150,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 16dc9096172424c44af9ce051af64d19, type: 2}
     - target: {fileID: 6902186934430909090, guid: 8688188d0366ad64b8a71f629f722150,
         type: 3}
       propertyPath: m_Size.y
@@ -5997,6 +5992,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 11.9
       objectReference: {fileID: 0}
+    - target: {fileID: 5820218902789891090, guid: 8688188d0366ad64b8a71f629f722150,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16dc9096172424c44af9ce051af64d19, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8688188d0366ad64b8a71f629f722150, type: 3}
 --- !u!4 &2106988920 stripped
@@ -6305,6 +6305,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129353602}
     m_Modifications:
+    - target: {fileID: 731477102896399084, guid: 2dad949a2e1515e46b1260e7e9769285,
+        type: 3}
+      propertyPath: m_Name
+      value: pre_medmirror
+      objectReference: {fileID: 0}
     - target: {fileID: 731477102896399083, guid: 2dad949a2e1515e46b1260e7e9769285,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6359,11 +6364,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 731477102896399084, guid: 2dad949a2e1515e46b1260e7e9769285,
-        type: 3}
-      propertyPath: m_Name
-      value: pre_medmirror
       objectReference: {fileID: 0}
     - target: {fileID: 731477102896399085, guid: 2dad949a2e1515e46b1260e7e9769285,
         type: 3}
@@ -6754,6 +6754,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 727270159265108108}
     m_Modifications:
+    - target: {fileID: 1632582365964739327, guid: 3d0b970ec892a114e80f36d24dba10b4,
+        type: 3}
+      propertyPath: m_Name
+      value: window
+      objectReference: {fileID: 0}
     - target: {fileID: 1632582365964739314, guid: 3d0b970ec892a114e80f36d24dba10b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6823,11 +6828,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.010299999
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632582365964739327, guid: 3d0b970ec892a114e80f36d24dba10b4,
-        type: 3}
-      propertyPath: m_Name
-      value: window
       objectReference: {fileID: 0}
     - target: {fileID: 4490556513662503710, guid: 3d0b970ec892a114e80f36d24dba10b4,
         type: 3}
@@ -6949,6 +6949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129353602}
     m_Modifications:
+    - target: {fileID: 260019637, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+      propertyPath: m_Name
+      value: Pre_FloorGlassWalls
+      objectReference: {fileID: 0}
     - target: {fileID: 260019640, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.375996
@@ -6992,10 +6996,6 @@ PrefabInstance:
     - target: {fileID: 260019640, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260019637, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
-      propertyPath: m_Name
-      value: Pre_FloorGlassWalls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
