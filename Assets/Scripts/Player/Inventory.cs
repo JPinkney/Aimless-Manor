@@ -23,7 +23,7 @@ public class InventoryItem
 public class Inventory
 {
 
-    private static int inventory_size = 2;
+    private static int inventory_size = 21;
     private InventoryItem[] inventory = new InventoryItem[inventory_size];
 
     public Inventory()
@@ -40,10 +40,10 @@ public class Inventory
         {
             return true;
         }
-        if (this.inventory[1] != null && this.inventory[1].item != null && this.inventory[1].item == obj)
-        {
-            return true;
-        }
+        //if (this.inventory[1] != null && this.inventory[1].item != null && this.inventory[1].item == obj)
+        //{
+        //    return true;
+        //}
         return false;
     }
 
@@ -94,10 +94,10 @@ public class Inventory
         {
             this.inventory[index] = new InventoryItem(obj, InventoryItem.Location.LEFT);
         }
-        else if (index == 1)
-        {
-            this.inventory[index] = new InventoryItem(obj, InventoryItem.Location.RIGHT);
-        }
+        //else if (index == 1)
+        //{
+        //    this.inventory[index] = new InventoryItem(obj, InventoryItem.Location.RIGHT);
+        //}
     }
 
     public void RemoveGameObjectFromInventory(GameObject obj)
@@ -115,7 +115,8 @@ public class Inventory
 
     public bool IsEmpty()
     {
-        return this.inventory[0] == null && this.inventory[1] == null;
+        return this.inventory[0] == null;
+        //return this.inventory[0] == null && this.inventory[1] == null;
     }
 
     public InventoryItem[] GetInventory()
@@ -125,7 +126,8 @@ public class Inventory
 
     public bool IsInventoryFull()
     {
-        return this.inventory[0] != null && this.inventory[1] != null;
+        return this.inventory[0] != null;
+        //return this.inventory[0] != null && this.inventory[1] != null;
     }
 
     public GameObject FindFirstObject()
@@ -133,10 +135,11 @@ public class Inventory
         if (this.inventory[0] != null)
         {
             return this.inventory[0].item;
-        } else if (this.inventory[1] != null)
-        {
-            return this.inventory[1].item;
-        }
+        } 
+        //else if (this.inventory[1] != null)
+        //{
+        //    return this.inventory[1].item;
+        //}
         return null;
     }
 
@@ -146,10 +149,10 @@ public class Inventory
         {
             return this.inventory[0];
         }
-        else if (this.inventory[0] != null)
-        {
-            return this.inventory[1];
-        }
+        //else if (this.inventory[0] != null)
+        //{
+        //    return this.inventory[1];
+        //}
         return null;
     }
 
@@ -172,16 +175,19 @@ public class Inventory
             return firstObj;
         }
 
-        if (index == 0 && this.inventory[1] != null)
-        {
-            return this.inventory[1];
-        } else if (index == 1 && this.inventory[0] != null)
-        {
-            return this.inventory[0];
-        } else
-        {
-            return null;
-        }
+        //if (index == 0 && this.inventory[1] != null)
+        //{
+        //    return this.inventory[1];
+        //} 
+        //else if (index == 1 && this.inventory[0] != null)
+        //{
+        //    return this.inventory[0];
+        //} 
+        //else
+        //{
+        //    return null;
+        //}
+        return null;
     }
 
     private int GetIndexOfCurrentGameObject(GameObject obj)
@@ -213,10 +219,10 @@ public class Inventory
         {
             return 0;
         }
-        else if (this.inventory[1] == null)
-        {
-            return 1;
-        }
+        //else if (this.inventory[1] == null)
+        //{
+        //    return 1;
+        //}
         return -1;
     }
 }
