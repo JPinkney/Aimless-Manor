@@ -2264,7 +2264,7 @@ PrefabInstance:
     - target: {fileID: 1557588320876478912, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.912
+      value: -28.009
       objectReference: {fileID: 0}
     - target: {fileID: 1557588320876478912, guid: e66e1b49661b7fa4aa6d03c8cf6d625a,
         type: 3}
@@ -2443,7 +2443,7 @@ PrefabInstance:
     - target: {fileID: 5007430020314542637, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.9
+      value: -28.01
       objectReference: {fileID: 0}
     - target: {fileID: 5007430020314542637, guid: 3e9c1f3daeb0b4cb4a4e76f2d02b1060,
         type: 3}
@@ -2893,6 +2893,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pre_CeilingLight
       objectReference: {fileID: 0}
+    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2264875250992438182, guid: 4594b988b103e1e42a4143eac2d29365,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2947,11 +2952,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4594b988b103e1e42a4143eac2d29365, type: 3}

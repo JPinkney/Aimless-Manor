@@ -3650,6 +3650,11 @@ PrefabInstance:
       propertyPath: confettiRain
       value: 
       objectReference: {fileID: 195132650}
+    - target: {fileID: 6465718369653916542, guid: dd3848f1871a9314a88d8a699d301067,
+        type: 3}
+      propertyPath: keyObj
+      value: 
+      objectReference: {fileID: 1167270323}
     - target: {fileID: 6465718369653916543, guid: dd3848f1871a9314a88d8a699d301067,
         type: 3}
       propertyPath: m_Size.z
