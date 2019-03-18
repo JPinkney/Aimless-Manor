@@ -29,6 +29,8 @@ public class Cauldron : Interactable
     public ParticleSystem hiddenBubbles;
     public GameObject key;
     public GameObject keyController;
+    public GameObject pedestal;
+    public ParticleSystem potGlimmer;
     public AudioClip bubblingWater;
 
     private AudioSource loopSound;
@@ -205,9 +207,11 @@ public class Cauldron : Interactable
 
         hiddenBubbles.Stop();
         loopSound.Stop();
+        potGlimmer.Stop();
 
         key.SetActive(true);
         keyController.SetActive(true);
+        pedestal.SetActive(true);
 
         isCoroutineExecuting = false;
      }
