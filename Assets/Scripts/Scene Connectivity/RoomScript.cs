@@ -30,8 +30,8 @@ public class RoomScript : MonoBehaviour
                  * Set it to false in loaded rooms so that the RoomController knows
                  * that it can reload it on the new trigger           
                  */
-                RoomController.LoadedRooms[this.gameObject.scene.buildIndex] = false;
-                SceneManager.UnloadSceneAsync(this.gameObject.scene);
+                //RoomController.LoadedRooms[this.gameObject.scene.buildIndex] = false;
+                //SceneManager.UnloadSceneAsync(this.gameObject.scene);
 
                 /*
                  * Close the door behind you
