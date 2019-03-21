@@ -3894,6 +3894,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1061129723399990395, guid: d4b2711ffd8b82c438a149a9fa090d35,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8480ecc35be8f1540ad45bf3773c2752, type: 2}
+    - target: {fileID: 1061129723399990395, guid: d4b2711ffd8b82c438a149a9fa090d35,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8480ecc35be8f1540ad45bf3773c2752, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b2711ffd8b82c438a149a9fa090d35, type: 3}
 --- !u!4 &360107391 stripped
@@ -14309,7 +14319,11 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 3514a8501cf53e64dbfae5c4ed9f6a29, type: 2}
+      objectReference: {fileID: 2100000, guid: 2b91f977ffd2fbd459994c6aba20b29e, type: 2}
+    - target: {fileID: 2300000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77dc24a88a1b5fb4092da5a00d95b073, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
 --- !u!1 &1435065367 stripped
@@ -18045,6 +18059,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 998829a5e07050e4281c46d3a3cb1c24, type: 2}
+    - target: {fileID: 812227780264527805, guid: 36c48160d2f0d415990a22ea99c66045,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5298d2f2ffd5b474c8a7918e1c1392f5, type: 2}
     m_RemovedComponents:
     - {fileID: 905179109757213800, guid: 36c48160d2f0d415990a22ea99c66045, type: 3}
     - {fileID: 2354672855220049658, guid: 36c48160d2f0d415990a22ea99c66045, type: 3}
