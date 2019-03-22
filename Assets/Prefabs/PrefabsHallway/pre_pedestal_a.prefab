@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5007430020314542637
 Transform:
   m_ObjectHideFlags: 0
@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61fa899c18da364fa5ee9d4f7d34302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyObj: {fileID: 0}
+  glimmer: {fileID: 0}
+  confettiBurst: {fileID: 0}
+  confettiRain: {fileID: 0}
 --- !u!1 &6502344927476933955
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiddenEgg: {fileID: 0}
   tutorialRoomPortal: {fileID: 0}
-  glimmer: {fileID: 0}
+  glimmer: {fileID: 833989130788624508}
 --- !u!1001 &372408360935109638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -317,6 +321,12 @@ PrefabInstance:
 --- !u!4 &833989130788624511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1061129723399990393, guid: d4b2711ffd8b82c438a149a9fa090d35,
+    type: 3}
+  m_PrefabInstance: {fileID: 372408360935109638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &833989130788624508 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1061129723399990394, guid: d4b2711ffd8b82c438a149a9fa090d35,
     type: 3}
   m_PrefabInstance: {fileID: 372408360935109638}
   m_PrefabAsset: {fileID: 0}

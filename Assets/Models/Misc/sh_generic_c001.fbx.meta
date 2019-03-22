@@ -57,7 +57,17 @@ ModelImporter:
     4300014: sh_generic_c.002
     4300016: sh_generic_c.001
     4300018: sh_generic_c
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_sh_generic_primary
+    second: {fileID: 2100000, guid: e0594ea347de52047af64bcda884a33b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_sh_generic_secondary
+    second: {fileID: 2100000, guid: fefaf95e691074062a36100876bc3375, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -102,7 +112,7 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -119,7 +129,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
