@@ -24,7 +24,7 @@ public class RoomPortalDisabler : MonoBehaviour
         }
     }
 
-    private void SetVisibility(GameObject[] cameras, bool cameraVisibility)
+    private void SetVisibility(List<GameObject> cameras, bool cameraVisibility)
     {
         foreach (GameObject c in cameras)
         {

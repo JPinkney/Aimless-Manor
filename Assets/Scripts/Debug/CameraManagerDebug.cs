@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class CameraManagerDebug : MonoBehaviour
 {
-    public GameObject[] scenaCameras;
+    //public GameObject[] scenaCameras;
+    public List<GameObject> scenaCameras;
 }
