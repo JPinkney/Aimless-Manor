@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2264875250523176403}
   - component: {fileID: 4302049897244361849}
   m_Layer: 0
-  m_Name: Pre_CeilingLight 1
+  m_Name: Pre_CeilingAmbient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.95784825, b: 0.8349056, a: 1}
   m_Intensity: 1.1
-  m_Range: 4.51
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

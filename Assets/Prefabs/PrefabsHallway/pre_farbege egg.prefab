@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1435065368}
   - component: {fileID: 1435065369}
   m_Layer: 0
-  m_Name: farbege egg
+  m_Name: pre_farbege egg
   m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435065367}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.019, y: 1.3943056, z: 30.578}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
@@ -63,7 +63,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 77dc24a88a1b5fb4092da5a00d95b073, type: 2}
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
-  - {fileID: 2100000, guid: 3514a8501cf53e64dbfae5c4ed9f6a29, type: 2}
+  - {fileID: 2100000, guid: 91e28698744b9dc49820f2993d6f9083, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
