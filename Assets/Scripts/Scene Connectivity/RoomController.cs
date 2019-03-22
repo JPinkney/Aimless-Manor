@@ -158,5 +158,20 @@ public class RoomController : MonoBehaviour
         return null;
     }
 
+
+    public static bool IsAllRoomCompleted()
+    {
+        foreach (KeyValuePair<string, bool> entry in RoomController.CompletedRooms)
+        {
+            if (!entry.Value)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
 }
 #endif
