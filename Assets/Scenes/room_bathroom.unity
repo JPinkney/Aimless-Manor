@@ -1097,19 +1097,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 82eba81b08efd8f469894d1057447fff, type: 3}
---- !u!65 &338981257
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338981255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 658.11566, y: 331.51697, z: 673.5014}
-  m_Center: {x: -0.012634277, y: -4.0778494, z: -336.5048}
 --- !u!1001 &345002800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7777,7 +7764,7 @@ PrefabInstance:
     - target: {fileID: 6597257915088778789, guid: 233720333d8ff3e449811f0085b65bde,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.658913
+      value: 6.584
       objectReference: {fileID: 0}
     - target: {fileID: 6597257915088778789, guid: 233720333d8ff3e449811f0085b65bde,
         type: 3}
@@ -7821,17 +7808,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
         type: 3}
-      propertyPath: brokenGlass
-      value: 
-      objectReference: {fileID: 8041494628389569925, guid: 6b906e4c265665b4dace47555c41afb0,
-        type: 3}
-    - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
-      propertyPath: breakNoise
-      value: 
-      objectReference: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
-    - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
       propertyPath: pedestal
       value: 
       objectReference: {fileID: 662392759}
@@ -7845,6 +7821,12 @@ PrefabInstance:
       propertyPath: glimmer
       value: 
       objectReference: {fileID: 1302577119}
+    - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
+        type: 3}
+      propertyPath: brokenGlass
+      value: 
+      objectReference: {fileID: 8101996580010911877, guid: 6b906e4c265665b4dace47555c41afb0,
+        type: 3}
     - target: {fileID: 1514308890534857330, guid: 233720333d8ff3e449811f0085b65bde,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
