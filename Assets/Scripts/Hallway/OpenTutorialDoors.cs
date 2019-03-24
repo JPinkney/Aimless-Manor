@@ -49,7 +49,6 @@ public class OpenTutorialDoors : MonoBehaviour
 
     public void open()
     {
-        Debug.Log("Are u fucking joking");
         StartCoroutine(this.MoveDoor(doorOpen));
     }
 
