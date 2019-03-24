@@ -8,6 +8,8 @@ public class HallwayTutorial : Interactable
     public GameObject tutorialRoomPortal;
     public ParticleSystem glimmer;
 
+
+
     public override void Interact(Inventory inv, GameObject obj)
     {
         if (obj && obj.tag == "Egg")
