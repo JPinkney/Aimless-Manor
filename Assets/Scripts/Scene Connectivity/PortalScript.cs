@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 /*
@@ -54,4 +53,3 @@ public class PortalScript : MonoBehaviour
             m_LinkedPortal.CloseDoor();
     }
 }
-#endif

@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEditor;
@@ -174,4 +173,3 @@ public class RoomController : MonoBehaviour
 
 
 }
-#endif

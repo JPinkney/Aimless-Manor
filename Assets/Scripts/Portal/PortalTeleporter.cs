@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PortalTeleporter : MonoBehaviour
 {
     public GameObject player;
     public Transform receiver;
     public bool gravity = true;
+
+    public int side = 9;
+    private DirectionMarking dm;
+
     private Transform playerTransform;
     private PlayerController playerController;
     private bool playerIsOverlapping = false;
@@ -17,6 +22,8 @@ public class PortalTeleporter : MonoBehaviour
         player = GameObject.Find("Player");
         playerTransform = player.GetComponent<Transform>();
         playerController = player.GetComponent<PlayerController>();
+
+        dm = GameObject.Find("DirectionMarker").GetComponent<DirectionMarking>();
     }
 
     // Update is called once per frame
@@ -38,6 +45,12 @@ public class PortalTeleporter : MonoBehaviour
 
                 playerTransform.rotation = receiver.rotation;
                 Debug.Log(playerTransform.rotation);
+
+                try
+                {
+                    dm.UpdateMarker(side);
+                } catch (NullReferenceException e){
+                }
 
                 playerIsOverlapping = false;
             }
