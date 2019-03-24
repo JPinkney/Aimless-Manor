@@ -56,14 +56,8 @@ public class PickupObject : MonoBehaviour
         var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
         if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.LEFT))
         {
-            pos.x -= Screen.width / 4;
-            pos.y -= Screen.height / 3;
-        }
-        else if (o.gameObjectLocationInInventory.Equals(InventoryItem.Location.RIGHT))
-        {
-            pos.x += Screen.width / 4;
-            pos.y -= Screen.height / 3;
-
+            pos.x = Screen.width / 2;
+            pos.y = Screen.height / 2;
         }
         if (currentlySelectedObj)
         {
@@ -85,11 +79,6 @@ public class PickupObject : MonoBehaviour
 
     void Pickup()
     {
-        //if (this.inventory.IsInventoryFull())
-        //{
-        //    return;
-        //}
-
         int x = Screen.width / 2;
         int y = Screen.height / 2;
         //Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
@@ -211,7 +200,7 @@ public class PickupObject : MonoBehaviour
         Vector3 playerPos = this.transform.position;
         Vector3 playerDirection = this.transform.forward;
         Quaternion playerRotation = this.transform.rotation;
-        float spawnDistance = 0.1f;
+        float spawnDistance = .8f;
 
         Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
         currentlySelectedObj.transform.position = spawnPos;
