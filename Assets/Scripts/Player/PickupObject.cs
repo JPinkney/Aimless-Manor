@@ -45,7 +45,6 @@ public class PickupObject : MonoBehaviour
                 }
             }
             CheckDrop();
-            CheckUse();
         }
         Pickup();
         checkComplete();
@@ -171,14 +170,6 @@ public class PickupObject : MonoBehaviour
 
     }
 
-    void CheckUse()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //UseObject();
-        }
-    }
-
     void ChangeCurrentlySelectedObjectLocation()
     {
         //ENABLE COLLIDER(S)
@@ -204,17 +195,6 @@ public class PickupObject : MonoBehaviour
 
         Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
         currentlySelectedObj.transform.position = spawnPos;
-    }
-
-    void UseObject()
-    {
-        if (currentlySelectedObj)
-        {
-            ChangeCurrentlySelectedObjectLocation();
-            currentlySelectedObj.GetComponentInChildren<MeshRenderer>().enabled = false;
-            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
-            ChangeSelectedObject();
-        }
     }
 
     void ChangeSelectedObject()
@@ -260,109 +240,6 @@ public class PickupObject : MonoBehaviour
         p.obtainKey();
     }
 
-    void dropObject()
-    {
-        if (currentlySelectedObj)
-        {
-            //ENABLE GRAVITY
-            //currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            Component[] rbChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
-            foreach (Rigidbody rb in rbChildren)
-            {
-                rb.useGravity = true;
-            }
-
-            Vector3 playerPos = this.transform.position;
-            Vector3 playerDirection = this.transform.forward;
-            Quaternion playerRotation = this.transform.rotation;
-            float spawnDistance = 0.1f;
-
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            currentlySelectedObj.transform.position = spawnPos;
-            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            GameObject obj = this.inventory.FindFirstObject();
-
-            Transform[] children = currentlySelectedObj.GetComponentsInChildren<Transform>();
-            foreach (Transform child in children)
-            {
-                child.gameObject.layer = 0;
-            }
-
-            if (obj)
-            {
-                FindAndSetOutlineMaterialForObj(false, obj, false);
-                currentlySelectedObj = obj;
-            }
-            else
-            {
-                currentlySelectedObj = null;
-            }
-        }
-    }
-
-    void checkUse()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            useObject();
-        }
-    }
-
-    void useObject()
-    {
-        if (currentlySelectedObj)
-        {
-            //ENABLE GRAVITY
-            //currentlySelectedObj.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            Component[] rbChildren = currentlySelectedObj.gameObject.GetComponentsInChildren(typeof(Rigidbody));
-            foreach (Rigidbody rb in rbChildren)
-            {
-                rb.useGravity = true;
-            }
-
-            Vector3 playerPos = this.transform.position;
-            Vector3 playerDirection = this.transform.forward;
-            Quaternion playerRotation = this.transform.rotation;
-            float spawnDistance = 0.1f;
-
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            currentlySelectedObj.transform.position = spawnPos;
-
-            currentlySelectedObj.GetComponentInChildren<MeshRenderer>().enabled = false;
-            // Destroy(currentlySelectedObj);
-            currentlySelectedObj.GetComponent<Pickupable>().obtainKey();
-
-            this.inventory.RemoveGameObjectFromInventory(currentlySelectedObj);
-
-            FindAndSetOutlineMaterialForObj(true, currentlySelectedObj, false);
-
-
-            //This piece of code adds the current item to the room its in instead of keeping it in the hands of the player
-            //currentlySelectedObj.gameObject.transform.SetParent(SceneManager.GetSceneAt(1).GetRootGameObjects()[0].transform);
-            GameObject obj = this.inventory.FindFirstObject();
-
-            Transform[] children = currentlySelectedObj.GetComponentsInChildren<Transform>();
-            foreach (Transform child in children)
-            {
-                child.gameObject.layer = 0;
-            }
-
-            if (obj)
-            {
-                FindAndSetOutlineMaterialForObj(false, obj, false);
-                currentlySelectedObj = obj;
-            }
-            else
-            {
-                currentlySelectedObj = null;
-            }
-        }
-    }
-
     void CheckDrop()
     {
         if (Input.GetKeyDown(KeyCode.T) || XCI.GetButton(XboxButton.B))
@@ -384,7 +261,7 @@ public class PickupObject : MonoBehaviour
 
         RaycastHit hit;
         if (lastOutlinedObject != null)
-        {
+        { 
             FindAndSetOutlineMaterialForObj(true, lastOutlinedObject, keyChange);
             lastOutlinedObject = null;
         }
@@ -393,15 +270,20 @@ public class PickupObject : MonoBehaviour
         if (Physics.Raycast(caaa.transform.position, caaa.transform.forward, out hit, 1.4f))
         {
             GameObject hitObj = hit.transform.gameObject;
-            if (hitObj.GetComponent<Pickupable>() != null)
+
+            // Don't set the outline if its the object in their hand
+            if (this.inventory.FindFirstObject() != hitObj)
             {
-                FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
-                lastOutlinedObject = hitObj;
-            }
-            else if (hitObj.GetComponent<Interactable>() != null)
-            {
-                FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
-                lastOutlinedObject = hitObj;
+                if (hitObj.GetComponent<Pickupable>() != null)
+                {
+                    FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
+                    lastOutlinedObject = hitObj;
+                }
+                else if (hitObj.GetComponent<Interactable>() != null)
+                {
+                    FindAndSetOutlineMaterialForObj(false, hitObj, keyChange);
+                    lastOutlinedObject = hitObj;
+                }
             }
         }
 
@@ -409,7 +291,7 @@ public class PickupObject : MonoBehaviour
 
     void FindAndSetOutlineMaterialForObj(bool remove, GameObject obj, bool keyChange)
     {
-
+   
         List<Material[]> oldMats = new List<Material[]>();
         if (obj.gameObject.GetComponent<Pickupable>() != null) {
             oldMats = obj.gameObject.GetComponent<Pickupable>().origMats;
