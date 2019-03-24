@@ -7,6 +7,9 @@ public class Hallway_EggTriggerKey : Interactable
     public GameObject key;
     public Transform brokenGlass;
 
+    public GameObject leftDoor;
+    public GameObject rightDoor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,6 @@ public class Hallway_EggTriggerKey : Interactable
             return;
         }
 
-        Debug.Log("Break for key is triggered");
-
         this.gameObject.SetActive(false);
 
         if (brokenGlass)
@@ -34,5 +35,18 @@ public class Hallway_EggTriggerKey : Interactable
         Physics.IgnoreLayerCollision(9, 9);
 
         this.key.SetActive(true);
+
+        var leftDoorRotationScript = leftDoor.GetComponent<OpenTutorialDoors>();
+        if (leftDoorRotationScript)
+        {
+            leftDoorRotationScript.open();
+        }
+
+        var rightDoorRotationScript = rightDoor.GetComponent<OpenTutorialDoors>();
+        if (rightDoorRotationScript)
+        {
+            rightDoorRotationScript.open();
+        }
+
     }
 }
