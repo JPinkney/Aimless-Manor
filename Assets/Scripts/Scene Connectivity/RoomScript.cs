@@ -1,9 +1,7 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEditor.SceneManagement;
 
 public class RoomScript : MonoBehaviour
 {
@@ -85,4 +83,3 @@ public class RoomScript : MonoBehaviour
         return true;
     }
 }
-#endif

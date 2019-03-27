@@ -204,12 +204,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: glass1
-    second: {fileID: 2100000, guid: 5419515766f63437bb05e632eb530a8e, type: 2}
+    second: {fileID: 2100000, guid: 48d448b26c9413948aeade1992125476, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -219,24 +219,24 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sh_large_chain1.009_Inner
-    second: {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sh_large_chain1.023_Inner
-    second: {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sh_large_chain1.078_Inner
-    second: {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sh_large_chain1.090_Inner
-    second: {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -274,7 +274,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -296,7 +296,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

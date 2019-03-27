@@ -1,14 +1,29 @@
 fileFormatVersion: 2
-guid: e502995a19bff471092d3bcff515e4dc
+guid: 9f87bbf773aa542578d4b5d18dda97bc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: shard_plate_a_mesh
+    100004: shard_plate_a_mesh.001
+    100006: shard_plate_a_mesh.002
     400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: vanity
+    400002: shard_plate_a_mesh
+    400004: shard_plate_a_mesh.001
+    400006: shard_plate_a_mesh.002
+    2100000: plate_a_mesh_Inner
+    2100002: mp_plate_a_outer
+    2100004: mp_plate_a_trim
+    2100006: mp_plate_a_inner
+    2300000: shard_plate_a_mesh
+    2300002: shard_plate_a_mesh.001
+    2300004: shard_plate_a_mesh.002
+    3300000: shard_plate_a_mesh
+    3300002: shard_plate_a_mesh.001
+    3300004: shard_plate_a_mesh.002
+    4300000: shard_plate_a_mesh.002
+    4300002: shard_plate_a_mesh.001
+    4300004: shard_plate_a_mesh
   externalObjects: {}
   materials:
     importMaterials: 1

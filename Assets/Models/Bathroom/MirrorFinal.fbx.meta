@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: 25adf13d4477542c6a9c581760e5247b
+guid: ebaa59a9397dc4a4aa26c32ba321303e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: mirrorframe
+    2100002: mirror
     2300000: //RootNode
     3300000: //RootNode
-    4300000: LEMON_02
+    4300000: mirror1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -49,7 +50,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
