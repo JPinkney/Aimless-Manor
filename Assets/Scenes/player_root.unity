@@ -88,8 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 851393c0de12ffe4681a56912b595f5b,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &5
 NavMeshSettings:
@@ -1165,7 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835389366}
   - component: {fileID: 1835389368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Inventory Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,6 +1465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostProcessing_Global
+      objectReference: {fileID: 0}
+    - target: {fileID: 648307292462009308, guid: 1a92b886c4b7e764cb9c3a581e6432e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 648307292462009299, guid: 1a92b886c4b7e764cb9c3a581e6432e6,
         type: 3}
