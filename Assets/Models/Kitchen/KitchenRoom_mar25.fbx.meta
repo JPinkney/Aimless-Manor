@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 079b1356b5e6f4c6093ab27a6d8ebf4b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: pCube64
+    100004: polySurface353
+    100006: polySurface353 1
+    100008: polySurface355
+    100010: polySurface358
+    100012: polySurface453
+    100014: polySurface461
+    100016: polySurface462
+    100018: polySurface462 1
+    100020: polySurface463
+    100022: polySurface464
+    100024: polySurface465
+    100026: polySurface465 1
+    100028: polySurface466
+    100030: polySurface467
+    100032: polySurface468
+    100034: polySurface468 1
+    100036: polySurface469
+    100038: polySurface470
+    100040: polySurface471
+    100042: polySurface472
+    100044: polySurface473
+    100046: polySurface474
+    100048: polySurface475
+    100050: polySurface89
+    100052: transform46
+    100054: transform47
+    100056: transform48
+    100058: transform49
+    100060: transform50
+    100062: transform51
+    100064: transform52
+    100066: transform53
+    100068: transform54
+    100070: transform55
+    100072: transform56
+    100074: transform57
+    100076: transform58
+    100078: transform59
+    100080: transform60
+    100082: transform61
+    100084: transform62
+    100086: transform63
+    100088: transform64
+    100090: transform65
+    400000: //RootNode
+    400002: pCube64
+    400004: polySurface353
+    400006: polySurface353 1
+    400008: polySurface355
+    400010: polySurface358
+    400012: polySurface453
+    400014: polySurface461
+    400016: polySurface462
+    400018: polySurface462 1
+    400020: polySurface463
+    400022: polySurface464
+    400024: polySurface465
+    400026: polySurface465 1
+    400028: polySurface466
+    400030: polySurface467
+    400032: polySurface468
+    400034: polySurface468 1
+    400036: polySurface469
+    400038: polySurface470
+    400040: polySurface471
+    400042: polySurface472
+    400044: polySurface473
+    400046: polySurface474
+    400048: polySurface475
+    400050: polySurface89
+    400052: transform46
+    400054: transform47
+    400056: transform48
+    400058: transform49
+    400060: transform50
+    400062: transform51
+    400064: transform52
+    400066: transform53
+    400068: transform54
+    400070: transform55
+    400072: transform56
+    400074: transform57
+    400076: transform58
+    400078: transform59
+    400080: transform60
+    400082: transform61
+    400084: transform62
+    400086: transform63
+    400088: transform64
+    400090: transform65
+    2100000: doorcolour
+    2100002: doorknob
+    2100004: walls
+    2100006: lambert23
+    2100008: floor
+    2100010: ceiling
+    2100012: doortrim
+    2100014: windowtrim1
+    2100016: glass
+    2300000: pCube64
+    2300002: polySurface453
+    2300004: polySurface465
+    2300006: polySurface475
+    3300000: pCube64
+    3300002: polySurface453
+    3300004: polySurface465
+    3300006: polySurface475
+    4300000: pCube64
+    4300002: polySurface453
+    4300004: polySurface465
+    4300006: polySurface475
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceiling
+    second: {fileID: 2100000, guid: f2d3c9d254466da4ba70cdb9b20bf278, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorcolour
+    second: {fileID: 2100000, guid: 5298d2f2ffd5b474c8a7918e1c1392f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorknob
+    second: {fileID: 2100000, guid: e0594ea347de52047af64bcda884a33b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doortrim
+    second: {fileID: 2100000, guid: 82fb26064699c454185d936ef0c41ecf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: 5298d2f2ffd5b474c8a7918e1c1392f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 21a421db248c1884d9865481104edd36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls
+    second: {fileID: 2100000, guid: 1a9612a2052f6d34dba10726149c273a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
