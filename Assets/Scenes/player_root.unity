@@ -88,8 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 851393c0de12ffe4681a56912b595f5b,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &5
 NavMeshSettings:
@@ -1108,7 +1107,7 @@ PrefabInstance:
     - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
       propertyPath: far clip plane
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
@@ -1933,7 +1932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835389366}
   - component: {fileID: 1835389368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Inventory Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1977,11 +1976,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 3
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 1
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -2270,6 +2269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostProcessing_Global
+      objectReference: {fileID: 0}
+    - target: {fileID: 648307292462009308, guid: 1a92b886c4b7e764cb9c3a581e6432e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 648307292462009299, guid: 1a92b886c4b7e764cb9c3a581e6432e6,
         type: 3}
