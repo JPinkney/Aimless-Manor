@@ -1511,6 +1511,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1748536915}
   gravity: 0
+  side: 9
 --- !u!65 &60132048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2096,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1673280548}
   gravity: 0
+  side: 9
 --- !u!65 &97969519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2165,6 +2167,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &99919756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3198,6 +3201,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &165281906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6025,6 +6029,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &356186885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6260,6 +6265,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1003203414}
   gravity: 1
+  side: 9
 --- !u!65 &362951036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6651,6 +6657,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1926162084}
   gravity: 0
+  side: 9
 --- !u!65 &405098869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7413,6 +7420,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &431466991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8380,6 +8388,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1926162084}
   gravity: 0
+  side: 9
 --- !u!65 &484967626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8571,6 +8580,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 496173424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &503362398
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3647681006491688943, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_Name
+      value: BackgroundMusicInitializer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.366
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.092627764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404694607272191536, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163402678784296542, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: weights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163402678784296542, guid: 7410fd82fd8114457a481f03bf241904,
+        type: 3}
+      propertyPath: weights.Array.data[3]
+      value: 100
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7410fd82fd8114457a481f03bf241904, type: 3}
 --- !u!1 &505932427
 GameObject:
   m_ObjectHideFlags: 0
@@ -8832,6 +8920,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1428585399}
   gravity: 0
+  side: 9
 --- !u!65 &553209501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9325,6 +9414,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1766708309}
   gravity: 0
+  side: 9
 --- !u!65 &565595112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9862,6 +9952,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &613528822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11145,6 +11236,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1748536915}
   gravity: 0
+  side: 9
 --- !u!65 &668865004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11316,6 +11408,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1128514076}
   gravity: 1
+  side: 9
 --- !u!65 &670605453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11721,6 +11814,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &680047553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13459,6 +13553,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &740067536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13580,6 +13675,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1748536915}
   gravity: 0
+  side: 9
 --- !u!65 &743576301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13855,6 +13951,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1128514076}
   gravity: 1
+  side: 9
 --- !u!65 &753420525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15007,6 +15104,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1926162084}
   gravity: 0
+  side: 9
 --- !u!65 &838911571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15667,6 +15765,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1766708309}
   gravity: 0
+  side: 9
 --- !u!65 &866731696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16493,6 +16592,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &926875670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17246,6 +17346,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1673280548}
   gravity: 0
+  side: 9
 --- !u!65 &976716630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17315,6 +17416,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1003203414}
   gravity: 1
+  side: 9
 --- !u!65 &978872022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17940,6 +18042,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &1012520023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18333,6 +18436,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1003203414}
   gravity: 1
+  side: 9
 --- !u!65 &1042093629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18805,6 +18909,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1766708309}
   gravity: 0
+  side: 9
 --- !u!65 &1075305915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19252,6 +19357,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 951136431}
   gravity: 0
+  side: 9
 --- !u!65 &1097238082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19496,6 +19602,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 951136431}
   gravity: 0
+  side: 9
 --- !u!65 &1103981614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19640,6 +19747,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &1118967673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20021,6 +20129,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1749939151}
   gravity: 1
+  side: 9
 --- !u!65 &1149477600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20499,6 +20608,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1673280548}
   gravity: 0
+  side: 9
 --- !u!65 &1174937098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21775,7 +21885,7 @@ Transform:
   - {fileID: 64055405}
   - {fileID: 1678041108}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1254125114
 PrefabInstance:
@@ -21988,6 +22098,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1673280548}
   gravity: 0
+  side: 9
 --- !u!65 &1256930484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23234,7 +23345,7 @@ Transform:
   - {fileID: 881212979}
   - {fileID: 1848676652}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357038993
 GameObject:
@@ -23322,6 +23433,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 951136431}
   gravity: 0
+  side: 9
 --- !u!65 &1357038997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23456,6 +23568,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &1358063587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24100,7 +24213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413612639
 GameObject:
@@ -24296,6 +24409,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &1417523310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24774,6 +24888,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &1434640529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25679,6 +25794,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1748536915}
   gravity: 0
+  side: 9
 --- !u!65 &1476240570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26570,6 +26686,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1128514076}
   gravity: 1
+  side: 9
 --- !u!65 &1521810595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26776,6 +26893,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1128514076}
   gravity: 1
+  side: 9
 --- !u!65 &1532508180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27022,6 +27140,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1749939151}
   gravity: 1
+  side: 9
 --- !u!65 &1552516386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30304,6 +30423,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1673280548}
   gravity: 0
+  side: 9
 --- !u!65 &1709409263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30460,6 +30580,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1766708309}
   gravity: 0
+  side: 9
 --- !u!65 &1729274520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31605,6 +31726,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &1779252868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31712,6 +31834,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1749939151}
   gravity: 1
+  side: 9
 --- !u!65 &1791254872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32035,6 +32158,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1748536915}
   gravity: 0
+  side: 9
 --- !u!65 &1803587205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33787,6 +33911,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &1881246400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34681,6 +34806,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 0}
   gravity: 0
+  side: 9
 --- !u!65 &1935150000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34889,6 +35015,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1766708309}
   gravity: 0
+  side: 9
 --- !u!65 &1938194030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34958,6 +35085,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1003203414}
   gravity: 1
+  side: 9
 --- !u!65 &1946324894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35065,6 +35193,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1749939151}
   gravity: 1
+  side: 9
 --- !u!65 &1949104440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35394,6 +35523,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1749939151}
   gravity: 1
+  side: 9
 --- !u!65 &1960525063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35742,6 +35872,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1926162084}
   gravity: 0
+  side: 9
 --- !u!65 &1970663871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36637,6 +36768,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 951136431}
   gravity: 0
+  side: 9
 --- !u!65 &2005438386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36909,6 +37041,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1358770614}
   gravity: 1
+  side: 9
 --- !u!65 &2031344215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38292,6 +38425,7 @@ MonoBehaviour:
   player: {fileID: 0}
   receiver: {fileID: 1926162084}
   gravity: 0
+  side: 9
 --- !u!65 &2116332935
 BoxCollider:
   m_ObjectHideFlags: 0
