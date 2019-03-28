@@ -27,7 +27,6 @@ public class DirectionMarking : MonoBehaviour
     private bool PlayerInBound()
     {
         Vector3 position = GameObject.Find("Player").transform.position;
-        Debug.Log(room.GetComponent<Collider>().bounds.Contains(position));
         return room.GetComponent<Collider>().bounds.Contains(position);
     }
 
