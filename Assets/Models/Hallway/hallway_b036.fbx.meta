@@ -642,7 +642,7 @@ ModelImporter:
       name: m_ab_floor_a
     second: {fileID: 2100000, guid: 3d9e253564949f7499df2d83b79d4b1f, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
