@@ -190,7 +190,7 @@ public class PickupObject : MonoBehaviour
         Vector3 playerPos = this.transform.position;
         Vector3 playerDirection = this.transform.forward;
         Quaternion playerRotation = this.transform.rotation;
-        float spawnDistance = .8f;
+        float spawnDistance = .3f;
 
         Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
         currentlySelectedObj.transform.position = spawnPos;
