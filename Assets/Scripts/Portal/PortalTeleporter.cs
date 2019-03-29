@@ -23,7 +23,10 @@ public class PortalTeleporter : MonoBehaviour
         playerTransform = player.GetComponent<Transform>();
         playerController = player.GetComponent<PlayerController>();
 
-        dm = GameObject.Find("DirectionMarker").GetComponent<DirectionMarking>();
+        try {
+            dm = GameObject.Find("DirectionMarker").GetComponent<DirectionMarking>();
+        } catch (NullReferenceException e) { }
+        
     }
 
     // Update is called once per frame
