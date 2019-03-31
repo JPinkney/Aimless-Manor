@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4042362662474716579}
   - component: {fileID: 2435431220341491274}
   - component: {fileID: 1435065370}
-  - component: {fileID: 1435065368}
   - component: {fileID: 1435065369}
+  - component: {fileID: 1435065368}
   m_Layer: 0
   m_Name: pre_farbege egg
   m_TagString: Egg
@@ -60,10 +60,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77dc24a88a1b5fb4092da5a00d95b073, type: 2}
+  - {fileID: 2100000, guid: 08fcd3aa1308e874ba30bf7b5edc7fc3, type: 2}
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
-  - {fileID: 2100000, guid: 91e28698744b9dc49820f2993d6f9083, type: 2}
+  - {fileID: 2100000, guid: bb4cc21e4a569d64faad6ac7f214e8a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,20 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1435065368
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435065367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.03802824
-  m_Height: 0.13605109
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.06834078, z: -0.000106334686}
 --- !u!114 &1435065369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreCollisionsWithPlayer: 1
+--- !u!65 &1435065368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435065367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.13605109, z: 0.08}
+  m_Center: {x: 0, y: 0.06834078, z: 0}

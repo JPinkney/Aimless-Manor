@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenGlass: {fileID: 4800622338229443596, guid: 713d49e215815fa45a7eee57a8ff1dda,
+  brokenGlass: {fileID: 2412980228056476757, guid: f252f51604aa1430c9b77e666c41810c,
     type: 3}
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
