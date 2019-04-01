@@ -66,5 +66,12 @@ public class OpenableRotatorAllAxes : Interactable
     public void closeDoor()
     {
         StartCoroutine(this.MoveDoor(doorClose));
+        doorStatus = false;
+    }
+
+    public void openDoor()
+    {
+        StartCoroutine(this.MoveDoor(doorOpen));
+        doorStatus = true;
     }
 }

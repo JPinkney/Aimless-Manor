@@ -5307,8 +5307,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.7853981
-      minScalar: -0.7853981
+      scalar: 6.283185
+      minScalar: 3.1415925
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6233,7 +6233,7 @@ ParticleSystem:
     tilesY: 4
     animationType: 0
     rowIndex: 0
-    cycles: 10
+    cycles: 7
     uvChannelMask: -1
     randomRow: 1
     sprites:
