@@ -33,7 +33,8 @@ public class CameraMovement : MonoBehaviour
 
         
         Vector3 position = transform.position;
-        position[0] = playerCamera.position.x;
+        //position[0] = playerCamera.position.x;
+        position[2] = playerCamera.position.z;
         transform.position = position;
         transform.rotation = playerCamera.rotation;
 

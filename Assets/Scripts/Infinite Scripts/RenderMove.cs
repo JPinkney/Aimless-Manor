@@ -35,9 +35,15 @@ public class RenderMove : MonoBehaviour
     {
         //Vector3 hallSize = front.position - back.position;
         Vector3 position = transform.position;
+        float x = playerCamera.position.x + (dist * (direc*-1));
+        float y = position[1];
+        float z = position[2];
+
+        /*
         float x = position[0];
         float y = position[1];
         float z = playerCamera.position.z + (dist * direc);
+        */
         transform.position = new Vector3(x, y, z);
     }
 }
