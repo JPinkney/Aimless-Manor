@@ -19,7 +19,7 @@ public class Key_Glimmer_Gone : Interactable
 
     public void Start()
     {
-        audioManager = AudioManager.instance;
+        //audioManager = AudioManager.instance;
     }
 
     public override void Interact(Inventory inv, GameObject obj)
@@ -32,9 +32,8 @@ public class Key_Glimmer_Gone : Interactable
 
         if (party && done == false)
         {
-            audioManager.Play(party);
+             AudioSource.PlayClipAtPoint(party, this.transform.position);
         }
-
 
         if (keyObj)
         {
