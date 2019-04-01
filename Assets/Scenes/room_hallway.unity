@@ -1020,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 6465718369653916530, guid: dd3848f1871a9314a88d8a699d301067,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6465718369653916541, guid: dd3848f1871a9314a88d8a699d301067,
         type: 3}
@@ -1097,6 +1097,11 @@ PrefabInstance:
       propertyPath: confettiBurst
       value: 
       objectReference: {fileID: 1958657431}
+    - target: {fileID: 6465718369653916542, guid: dd3848f1871a9314a88d8a699d301067,
+        type: 3}
+      propertyPath: party
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e84a4f3d4b369c4795f3694ce2af5e6, type: 3}
     - target: {fileID: 6465718369653916543, guid: dd3848f1871a9314a88d8a699d301067,
         type: 3}
       propertyPath: m_Size.z
