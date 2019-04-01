@@ -1097,6 +1097,11 @@ PrefabInstance:
       propertyPath: confettiBurst
       value: 
       objectReference: {fileID: 1958657431}
+    - target: {fileID: 6465718369653916542, guid: dd3848f1871a9314a88d8a699d301067,
+        type: 3}
+      propertyPath: party
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e84a4f3d4b369c4795f3694ce2af5e6, type: 3}
     - target: {fileID: 6465718369653916543, guid: dd3848f1871a9314a88d8a699d301067,
         type: 3}
       propertyPath: m_Size.z
@@ -1131,6 +1136,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465718369653916540, guid: dd3848f1871a9314a88d8a699d301067,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465718369653916540, guid: dd3848f1871a9314a88d8a699d301067,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3848f1871a9314a88d8a699d301067, type: 3}
@@ -1804,6 +1819,11 @@ PrefabInstance:
     - target: {fileID: 217615345582028684, guid: 93c8f34831f1daa4b8374451fb38cbb0,
         type: 3}
       propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466822834638711160, guid: 93c8f34831f1daa4b8374451fb38cbb0,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7521,6 +7541,11 @@ PrefabInstance:
       propertyPath: m_DrawHalo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 155671446797931781, guid: 69539e17f44990a4d9487c5d9704ebfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69539e17f44990a4d9487c5d9704ebfc, type: 3}
 --- !u!4 &557176639 stripped
@@ -10697,6 +10722,11 @@ PrefabInstance:
       propertyPath: m_DrawHalo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 155671446797931781, guid: 69539e17f44990a4d9487c5d9704ebfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69539e17f44990a4d9487c5d9704ebfc, type: 3}
 --- !u!4 &791587834 stripped
@@ -10987,6 +11017,11 @@ PrefabInstance:
     - target: {fileID: 217615345582028684, guid: 93c8f34831f1daa4b8374451fb38cbb0,
         type: 3}
       propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466822834638711160, guid: 93c8f34831f1daa4b8374451fb38cbb0,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15345,16 +15380,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7794477113520283338, guid: ab92d8c0a91e0e8419d441a7353f2d73,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2d7e4988344f90643aabdb6c445fbb1a, type: 2}
     - target: {fileID: 4576622642379832521, guid: ab92d8c0a91e0e8419d441a7353f2d73,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 7794477113520283338, guid: ab92d8c0a91e0e8419d441a7353f2d73,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d7e4988344f90643aabdb6c445fbb1a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab92d8c0a91e0e8419d441a7353f2d73, type: 3}
 --- !u!1001 &1063963099
@@ -17972,7 +18007,7 @@ PrefabInstance:
     - target: {fileID: 2300038, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f589b31243b0ce841919518b506fbff9, type: 2}
+      objectReference: {fileID: 2100000, guid: 601ef60567be8be418ed0f15c2dcf842, type: 2}
     - target: {fileID: 2300040, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -34555,6 +34590,11 @@ PrefabInstance:
       propertyPath: m_DrawHalo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 155671446797931781, guid: 69539e17f44990a4d9487c5d9704ebfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69539e17f44990a4d9487c5d9704ebfc, type: 3}
 --- !u!4 &3111887840291548550 stripped
@@ -34638,6 +34678,11 @@ PrefabInstance:
     - target: {fileID: 6382422287133346801, guid: 69539e17f44990a4d9487c5d9704ebfc,
         type: 3}
       propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155671446797931781, guid: 69539e17f44990a4d9487c5d9704ebfc,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_SpecialFX_transparent
-  m_Shader: {fileID: 4800000, guid: 3e0a63bd6b2ebb4479d2e5eb80b6d248, type: 3}
+  m_Name: m_blurr_object
+  m_Shader: {fileID: 4800000, guid: a6e21b79e09acb743bac0ebf30c4a043, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,18 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _DisplaceTex:
+        m_Texture: {fileID: 2800000, guid: afc65eb8b61ef3148bd02e49fc8bff7e, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 5, y: 5}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: b4b15af4510399043bc918288d07d85f, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 5, y: 5}
     m_Floats:
-    - _Amount: 1
-    - _Amplitude: 1
-    - _CutoutThresh: 0.2
-    - _Distance: 1
-    - _Frequency: 1
-    - _Scale: 1
-    - _Speed: 1
-    - _Transparency: 0.25
-    m_Colors:
-    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Magnitude: 0.1
+    m_Colors: []

@@ -1119,6 +1119,11 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 823
       objectReference: {fileID: 0}
+    - target: {fileID: 3343427492233289383, guid: 14acad5b4b0dd4043ab9e1b454769a51,
+        type: 3}
+      propertyPath: m_RenderingPath
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3343427492233289401, guid: 14acad5b4b0dd4043ab9e1b454769a51,
         type: 3}
       propertyPath: m_Layer
