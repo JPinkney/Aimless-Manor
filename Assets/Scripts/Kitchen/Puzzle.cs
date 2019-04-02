@@ -10,12 +10,17 @@ public class Puzzle : MonoBehaviour
     public GameObject inf;
     public GameObject camMan;
     private CameraHandler script;
+    public GameObject[] plates;
 
     // Start is called before the first frame update
     void Start()
     {
         platesBroke = 0;
         script = camMan.GetComponent<CameraHandler>();
+        foreach (GameObject plate in plates)
+        {
+            Destroy(plate.GetComponent<StandardBreak>());
+        }
     }
 
     /*
