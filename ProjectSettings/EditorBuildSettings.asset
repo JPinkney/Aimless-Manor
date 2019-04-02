@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/room_bathroom.unity
     guid: 064e9a20935548e4889f458581619ca2
   - enabled: 1
+    path: Assets/Scenes/new_kitchen.unity
+    guid: 4d429b8c062156d42993c4d02343007d
+  - enabled: 0
     path: Assets/Scenes/room_kitchen.unity
     guid: 52a3bcdfd29dddc418662dca1db7f51a
   m_configObjects: {}
