@@ -15,6 +15,11 @@ public class StandardBreak : Interactable
     public AudioClip voicelineNoise;
     private AudioSource voicelineSource;
 
+    public bool kitPuzzle;
+    public GameObject kitMan;
+
+    private Puzzle kitScript;
+
     //public Transform newKeyLocation;
     //public GameObject keyObj;
     //public ParticleSystem glimmer;
@@ -24,6 +29,16 @@ public class StandardBreak : Interactable
     public void Start()
     {
         audioManager = AudioManager.instance;
+        if (kitPuzzle)
+        {
+            kitScript = kitMan.GetComponent<Puzzle>();
+            
+        }
+        else
+        {
+            kitMan = null;
+            kitScript = null;
+        }
     }
 
     public override void Interact(Inventory inv, GameObject obj)
@@ -54,6 +69,12 @@ public class StandardBreak : Interactable
         {
             glassShatter.Play();
         }
+
+        if (kitPuzzle)
+        {
+            kitScript.PlateBroke();
+        }
+
         Physics.IgnoreLayerCollision(9, 9);
         //keyObj.transform.position = newKeyLocation.position;
         //glimmer.Play();
