@@ -104,7 +104,7 @@ public class Inventory
     {
         for (int ind = 0; ind < inventory.Length; ind++)
         {
-            Debug.Log("Trying to remove");
+            Debug.Log("Trying to remove " + obj.name);
             if (inventory[ind] != null && inventory[ind].item == obj)
             {
                 Debug.Log("Finally removed");
