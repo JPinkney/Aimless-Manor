@@ -38,8 +38,6 @@ public class CauldronItemDrop : MonoBehaviour
         this.waterEffect.Stop();
         dropSound.Stop();
         soundIsPlaying = false;
-
-
     }
 
     // Update is called once per frame
