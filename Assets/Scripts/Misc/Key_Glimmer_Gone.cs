@@ -8,6 +8,7 @@ public class Key_Glimmer_Gone : Interactable
 
     public GameObject keyObj;
     public ParticleSystem glimmer;
+    public ParticleSystem glimmer2;
     public ParticleSystem confettiBurst;
     public ParticleSystem confettiRain;
     private int count;
@@ -45,6 +46,11 @@ public class Key_Glimmer_Gone : Interactable
         if (glimmer)
         {
             glimmer.Stop();
+        }
+
+        if (glimmer2)
+        {
+            glimmer2.Stop();
         }
 
         if (confettiBurst && done == false)
