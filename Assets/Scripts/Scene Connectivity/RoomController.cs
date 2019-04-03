@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using System.Collections.Generic;
+using System;
 //using UnityEditor.SceneManagement;
 
 //#if UNITY_EDITOR
@@ -38,6 +39,7 @@ public class RoomController : MonoBehaviour
             CompletedRooms[room_roots[i]] = false;
             LoadedRooms[i+1] = false;
         }
+        DontDestroyOnLoad(this.gameObject);
 
         //for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
         //    string scene_name = EditorBuildSettings.scenes[i].path;
@@ -63,6 +65,26 @@ public class RoomController : MonoBehaviour
         KeyTracker = GameObject.Find("KeyUI");
 
         LoadRoom(null);
+    }
+
+
+
+    private void Update()
+    {
+        List<String> checkDuplicateRooms = new List<String>();
+        for (int i = 1; i < SceneManager.sceneCount; i++)
+        {
+            String sceneName = SceneManager.GetSceneAt(i).name;
+            if (checkDuplicateRooms.Contains(sceneName))
+            {
+                SceneManager.UnloadSceneAsync(i);
+                Debug.Log("Unloading Scene: " + sceneName);
+            } else
+            {
+                checkDuplicateRooms.Add(sceneName);
+            }
+        }
+
     }
 
     /*
@@ -160,6 +182,8 @@ public class RoomController : MonoBehaviour
 
     public static bool IsAllRoomCompleted()
     {
+        if (RoomController.CompletedRooms.Count == 0) { return false; }
+
         foreach (KeyValuePair<string, bool> entry in RoomController.CompletedRooms)
         {
             if (!entry.Value)
@@ -171,5 +195,16 @@ public class RoomController : MonoBehaviour
         return true;
     }
 
+    public static void SetAllRoomsIncomplete()
+    {
+        try
+        {
+            foreach (KeyValuePair<string, bool> entry in RoomController.CompletedRooms)
+            {
+                RoomController.CompletedRooms[entry.Key] = false;
+            }
+            KeyTracker.GetComponent<KeyHUD>().collectedKeys = 0;
+        } catch (NullReferenceException e) { }
+    }
 
 }
