@@ -4224,6 +4224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237610498}
+  - component: {fileID: 237610499}
   m_Layer: 0
   m_Name: PlateWall
   m_TagString: Untagged
@@ -4248,6 +4249,19 @@ Transform:
   m_Father: {fileID: 733832201}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &237610499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237610497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2.5, z: 3.6}
+  m_Center: {x: -16.92, y: 1.2, z: 0.43}
 --- !u!1001 &238932406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12955,6 +12969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571454170}
+  - component: {fileID: 571454171}
   m_Layer: 0
   m_Name: PlateWall
   m_TagString: Untagged
@@ -12979,6 +12994,19 @@ Transform:
   m_Father: {fileID: 447476714}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &571454171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571454169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2.5, z: 3.6}
+  m_Center: {x: -16.92, y: 1.2, z: 0.43}
 --- !u!1 &571477765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2932250607015254542, guid: 34b26dd96325d4b649d74aa8d6bcd0e4,
@@ -16480,6 +16508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786791586}
+  - component: {fileID: 786791587}
   m_Layer: 0
   m_Name: PlateWall
   m_TagString: Untagged
@@ -16504,6 +16533,19 @@ Transform:
   m_Father: {fileID: 749693601}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &786791587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786791585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2.5, z: 3.6}
+  m_Center: {x: -16.92, y: 1.2, z: 0.43}
 --- !u!1001 &789931977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20859,6 +20901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992481902}
+  - component: {fileID: 992481903}
   m_Layer: 0
   m_Name: PlateWall
   m_TagString: Untagged
@@ -20883,6 +20926,19 @@ Transform:
   m_Father: {fileID: 1742518728}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &992481903
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992481901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2.5, z: 3.6}
+  m_Center: {x: -16.92, y: 1.2, z: 0.43}
 --- !u!1 &995782228
 GameObject:
   m_ObjectHideFlags: 0
@@ -21591,6 +21647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032717312}
+  - component: {fileID: 1032717313}
   m_Layer: 0
   m_Name: PlateWall
   m_TagString: Untagged
@@ -21615,6 +21672,19 @@ Transform:
   m_Father: {fileID: 690534823}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1032717313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032717311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.61, y: 2.52, z: 3.57}
+  m_Center: {x: -16.92, y: 1.2, z: 0.43}
 --- !u!1001 &1036425743
 PrefabInstance:
   m_ObjectHideFlags: 0
