@@ -44,6 +44,7 @@ public class RoomController : MonoBehaviour
             CompletedRooms[room_roots[i]] = false;
             LoadedRooms[i+2] = false;
         }
+        DontDestroyOnLoad(this.gameObject);
 
         LoadedRooms[1] = true;
 
