@@ -14,6 +14,6 @@ public class LoadEnd : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 }

@@ -33,32 +33,22 @@ public class RoomController : MonoBehaviour
     {
         m_staticRef = this;
 
-        LoadedRooms[0] = true;
-        for(int i = 0; i < room_roots.Length; i ++)
+        // no - scene index should be the same number as the build number
+        // meaning 0 is true and 1 is true
+        // and 0 is hallway, so it should be i + 2
+        // and the lengths of the LoadedRooms should be 4 in total
+
+
+        for (int i = 0; i < room_roots.Length; i ++)
         {
             CompletedRooms[room_roots[i]] = false;
-            LoadedRooms[i+1] = false;
+            LoadedRooms[i+2] = false;
         }
         DontDestroyOnLoad(this.gameObject);
 
-        //for (int i = 0; i < EditorBuildSettings.scenes.Length; i++){
-        //    string scene_name = EditorBuildSettings.scenes[i].path;
+        LoadedRooms[1] = true;
 
-        //    if(scene_name != "")
-        //    {
-        //        scene_name = scene_name.Substring(scene_name.LastIndexOf('/') + 1, scene_name.LastIndexOf('.') - (scene_name.LastIndexOf('/') + 1));
-
-        //        if (scene_name != "player_root")
-        //        {
-        //            CompletedRooms[scene_name] = false;
-        //            LoadedRooms[i] = false;
-        //        }
-        //        else
-        //        {
-        //            LoadedRooms[i] = true;
-        //        }
-        //    }
-        //}
+        DontDestroyOnLoad(this.gameObject);
 
         portalDisable = FindObjectOfType<RoomPortalDisabler>();
 
@@ -71,19 +61,19 @@ public class RoomController : MonoBehaviour
 
     private void Update()
     {
-        List<String> checkDuplicateRooms = new List<String>();
-        for (int i = 1; i < SceneManager.sceneCount; i++)
-        {
-            String sceneName = SceneManager.GetSceneAt(i).name;
-            if (checkDuplicateRooms.Contains(sceneName))
-            {
-                SceneManager.UnloadSceneAsync(i);
-                Debug.Log("Unloading Scene: " + sceneName);
-            } else
-            {
-                checkDuplicateRooms.Add(sceneName);
-            }
-        }
+        //List<String> checkDuplicateRooms = new List<String>();
+        //for (int i = 1; i < SceneManager.sceneCount; i++)
+        //{
+        //    String sceneName = SceneManager.GetSceneAt(i).name;
+        //    if (checkDuplicateRooms.Contains(sceneName))
+        //    {
+        //        SceneManager.UnloadSceneAsync(i);
+        //        Debug.Log("Unloading Scene: " + sceneName);
+        //    } else
+        //    {
+        //        checkDuplicateRooms.Add(sceneName);
+        //    }
+        //}
 
     }
 
@@ -101,15 +91,18 @@ public class RoomController : MonoBehaviour
         int levelIndex;
         if (portal == null)
         {
-            levelIndex = 1;
+            //levelIndex = 1;
+            levelIndex = 2;
         }
         else
         {
             levelIndex = portal.m_destRoomID;
         }
-
+        Debug.Log("----------------Loading Index: " + levelIndex);
         if (!LoadedRooms[levelIndex])
         {
+
+
             if (lowSpecModeEnabled)
             {
                 StartCoroutine(LoadSceneFromIndexAsync(portal, levelIndex));
