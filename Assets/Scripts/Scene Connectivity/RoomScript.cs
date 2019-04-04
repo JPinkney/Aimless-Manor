@@ -2,6 +2,7 @@
 using UnityEditor;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class RoomScript : MonoBehaviour
 {
@@ -62,9 +63,15 @@ public class RoomScript : MonoBehaviour
 
     private void Update()
     {
-        if (keys.Length > 0 && !RoomController.CompletedRooms[this.gameObject.tag])
+        try
         {
-            Complete();
+            if (keys.Length > 0 && !RoomController.CompletedRooms[this.gameObject.tag])
+            {
+                Complete();
+            }
+        } catch(KeyNotFoundException e)
+        {
+
         }
     }
 

@@ -12,7 +12,7 @@ public void Start() {
   }
 
   public void Open() {
-    SendMessageUpwards("LoadRoom");
+    SendMessageUpwards("Load Room");
     //GetComponent<Collider>().enabled = false; // Stops retrigger
     m_delayTimer = 1.0f;
   }

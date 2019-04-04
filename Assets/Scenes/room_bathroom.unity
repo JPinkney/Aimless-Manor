@@ -841,7 +841,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277309482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6051bace5b500c84698108ae9537ffa0, type: 3}
   m_Name: 
@@ -1824,6 +1824,8 @@ MonoBehaviour:
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
 --- !u!1001 &405326980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3416,7 +3418,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817692378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6051bace5b500c84698108ae9537ffa0, type: 3}
   m_Name: 
@@ -3463,6 +3465,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pre_CeilingLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
+        type: 3}
+      propertyPath: m_Range
+      value: 3.6906662
       objectReference: {fileID: 0}
     - target: {fileID: 2264875250992438182, guid: 4594b988b103e1e42a4143eac2d29365,
         type: 3}
@@ -3518,16 +3530,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264875250992438183, guid: 4594b988b103e1e42a4143eac2d29365,
-        type: 3}
-      propertyPath: m_Range
-      value: 3.6906662
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4594b988b103e1e42a4143eac2d29365, type: 3}
@@ -5822,7 +5824,7 @@ MonoBehaviour:
   m_LinkedPortal: {fileID: 0}
   m_currDoor: {fileID: 0}
   m_DestPortal: {fileID: 0}
-  m_destRoomID: 1
+  m_destRoomID: 2
 --- !u!4 &1653779249
 Transform:
   m_ObjectHideFlags: 0
@@ -6392,7 +6394,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785370508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6051bace5b500c84698108ae9537ffa0, type: 3}
   m_Name: 
@@ -7705,7 +7707,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122010196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6051bace5b500c84698108ae9537ffa0, type: 3}
   m_Name: 
@@ -9039,6 +9041,8 @@ MonoBehaviour:
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
 --- !u!1001 &5841055790120425972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9166,6 +9170,8 @@ MonoBehaviour:
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
 --- !u!1 &6255373511612900535
 GameObject:
   m_ObjectHideFlags: 0

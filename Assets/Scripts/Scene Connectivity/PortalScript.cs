@@ -25,7 +25,7 @@ public class PortalScript : MonoBehaviour
     {
         //If its in the hallway then instantiate the doors
         //Otherwise we shouldn't need them
-        if (this.gameObject.scene.buildIndex == 1 && m_LinkedPortal == null)
+        if (this.gameObject.scene.buildIndex == 2 && m_LinkedPortal == null)
         {
             m_currDoor = Instantiate(RoomController.m_staticRef.m_DoorPrefab, transform.position, transform.rotation) as GameObject;
             m_currDoor.GetComponent<OpenableRotatorAllAxes>().objectToRotate = m_currDoor;
@@ -41,9 +41,11 @@ public class PortalScript : MonoBehaviour
 
     public void LoadRoom()
     {
-        if (m_LinkedPortal)
-            return;
 
+        if (m_LinkedPortal) {
+            return;
+        }
+        Debug.Log("Calling Room Controller to load room from portal script");
         RoomController.m_staticRef.LoadRoom(this);
     }
 
