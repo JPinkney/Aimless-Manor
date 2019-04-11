@@ -196,8 +196,15 @@ public class RoomController : MonoBehaviour
             {
                 RoomController.CompletedRooms[entry.Key] = false;
             }
+
             KeyTracker.GetComponent<KeyHUD>().collectedKeys = 0;
-        } catch (NullReferenceException e) { }
+        }
+        catch (NullReferenceException nre)
+        {
+        }
+        catch (InvalidOperationException ioe)
+        {
+        }
     }
 
 }

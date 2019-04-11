@@ -17,7 +17,7 @@ public class HallwayTutorial : Interactable
             obj.SetActive(false);
             inv.RemoveGameObjectFromInventory(obj);
             hiddenEgg.SetActive(true);
-            tutorialRoomPortal.SetActive(true);
+            // tutorialRoomPortal.SetActive(true);
             glimmer.Stop();
         }
     }
