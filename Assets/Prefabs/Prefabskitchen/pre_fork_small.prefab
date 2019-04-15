@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8671984240215645852}
   - component: {fileID: 5301825899672115598}
   m_Layer: 0
-  m_Name: fork_r
+  m_Name: pre_fork_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &917093094
 Transform:
