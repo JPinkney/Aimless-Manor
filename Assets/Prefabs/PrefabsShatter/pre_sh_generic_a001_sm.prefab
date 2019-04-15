@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 5073518827085206239}
   - component: {fileID: 9040457184268795029}
   m_Layer: 0
-  m_Name: pre_sh_generic_a001_lg 1
+  m_Name: pre_sh_generic_a001_sm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,9 +817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70be15761333f144b9e1ec4b9e8a56cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 3
-  minForce: 50
-  maxForce: 500
+  destroyDelay: 5
+  minForce: 20
+  maxForce: 200
   radius: 0.5
 --- !u!114 &9040457184268795029
 MonoBehaviour:

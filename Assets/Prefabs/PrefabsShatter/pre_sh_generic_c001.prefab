@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 796610884381898997}
   - component: {fileID: 5529437121013921247}
   m_Layer: 0
-  m_Name: sh_generic_c001
+  m_Name: pre_sh_generic_c001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,8 +818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 3
-  minForce: 50
-  maxForce: 500
+  minForce: 20
+  maxForce: 200
   radius: 0.5
 --- !u!114 &5529437121013921247
 MonoBehaviour:
