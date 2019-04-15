@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ExplodeTutScript : MonoBehaviour
 {
-    public float destroyDelay;
-    public float minForce;
-    public float maxForce;
-    public float radius;
+    public float destroyDelay = 3.0f;
+    public float minForce = 50.0f;
+    public float maxForce = 500.0f;
+    public float radius = 0.5f;
 
 
     void Start()
