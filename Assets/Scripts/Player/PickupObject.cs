@@ -311,11 +311,11 @@ public class PickupObject : MonoBehaviour
                 {
                     if (rend.gameObject.GetComponent<ParticleSystem>() == null)
                     {
-                        Material[] newMats = new Material[rend.materials.Length];
-                        for (int i = 0; i < rend.materials.Length; i++)
-                        {
-                            newMats[i] = mat;
-                        }
+                        //Material[] newMats = new Material[rend.materials.Length];
+                        //for (int i = 0; i < rend.materials.Length; i++)
+                        //{
+                        //    newMats[i] = mat;
+                        //}
                         rend.materials = oldMats[counter];
 
                         counter++;
