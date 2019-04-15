@@ -12161,6 +12161,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  explodeOffsetY: 0.1
 --- !u!1 &506855004
 GameObject:
   m_ObjectHideFlags: 0
@@ -22426,6 +22427,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  explodeOffsetY: 0.1
 --- !u!1001 &988990620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26700,6 +26702,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  explodeOffsetY: 0.1
 --- !u!1 &1208023686
 GameObject:
   m_ObjectHideFlags: 0
@@ -32865,30 +32868,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: farbege egg
       objectReference: {fileID: 0}
-    - target: {fileID: 1435065367, guid: 005525bd308cc4660899b4c6f7dca19d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: bb4cc21e4a569d64faad6ac7f214e8a3, type: 2}
-    - target: {fileID: 2300000, guid: ca711d853c7cd154fa9b74d01824501f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08fcd3aa1308e874ba30bf7b5edc7fc3, type: 2}
     - target: {fileID: 1435065371, guid: 005525bd308cc4660899b4c6f7dca19d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.019
@@ -32933,16 +32912,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2435431220341491274, guid: 005525bd308cc4660899b4c6f7dca19d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08fcd3aa1308e874ba30bf7b5edc7fc3, type: 2}
-    - target: {fileID: 2435431220341491274, guid: 005525bd308cc4660899b4c6f7dca19d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: bb4cc21e4a569d64faad6ac7f214e8a3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 005525bd308cc4660899b4c6f7dca19d, type: 3}
 --- !u!4 &1435065371 stripped
@@ -49896,6 +49865,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  explodeOffsetY: 0.1
 --- !u!136 &2078950766753673799
 CapsuleCollider:
   m_ObjectHideFlags: 0
