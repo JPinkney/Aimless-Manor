@@ -19,7 +19,8 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || XCI.GetButton(XboxButton.Start))
+        //if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) || XCI.GetButton(XboxButton.Start))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X) || XCI.GetButton(XboxButton.Start))
         {
             if (isPaused)
             {
@@ -47,16 +48,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        Resume();
+        SceneManager.LoadScene(1);
         RoomController.SetAllRoomsIncomplete();
     }
 
     public void Quit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit ();
-#endif
+        Resume();
+        SceneManager.LoadScene(0);
+        RoomController.SetAllRoomsIncomplete();
     }
 }

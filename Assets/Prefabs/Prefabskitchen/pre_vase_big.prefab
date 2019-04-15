@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4065132068752230485}
   - component: {fileID: 9203077135196575652}
   m_Layer: 0
-  m_Name: vase_big
+  m_Name: pre_vase_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &151792258
 Transform:

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 42905769574379235}
-  doorOpenRot: {x: 0, y: -102, z: 0}
+  doorOpenRot: {x: 0, y: -130, z: 0}
   doorCloseRot: {x: 0, y: 0, z: 0}
   doorAnimSpeed: 2
   doorClose: {x: 0, y: 0, z: 0, w: 1}

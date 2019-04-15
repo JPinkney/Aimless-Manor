@@ -26,8 +26,17 @@ public class StandardBreak : Interactable
 
     private AudioManager audioManager;
 
+    //test
+    [Range(-0.5f, 0.5f)]
+    public float explodeOffsetY = 0.1f;
+    private Vector3 explodePos = new Vector3();
+
     public void Start()
     {
+        explodePos.x = transform.position.x;
+        explodePos.y = transform.position.y + explodeOffsetY;
+        explodePos.z = transform.position.z;
+
         audioManager = AudioManager.instance;
         if (kitPuzzle)
         {
@@ -61,7 +70,7 @@ public class StandardBreak : Interactable
 
         if (brokenGlass)
         {
-            Instantiate(brokenGlass, transform.position, transform.rotation);
+            Instantiate(brokenGlass, explodePos, transform.rotation);
             brokenGlass.localScale = transform.localScale;
         }
 
@@ -75,7 +84,7 @@ public class StandardBreak : Interactable
             kitScript.PlateBroke();
         }
 
-        Physics.IgnoreLayerCollision(9, 9);
+        //Physics.IgnoreLayerCollision(9, 9);
         //keyObj.transform.position = newKeyLocation.position;
         //glimmer.Play();
 
