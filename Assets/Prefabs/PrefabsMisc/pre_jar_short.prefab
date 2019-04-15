@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7159817724580181011}
   - component: {fileID: 1217205692589829393}
   - component: {fileID: 9155968912062762420}
-  - component: {fileID: 6118646050619944256}
+  - component: {fileID: 1739976671}
   m_Layer: 0
   m_Name: pre_jar_short
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266294100761513198}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -64,7 +64,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6118646050619944256
+--- !u!114 &1739976671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,9 +73,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 266294100761513198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc7e089b77ee4d2abdef4e263fd2ab0, type: 3}
+  m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokenGlass: {fileID: 4592184546731430490, guid: 5083420c1894b4d74b7b5983fc490dad,
+    type: 3}
+  glassShatter: {fileID: 0}
+  breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
 --- !u!1 &5876080153561836135
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +141,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 609b9b8e664774d9bb9dcf988d43a796, type: 2}
-  - {fileID: 2100000, guid: 386df521c1f66a14daf956b427ad482e, type: 2}
+  - {fileID: 2100000, guid: c39ef7deba7edbc4cb932a9ddea5f16c, type: 2}
+  - {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

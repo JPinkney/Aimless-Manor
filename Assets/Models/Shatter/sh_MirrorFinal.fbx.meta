@@ -58,7 +58,22 @@ ModelImporter:
     4300014: mirror1.002
     4300016: mirror1.001
     4300018: mirror1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror
+    second: {fileID: 2100000, guid: 6f2f06128433d7c4d933ef1e11c88ae6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror1_Inner
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirrorframe
+    second: {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
