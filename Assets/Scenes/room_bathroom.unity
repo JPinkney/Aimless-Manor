@@ -5281,11 +5281,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 260019638, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+    - target: {fileID: 73709327, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
-    - target: {fileID: 73709327, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+    - target: {fileID: 260019638, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
@@ -5297,14 +5297,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
-    - target: {fileID: 1100846197, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
     - target: {fileID: 1011734511, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16dc9096172424c44af9ce051af64d19, type: 2}
+    - target: {fileID: 1100846197, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ec9527aa9286c84cae8be13dbf76680, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7df2a348cc7e794db04fb8119fa97e7, type: 3}
 --- !u!4 &1317080205 stripped
@@ -8963,30 +8963,9 @@ PrefabInstance:
       objectReference: {fileID: 1302577119}
     - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
         type: 3}
-      propertyPath: brokenGlass
-      value: 
-      objectReference: {fileID: 8101996580010911877, guid: 6b906e4c265665b4dace47555c41afb0,
-        type: 3}
-    - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
-      propertyPath: voicelineNoise
-      value: 
-      objectReference: {fileID: 8300000, guid: 3154e36e3363264469912977e82c6881, type: 3}
-    - target: {fileID: 1168604476255053754, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
       propertyPath: KeyController
       value: 
       objectReference: {fileID: 6465718370618945479}
-    - target: {fileID: 1514308890534857330, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 48d448b26c9413948aeade1992125476, type: 2}
-    - target: {fileID: 1514308890534857330, guid: 233720333d8ff3e449811f0085b65bde,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233720333d8ff3e449811f0085b65bde, type: 3}
 --- !u!1 &1695829615012882210 stripped
