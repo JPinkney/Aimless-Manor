@@ -8,6 +8,11 @@ public class Disappear_AfterAllKeys : MonoBehaviour
     public GameObject AllKeysBox;
     public GameObject KeyLock;
     public GameObject KeyOpen;
+    public GameObject chains;
+    public GameObject chainsBroken;
+
+    [Range(0.1f, 60.0f)]
+    public float destroyDelay = 10.0f;
 
     private bool done = false;
 
@@ -26,6 +31,12 @@ public class Disappear_AfterAllKeys : MonoBehaviour
             KeyLock.SetActive(false);
 
             KeyOpen.SetActive(true);
+
+            chains.SetActive(false);
+
+            chainsBroken.SetActive(true);
+
+            Destroy(chainsBroken.gameObject, destroyDelay);
 
             this.gameObject.SetActive(false);
 
