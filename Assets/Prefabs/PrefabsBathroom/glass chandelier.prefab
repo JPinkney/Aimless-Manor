@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6555579780078941056}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
   - {fileID: 2100000, guid: 588bef59f0d270c4193e93bf2c3c97c8, type: 2}
   - {fileID: 2100000, guid: 8af19b00cc0dde54e93514b24c50bd2d, type: 2}
-  - {fileID: 2100000, guid: 77dc24a88a1b5fb4092da5a00d95b073, type: 2}
+  - {fileID: 2100000, guid: 48d448b26c9413948aeade1992125476, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,13 +108,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e093add8d0d3747bdc4ec821e14be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenGlass: {fileID: 8041494628389569925, guid: 6b906e4c265665b4dace47555c41afb0,
+  brokenGlass: {fileID: 8101996580010911877, guid: 6b906e4c265665b4dace47555c41afb0,
     type: 3}
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   pedestal: {fileID: 0}
-  voicelineNoise: {fileID: 0}
+  voicelineNoise: {fileID: 8300000, guid: 3154e36e3363264469912977e82c6881, type: 3}
   newKeyLocation: {fileID: 0}
   keyObj: {fileID: 0}
   glimmer: {fileID: 0}
-  highlightLight: {fileID: 0}
+  KeyController: {fileID: 0}
