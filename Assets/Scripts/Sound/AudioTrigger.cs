@@ -10,6 +10,8 @@ public class AudioTrigger : MonoBehaviour
     private AudioSource someSource;
     private AudioManager audioManager;
 
+    public ParticleSystem confettiRain;
+
     private void Start()
     {
         audioManager = AudioManager.instance;
@@ -23,6 +25,13 @@ public class AudioTrigger : MonoBehaviour
         {
             audioManager.Play(someSource);
             hasPlayed = true;
+
+            if (confettiRain)
+            {
+                confettiRain.Play();
+            }
+
         }
+
     }
 }
