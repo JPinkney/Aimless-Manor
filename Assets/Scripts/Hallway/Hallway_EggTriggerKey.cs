@@ -8,8 +8,8 @@ public class Hallway_EggTriggerKey : Interactable
     public Transform brokenGlass;
     public GameObject keyController;
 
-    public GameObject leftDoor;
-    public GameObject rightDoor;
+    //public GameObject leftDoor;
+    //public GameObject rightDoor;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class Hallway_EggTriggerKey : Interactable
 
         this.key.SetActive(true);
  
-        var leftDoorRotationScript = leftDoor.GetComponent<OpenTutorialDoors>();
+        /*var leftDoorRotationScript = leftDoor.GetComponent<OpenTutorialDoors>();
         if (leftDoorRotationScript)
         {
             leftDoorRotationScript.open();
@@ -53,6 +53,7 @@ public class Hallway_EggTriggerKey : Interactable
         {
             rightDoorRotationScript.open();
         }
+        */
 
     }
 }

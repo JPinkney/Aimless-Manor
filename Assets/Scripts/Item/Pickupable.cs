@@ -16,6 +16,22 @@ public class Pickupable : MonoBehaviour
     GameObject player;
     //GameObject key;
 
+    public GameObject leftDoor;
+    public GameObject rightDoor;
+
+    public ParticleSystem confettiBurst;
+    public ParticleSystem confettiRain;
+    public ParticleSystem glimmer;
+    public ParticleSystem glimmer2;
+
+    public AudioClip party;
+
+    private bool hasPlayed = false;
+
+    public AudioClip someAudio;
+    private AudioSource someSource;
+    private AudioManager audioManager;
+
     // Use this for initialization
     void Start()
     {
@@ -30,6 +46,10 @@ public class Pickupable : MonoBehaviour
             origMats.Add(rend.materials);
         }
 
+        audioManager = AudioManager.instance;
+        someSource = gameObject.AddComponent<AudioSource>();
+        someSource.clip = someAudio;
+
         //for(int r=0; r<origRenderers.Length; r++)
         //{
 
@@ -38,9 +58,57 @@ public class Pickupable : MonoBehaviour
 
     public void obtainKey()
     {
+        if (confettiBurst)
+        {
+            confettiBurst.Play();
+        }
+
+        if (confettiRain)
+        {
+            confettiRain.Play();
+        }
+
+        if (party)
+        {
+            AudioSource.PlayClipAtPoint(party, this.transform.position);
+        }
+
+        if (glimmer)
+        {
+            glimmer.Stop();
+        }
+
+        if (glimmer2)
+        {
+            glimmer2.Stop();
+        }
+
+        if (someAudio && hasPlayed == false)
+        {
+            audioManager.Play(someSource);
+            hasPlayed = true;
+        }
+
+        if (leftDoor)
+        {
+            var leftDoorRotationScript = leftDoor.GetComponent<OpenTutorialDoors>();
+            if (leftDoorRotationScript)
+            {
+                leftDoorRotationScript.open();
+            }
+        }
+
+        if (rightDoor)
+        {
+            var rightDoorRotationScript = rightDoor.GetComponent<OpenTutorialDoors>();
+            if (rightDoorRotationScript)
+            {
+                rightDoorRotationScript.open();
+            }
+        }
+
         Debug.Log("OBTAINING KEY");
         this.key_got = true;
-        
     }
 
     public bool KeyObtained()
