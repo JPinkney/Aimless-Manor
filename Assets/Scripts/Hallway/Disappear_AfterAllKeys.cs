@@ -5,6 +5,7 @@ using UnityEngine;
 public class Disappear_AfterAllKeys : MonoBehaviour
 {
     public GameObject doorL, doorR;
+    public GameObject AllKeysBox;
 
     private bool done = false;
 
@@ -18,6 +19,8 @@ public class Disappear_AfterAllKeys : MonoBehaviour
     {
         if (RoomController.IsAllRoomCompleted() && !done)
         {
+            AllKeysBox.SetActive(true);
+
             this.gameObject.SetActive(false);
 
             this.doorL.transform.Rotate(0, -90, 0); // left: -90
@@ -25,5 +28,7 @@ public class Disappear_AfterAllKeys : MonoBehaviour
 
             this.done = true;
         }
+
+
     }
 }

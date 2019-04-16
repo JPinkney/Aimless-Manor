@@ -13,14 +13,19 @@ public class Key_Glimmer_Gone : Interactable
     public ParticleSystem confettiRain;
     private int count;
     private bool done;
+    private bool hasPlayed = false;
     public AudioClip party;
+    public AudioClip someAudio;
+    private AudioSource someSource;
     private AudioSource partySource;
 
     private AudioManager audioManager;
 
     public void Start()
     {
-        //audioManager = AudioManager.instance;
+        audioManager = AudioManager.instance;
+        someSource = gameObject.AddComponent<AudioSource>();
+        someSource.clip = someAudio;
     }
 
     public override void Interact(Inventory inv, GameObject obj)
@@ -34,6 +39,12 @@ public class Key_Glimmer_Gone : Interactable
         if (party && done == false)
         {
              AudioSource.PlayClipAtPoint(party, this.transform.position);
+        }
+
+        if (someAudio && hasPlayed == false)
+        {
+            audioManager.Play(someSource);
+            hasPlayed = true;
         }
 
         if (keyObj)
