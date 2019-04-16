@@ -11,6 +11,7 @@ public class PortalTeleporter : MonoBehaviour
 
     public int side = 9;
     private DirectionMarking dm;
+    private FootstepMarking fs;
 
     private Transform playerTransform;
     private PlayerController playerController;
@@ -26,7 +27,12 @@ public class PortalTeleporter : MonoBehaviour
         try {
             dm = GameObject.Find("DirectionMarker").GetComponent<DirectionMarking>();
         } catch (NullReferenceException e) { }
-        
+        try
+        {
+            fs = GameObject.Find("DirectionMarker").GetComponent<FootstepMarking>();
+        }
+        catch (NullReferenceException e) { }
+
     }
 
     // Update is called once per frame
@@ -52,6 +58,12 @@ public class PortalTeleporter : MonoBehaviour
                 try
                 {
                     dm.UpdateMarker(side);
+                } catch (NullReferenceException e){
+                }
+
+                try
+                {
+                    fs.UpdateMarker(side);
                 } catch (NullReferenceException e){
                 }
 
