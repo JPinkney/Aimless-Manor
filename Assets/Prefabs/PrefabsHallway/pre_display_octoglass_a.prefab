@@ -174,7 +174,7 @@ MonoBehaviour:
     type: 3}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   pedestal: {fileID: 0}
-  voicelineNoise: {fileID: 0}
+  voicelineNoise: {fileID: 8300000, guid: 2e55e370ef916a845827ce49e79590d0, type: 3}
   newKeyLocation: {fileID: 0}
   keyObj: {fileID: 0}
   glimmer: {fileID: 0}

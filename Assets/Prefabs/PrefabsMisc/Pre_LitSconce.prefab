@@ -4742,6 +4742,8 @@ GameObject:
   - component: {fileID: 2442440489655788545}
   - component: {fileID: 5320367987720301975}
   - component: {fileID: 384546252441584768}
+  - component: {fileID: 5831227666014836670}
+  - component: {fileID: 4968472012639475626}
   m_Layer: 0
   m_Name: sconce1
   m_TagString: Untagged
@@ -4809,6 +4811,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5831227666014836670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087436592171343159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 764.4922, y: 2275.6257, z: 1487.0548}
+  m_Center: {x: 0.001953125, y: -752.9055, z: -736.0114}
+--- !u!54 &4968472012639475626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087436592171343159}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7428214256339365206
 GameObject:
   m_ObjectHideFlags: 0

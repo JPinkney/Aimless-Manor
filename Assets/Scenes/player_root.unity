@@ -1067,7 +1067,7 @@ MonoBehaviour:
   - kitchen
   m_DoorPrefab: {fileID: 42905769574379235, guid: 3f4315dadcfa6443398effc08e925c33,
     type: 3}
-  lowSpecModeEnabled: 1
+  lowSpecModeEnabled: 0
   portalDisable: {fileID: 0}
 --- !u!4 &637798823
 Transform:

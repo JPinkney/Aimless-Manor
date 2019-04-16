@@ -21,7 +21,7 @@ public class Break : Interactable
     public GameObject keyObj;
     public ParticleSystem glimmer;
 
-    public GameObject highlightLight;
+    public GameObject KeyController;
 
     private AudioManager audioManager;
 
@@ -57,6 +57,11 @@ public class Break : Interactable
         if (pedestal)
         {
             pedestal.SetActive(true);
+        }
+
+        if (KeyController)
+        {
+            KeyController.SetActive(true);
         }
 
         if (glassShatter)

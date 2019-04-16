@@ -21,6 +21,7 @@ TagManager:
   - Egg
   - left_door
   - right_door
+  - cellar
   layers:
   - Default
   - TransparentFX
