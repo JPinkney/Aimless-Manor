@@ -6,6 +6,8 @@ public class Disappear_AfterAllKeys : MonoBehaviour
 {
     public GameObject doorL, doorR;
     public GameObject AllKeysBox;
+    public GameObject KeyLock;
+    public GameObject KeyOpen;
 
     private bool done = false;
 
@@ -20,6 +22,10 @@ public class Disappear_AfterAllKeys : MonoBehaviour
         if (RoomController.IsAllRoomCompleted() && !done)
         {
             AllKeysBox.SetActive(true);
+
+            KeyLock.SetActive(false);
+
+            KeyOpen.SetActive(true);
 
             this.gameObject.SetActive(false);
 
