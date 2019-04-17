@@ -18,7 +18,9 @@ public class StandardBreak : Interactable
     public bool kitPuzzle;
     public GameObject kitMan;
 
-    private Puzzle kitScript;
+    public int num;
+
+    private KitchenPuzzle kitScript;
 
     //public Transform newKeyLocation;
     //public GameObject keyObj;
@@ -40,7 +42,7 @@ public class StandardBreak : Interactable
         audioManager = AudioManager.instance;
         if (kitPuzzle)
         {
-            kitScript = kitMan.GetComponent<Puzzle>();
+            kitScript = kitMan.GetComponent<KitchenPuzzle>();
             
         }
         else
@@ -81,7 +83,7 @@ public class StandardBreak : Interactable
 
         if (kitPuzzle)
         {
-            kitScript.PlateBroke();
+            kitScript.PlateBroke(num);
         }
 
         //Physics.IgnoreLayerCollision(9, 9);
