@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 6fd95d01a90bb5d428d2c586142320ea
+guid: 1b6c3574aeca7aa4c8cdc674ba8d0b87
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert3
+    2100002: wood
     2300000: //RootNode
     3300000: //RootNode
     4300000: polySurface7
@@ -49,7 +50,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
