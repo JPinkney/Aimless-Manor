@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2871779446575593856}
   - component: {fileID: 6614825216888453511}
   - component: {fileID: 6369056454561520461}
-  - component: {fileID: 2226289785584599169}
+  - component: {fileID: 4850616037972693433}
   m_Layer: 0
   m_Name: pre_display_pentaglass
   m_TagString: Untagged
@@ -93,7 +93,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0d28fc36f0f7b48929b78f56ae78903e, type: 3}
---- !u!114 &2226289785584599169
+--- !u!114 &4850616037972693433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,10 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenGlass: {fileID: 8052839710239028374, guid: 922e8bd264b064436ac782d22f07aa70,
+  brokenGlass: {fileID: 8052839710239028374, guid: b82084b1045d6ac41a14407284ef0355,
     type: 3}
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  num: 0
+  explodeOffsetY: 0.1

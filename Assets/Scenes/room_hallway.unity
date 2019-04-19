@@ -10555,21 +10555,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0056517664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0056517664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0056517664
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f327bb12037a4ca8b687e26591b7dee, type: 3}
 --- !u!4 &429930713 stripped
@@ -12323,6 +12308,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  num: 0
   explodeOffsetY: 0.1
 --- !u!1001 &499222694
 PrefabInstance:
@@ -18525,6 +18511,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 779287320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &779287322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 93cabe898a57a5249a7c8b9edb8b45af,
+    type: 3}
+  m_PrefabInstance: {fileID: 779287320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &779287323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779287322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenGlass: {fileID: 8052839710239028374, guid: 713d49e215815fa45a7eee57a8ff1dda,
+    type: 3}
+  glassShatter: {fileID: 0}
+  breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
+  num: 0
+  explodeOffsetY: 0.1
+--- !u!65 &779287324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779287322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 141.44925, y: 75.19445, z: 146.51846}
+  m_Center: {x: -0.00024795532, y: -0.00048446655, z: -0.00049209595}
 --- !u!1001 &784144279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23213,13 +23239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenGlass: {fileID: 3866735761043900104, guid: 516adc001a04cb44e98dce7bb8826564,
+  brokenGlass: {fileID: 8052839710239028374, guid: b82084b1045d6ac41a14407284ef0355,
     type: 3}
   glassShatter: {fileID: 0}
   breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
   voicelineNoise: {fileID: 8300000, guid: 5aa9a5cfd90dd764380b71c226f8c5df, type: 3}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  num: 0
   explodeOffsetY: 0.1
 --- !u!1001 &988990620
 PrefabInstance:
@@ -25080,6 +25107,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1069984119}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1069984121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 35672e8902ff26a4fafe32b524bc0b9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1069984119}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1069984122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069984121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenGlass: {fileID: 8052839710239028374, guid: b20325bc0fb974ce8b4904a81490ca4f,
+    type: 3}
+  glassShatter: {fileID: 0}
+  breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
+  num: 0
+  explodeOffsetY: 0.1
+--- !u!65 &1069984123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069984121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.621155, y: 103.25273, z: 1.8610619}
+  m_Center: {x: -0.00012207031, y: 0, z: 0}
 --- !u!1 &1071850688
 GameObject:
   m_ObjectHideFlags: 0
@@ -27878,6 +27945,7 @@ MonoBehaviour:
   voicelineNoise: {fileID: 0}
   kitPuzzle: 0
   kitMan: {fileID: 0}
+  num: 0
   explodeOffsetY: 0.1
 --- !u!1 &1208023686
 GameObject:
@@ -28698,7 +28766,7 @@ PrefabInstance:
     - target: {fileID: 2300112, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c39ef7deba7edbc4cb932a9ddea5f16c, type: 2}
+      objectReference: {fileID: 2100000, guid: 055ce380aad481546be718800e90def2, type: 2}
     - target: {fileID: 2300114, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -28730,7 +28798,7 @@ PrefabInstance:
     - target: {fileID: 2300120, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: c39ef7deba7edbc4cb932a9ddea5f16c, type: 2}
+      objectReference: {fileID: 2100000, guid: 055ce380aad481546be718800e90def2, type: 2}
     - target: {fileID: 2300120, guid: b99e7e1489abd41219182ec03f89e178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -33617,6 +33685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pre_display_pentaglass (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291782939331412442, guid: 2f327bb12037a4ca8b687e26591b7dee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
         type: 3}
@@ -42344,6 +42417,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1761960937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1761960939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: c6b4e67152cbf5841881569b955c03a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761960937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761960940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761960939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenGlass: {fileID: 8052839710239028374, guid: b20325bc0fb974ce8b4904a81490ca4f,
+    type: 3}
+  glassShatter: {fileID: 0}
+  breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
+  num: 0
+  explodeOffsetY: 0.1
+--- !u!65 &1761960941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761960939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08428215, y: 0.025629783, z: 0.102503054}
+  m_Center: {x: 5.314361e-10, y: 0.012680083, z: 0.0000002387965}
 --- !u!1001 &1764062735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49658,21 +49771,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0056517664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0056517664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226228225383037098, guid: 2f327bb12037a4ca8b687e26591b7dee,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0056517664
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f327bb12037a4ca8b687e26591b7dee, type: 3}
 --- !u!4 &2051481961 stripped
@@ -52505,6 +52603,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2270c5377626bf8498801ca49a068cac, type: 3}
+--- !u!1 &3107527035896232512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3438716719168887721, guid: 2270c5377626bf8498801ca49a068cac,
+    type: 3}
+  m_PrefabInstance: {fileID: 3107527035896232511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3107527035896232513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107527035896232512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a40bb745502d74aaf559684d03743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenGlass: {fileID: 8052839710239028374, guid: 773c915ad65793e42869afbef59ef2f3,
+    type: 3}
+  glassShatter: {fileID: 0}
+  breakNoise: {fileID: 8300000, guid: 1ab05041907a14d96b189e31424e14af, type: 3}
+  voicelineNoise: {fileID: 0}
+  kitPuzzle: 0
+  kitMan: {fileID: 0}
+  num: 0
+  explodeOffsetY: 0.1
+--- !u!65 &3107527035896232514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107527035896232512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.057231765, y: 0.08437481, z: 0.048202805}
+  m_Center: {x: 0.001208018, y: 0.042689852, z: 0.00023827383}
 --- !u!1001 &3111887840291548549
 PrefabInstance:
   m_ObjectHideFlags: 0
