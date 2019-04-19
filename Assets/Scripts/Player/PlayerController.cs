@@ -78,28 +78,40 @@ public class PlayerController : MonoBehaviour
         float leftAxisY = XCI.GetAxis(XboxAxis.LeftStickX); //Left is - Right is +
         float leftAxisX = XCI.GetAxis(XboxAxis.LeftStickY);
 
+
+
         //Left stick moving left
-        if (leftAxisX < 0)
+        if (leftAxisX < -0.5)
         {
-            rb.transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
+            rb.transform.Translate(-Vector3.forward * moveSpeed);
         }
 
         //Left stick moving right
-        if (leftAxisX > 0)
+        if (leftAxisX > 0.5)
         {
-            rb.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            rb.transform.Translate(Vector3.forward * moveSpeed);
+        }
+
+        if (leftAxisY != 0)
+        {
+            Debug.Log(leftAxisX + " " + leftAxisY);
         }
 
         //Left stick moving left
-        if (leftAxisY < 0)
+        if (leftAxisY < -0.5)
         {
-            rb.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
+            // rb.transform.position += new Vector3(0, 0, leftAxisY) * moveSpeed;
+            rb.transform.Translate(Vector3.left * moveSpeed);
+            //rb.transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
 
         //Left stick moving right
-        if (leftAxisY > 0)
+        if (leftAxisY > 0.5)
         {
-            rb.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            // rb.transform.position += new Vector3(0, 0, leftAxisY) * moveSpeed;
+            rb.transform.Translate(Vector3.right * moveSpeed);
+            //rb.transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
 
         /*
